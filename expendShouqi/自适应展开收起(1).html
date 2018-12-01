@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box{
+			width:100%;
+			height:100%;
+		}
+		.box form{
+			overflow:hidden;
+		}
+		.box form div{
+			float:left;
+			margin:5px;
+			border:1px solid red;
+			height:30px;
+			line-height:30px;
+		}
+		.id1{
+			width:160px;
+		}
+		.id2{
+			width:120px;
+		}
+		.id3{
+			width:180px;
+		}
+		.id4{
+			width:210px;
+		}
+		.id5{
+			width:130px;
+		}
+		.id6{
+			width:190px;
+		}
+		.id7{
+			width:130px;
+		}
+		.id8{
+			width:170px;
+		}
+		.id9{
+			width:100px;
+		}
+		.button{
+			width:80px;
+			background-color:#ccc;
+			text-align:center;
+		}
+		.sskzidong{
+			position: relative;
+		}
+		.abfudong{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.bthclick{
+			position: absolute;
+			text-align: center;
+			cursor: pointer;
+			line-height: 20px;
+			bottom: -20px;
+			left: 50%;
+			width: 80px;
+			height: 20px;
+			margin-left: -40px;
+			font-size: 12px;
+			border:1px solid red;
+		}
+		.fitdiv{
+			height: 40px;
+			overflow: hidden;
+		}
+		.fitdiv.active{
+			height: auto;
+		}
+		form{
+			position: relative;
+		}
+		.spButton.active{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+<div class="sskzidong">
+	<div class="abfudong">
+        <b class='bthclick' onclick='cilksuosuo(this)'>展开搜索</b>
+    </div>
+	<div class="box fitdiv">
+		<form>
+			<div class="id1 searchPad"></div>
+			<div class="id2 searchPad"></div>
+			<div class="id3 searchPad"></div>
+			<div class="id4 searchPad"></div>
+			<div class="id5 searchPad"></div>
+			<div class="button spButton">查询</div>
+		</form>
+	</div>
+</div>
+</body>
+<script src="jquery2.1.1.min.js"></script>
+<script>
+$(function(){
+//	页面加载时运行必要的三个函数
+//	查询按钮定位
+	querylocation();
+//	判断是否需要展开收起按钮
+	unfoldShow();
+//	计算展开收起按钮层的高度
+	conboxheight();
+//	当页面大小改变时
+    window.onresize=function(){
+//      重新计算展开收缩按钮的高度
+        conboxheight();
+//      重新运行查询按钮所在位置的函数
+        querylocation();
+//      判断如果在展开状态下改变了页面大小时重新计算位置与高度
+        if($('.sskzidong .abfudong .bthclick').text()=='收起搜索'){
+//        	展开状态下的查询按钮不能位置改变，所以删除绝对定位的class
+        	$('.fitdiv .spButton').removeClass('active');
+//        	展开状态下让父容器不能有内边距占据空白位置，设置为0
+        	$('.fitdiv').find('form').css('padding-right','0');
+//        	判断是否需要展开收起的按钮
+        	var searHeight=$('.searchPad').outerHeight(true);
+        		if($('.fitdiv').find('form').height()>searHeight){
+        			$('.abfudong').show();
+	        		conboxheight();
+	        	}else{
+//	        		如果需要的话显示展开收起的按钮并且重新计算展开收起按钮层的高度
+	        		$('.abfudong').hide();
+	        		conboxheight();
+	        	}
+        }else{
+//        	如果是收起状态下改变了页面大小时重新判断和计算查询按钮的位置
+        	unfoldShow();
+        	querylocation();
+        };
+    }
+});
+
+//给予展开收起按钮父容器与整个搜索栏的高度一致。（需要展开收起按钮放置在搜索栏底部居中时使用）
+function conboxheight(){
+    $('.sskzidong .abfudong').each(function(){
+        var tilteheight=$(this).next('.fitdiv').height();
+        $(this).height(tilteheight);
+    });
+};
+//判断内容是否需要展开收起按钮，需要显示，不需要隐藏
+function unfoldShow(){
+//	根据搜索框父容器form元素的高度来判断是否有一行以上的内容
+	var searHeight=$('.searchPad').outerHeight(true);
+	if($('.fitdiv').find('form').height()>searHeight){
+		$('.abfudong').show();
+	}else{
+		$('.abfudong').hide();
+		$('.fitdiv form').css('padding-right',0);
+	}
+};
+//判断查询按钮所在位置的函数
+function querylocation(){
+//	定义一个为0的数值
+	var sum=0;
+//	循环搜索框来拿到所有搜索框的宽度
+	$('.fitdiv .searchPad').each(function(index){
+//		获取查询按钮的宽度
+		var formwidth=$('.fitdiv form').outerWidth(true);
+		var submitWidth=$('.fitdiv .spButton').outerWidth(true);
+//		让搜索框的宽度不断相加
+		sum+=+$(this).outerWidth(true);
+//		判断是否大于或等于父容器form的宽度
+		if(sum>=$('.fitdiv').outerWidth(true)-submitWidth){
+//			停止相加
+			return false;
+		};
+//		给父容器一个相当于查询按钮宽度的内边距来让查询按钮占据位置
+		$('.fitdiv form').css('padding-right',formwidth-sum-submitWidth+'px');
+//		给查询按钮一个绝对定位的class
+		$('.fitdiv .spButton').addClass('active');
+//		查询按钮的left值等于搜索框宽度相加到停止时的一个数值
+		$('.fitdiv .spButton').css('left',sum+'px');
+		$('.fitdiv .spButton').css('top','0');
+	});
+};
+//定义一个为true的值来进行展开状态和收起状态的判断
+var typezhankai=true;
+//展开收起按钮点击事件
+function cilksuosuo(jis){
+//	如果值为true时，点击展开内容
+    if(typezhankai==true){
+//    	点击添加让搜索框的容器的高度变为auto的class
+       $(jis).parent('.abfudong') .next('.fitdiv').addClass('active');
+//      让父容器的内边距变为0，不让内边距占位置导致有大量空白
+        $('.fitdiv').find('form').css('padding-right','0');
+//      删除按钮的绝对定位class，让按钮正常排序在最后的搜索框后面
+        $('.fitdiv .spButton').removeClass('active');
+//      重新计算一次展开收起按钮层的高度，使其与搜索栏容器的高度一致
+        conboxheight();
+//      变化展开收起按钮的样式
+        $(jis).text('收起搜索');
+//      将值变为false，好进行下一步的收起操作
+        typezhankai=false;
+//      如果值为false时说明要进行的是收起搜索的操作
+    }else if(typezhankai==false){
+//    	删除自动高度auto的class
+        $(jis).parent('.abfudong') .next('.fitdiv').removeClass('active');
+//      删除展开后展开按钮的样式
+        $(jis).text('展开搜索');
+//      重新计算展开收起层的高度
+        conboxheight();
+//      重新计算查询按钮的位置使其排序在收起状态下的显示的一行的末尾
+        querylocation();
+//      将值变为true，好进行展开操作
+        typezhankai=true;
+    };
+};
+</script>
+</html>

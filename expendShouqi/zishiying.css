@@ -1,0 +1,79 @@
+/*
+* @Author: Marte
+* @Date:   2017-12-21 15:33:30
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-12-24 16:34:15
+*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.searchwrap{
+    position: relative;
+}
+.inputwrap{
+    height: 30px;
+    overflow: hidden;
+}
+.inputwrap form{
+    position: relative;
+    overflow:hidden;
+}
+.inputwrap form div{
+    float:left;
+    margin-bottom: 5px;
+    margin-right:5px;
+    border:1px solid red;
+    height:30px;
+    line-height:30px;
+}
+.id1{
+    width:160px;
+}
+.id2{
+    width:120px;
+}
+.id3{
+    width:180px;
+}
+.id4{
+    width:210px;
+}
+.id5,.id7{
+    width:130px;
+}
+.id6{
+    width:190px;
+}
+.id8{
+    width:170px;
+}
+.id9{
+    width:100px;
+}
+.search{
+    width:80px;
+    background-color:#ccc;
+    text-align:center;
+}
+.newbtn{
+    position: absolute;
+    top: 0;
+}
+.bthzhanshou{
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    line-height: 20px;
+    bottom: -20px;
+    left: 50%;
+    width: 80px;
+    height: 20px;
+    margin-left: -40px;
+    font-size: 12px;
+    border:1px solid red;
+}
+.showactive{
+    height: auto!important;
+}
