@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>jQuery幻灯片插件slick演示3_dowebok</title>
+<link rel="stylesheet" href="style/slick.css">
+<style>
+* { margin: 0; padding: 0;}
+.slick { width: 900px; margin: 0 auto;}
+.slick img { width: 280px; padding: 10px;}
+.slick-prev:before, .slick-next:before { position: absolute; left: 0; top: 1px; color: #ccc;}
+.slick-prev { left: -35px;width: 20px;
+    height:39px;background: url("images/img1_75.png") 0 0 no-repeat;}
+.slick-next { right: -35px;width: 20px;
+    height:39px;background: url("images/img1_78.png") 0 0 no-repeat;}
+.slick-dots { bottom: -35px;}
+
+</style>
+</head>
+
+<body>
+
+
+
+<div class="slick">
+	<div><a href=""><img src="images/1.jpg" alt=""></a></div>
+	<div><a href=""><img src="images/1.jpg" alt=""></a></div>
+	<div><a href=""><img src="images/1.jpg" alt=""></a></div>
+	<div><a href=""><img src="images/1.jpg" alt=""></a></div>
+	<div><a href=""><img src="images/1.jpg" alt=""></a></div>
+</div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script>
+$(function(){
+	$('.slick').slick({
+		//dots: true,
+		slidesToShow: 3,
+		autoplay: true,
+		autoplaySpeed: 2000
+	});
+});
+</script>
+</body>
+</html>

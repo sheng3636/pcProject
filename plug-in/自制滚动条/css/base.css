@@ -1,0 +1,144 @@
+﻿/*
+######################################################################################################################
+#
+#                CSS样式表编码规范
+#
+# 1、本base.css文件为所有互生项目的通用CSS;一般不会随便更新；
+# 2、项目中前端人员自主编写的样式表固定为style.css的文件；
+# 3、为避免编写重复代码或覆盖别人的代码，少写全局样式，多写权重较低的样式名；
+# 4、自定义样式名须使用前缀 hs-xxx-【xxx表示编写人员的姓名简写，如qsl】，样式名须简单明了，最好以英文命名，中间以“-”连接；
+# 5、页面引用样式表为style.css，xxx.css【xxx同上】两个文件，其中xxx.css为过渡文件，样式内容定期由指定人员合并到style.css文件中；
+#
+#
+#####################################################################################################################
+*/
+
+/*CSS reset*/
+html{background:#FFF;height:100%;}
+table{border-collapse:collapse;border-spacing:0;table-layout:fixed;empty-cells:show;}
+body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,form,p {margin:0; font:100% Arial,SimSun, sans-serif;}
+body,td,th,h1,h2,h3,h4,h5,h6 { font-family: "Microsoft Yahei", "SimHei", "SimSun";}
+ul,ol {padding:0;list-style-type:none;}
+a img {border:none;}
+input,textarea,a,button {outline:none;}
+input::-moz-focus-inner {border:0;}
+
+/*文字排版*/
+.f12{font-size:12px;}
+.f13{font-size:13px;}
+.f14{font-size:14px;}
+.f16{font-size:16px;}
+.f20{font-size:20px;}
+.fb{font-weight:bold;}
+.fn{font-weight:normal;}
+.t2{text-indent:2em;}
+.lh150{line-height:150%;}
+.lh180{line-height:180%;}
+.lh200{line-height:200%;}
+.unl{text-decoration:underlline;}
+.unln{text-decoration:none;}
+
+/*定位*/
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+.bc{margin-left:auto;margin-right:auto;}
+.fl{float:left;display:inline;}
+.fr{float:right;display:inline;}
+.cb{clear:both;}
+.cl{clear:left;}
+.cr{clear:rigth;}
+.clearfix:after {content:'.';display:block;clear:both;visibility:hidden;height:0px;}
+.clearfix {*zoom:1;}
+.vm{verticle-align:middle;}
+.pr{position:relative;}
+.pa{position:absolute;}
+.zoom{zoom:1;}
+.hidden{visiility:hidden;}
+.none{display:none;}
+.blk{display:block;}
+.ine{display:inline;}
+.ineblk{display:inline-block;}
+
+/*长度高度*/
+.w10{width:10px;}
+.w20{width:20px;}
+.w30{width:30px;}
+.w40{width:40px;}
+.w50{width:50px;}
+.w60{width:60px;}
+.w70{width:70px;}
+.w80{width:80px;}
+.w90{width:90px;}
+.w100{width:100px;}
+.w200{width:200px;}
+.w300{width:300px;}
+.w400{width:400px;}
+.w{width:100%}
+.h10{height:10px;}
+.h20{height:20px;}
+.h30{height:30px;}
+.h40{height:40px;}
+.h50{height:50px;}
+.h60{height:60px;}
+.h70{height:70px;}
+.h80{height:80px;}
+.h90{height:90px;}
+.h100{height:100px;}
+.h200{height:200px;}
+.h{height:100%}
+
+/*边距*/
+.m5{margin:5px;}
+.m10{margin:10px;}
+.m15{margin:15px;}
+.m20{margin:20px;}
+.m30{margin:30px;}
+.mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt30{margin-top:30px;}
+.mb5{margin-bottom:5px;}
+.mb10{margin-bottom:10px;}
+.mb15{margin-bottom:15px;}
+.mb20{margin-bottom:20px;}
+.mb30{margin-bottom:30px;}
+.ml5{margin-left:5px;}
+.ml10{margin-left:10px;}
+.ml15{margin-left:15px;}
+.ml20{margin-left:20px;}
+.ml30{margin-left:30px;}
+.mr5{margin-right:5px;}
+.mr10{margin-right:10px;}
+.mr15{margin-right:15px;}
+.mr20{margin-right:20px;}
+.mr30{margin-right:30px;}
+.p5{padding:5px;}
+.p10{padding:10px;}
+.p15{padding:15px;}
+.p20{padding:20px;}
+.p30{padding:30px;}
+.pt5{padding-top:5px;}
+.pt10{padding-top:10px;}
+.pt15{padding-top:15px;}
+.pt20{padding-top:20px;}
+.pt30{padding-top:30px;}
+.pb5{padding-bottom:5px;}
+.pb10{padding-bottom:10px;}
+.pb15{padding-bottom:15px;}
+.pb20{padding-bottom:20px;}
+.pb30{padding-bottom:30px;}
+.pl5{padding-left:5px;}
+.pl10{padding-left:10px;}
+.pl15{padding-left:15px;}
+.pl20{padding-left:20px;}
+.pl30{padding-left:30px;}
+.pr5{padding-right:5px;}
+.pr10{padding-right:10px;}
+.pr15{padding-right:15px;}
+.pr20{padding-right:20px;}
+.pr30{padding-right:30px;}
+
+/*CSS get*/
+.eps{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}/*须配合width使用,表格使用时须在父table中使用table-layout:fixed*/

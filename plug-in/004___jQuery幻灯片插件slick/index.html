@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>jQuery幻灯片插件slick演示1_dowebok</title>
+<link rel="stylesheet" href="style/slick.css">
+<style>
+* { margin: 0; padding: 0;}
+.slick { width: 600px; margin: 0 auto;}
+.slick-prev:before, .slick-next:before { position: absolute; left: 0; top: 1px; color: #ccc;}
+.slick-prev { left: -35px;}
+.slick-next { right: -35px;}
+.slick-dots { bottom: -35px;}
+</style>
+</head>
+
+<body>
+
+<h1 style="margin: 40px; font: 32px Microsoft Yahei; text-align: center;">jQuery幻灯片插件slick演示1</h1>
+
+<div class="menu">
+	<a class="cur" href="index.html">1）单个显示</a>
+	<a href="index2.html">2）多个显示</a>
+	<a href="index3.html">3）多个显示单个滑动</a>
+	<a href="index4.html">4）响应式</a>
+	<a href="index5.html">5）不规则</a>
+	<a href="index6.html">6）中心模式</a>
+	<a href="index7.html">7）图片延迟加载</a>
+	<a href="index8.html">8）自动播放</a>
+	<a href="index9.html">9）解绑/销毁</a>
+</div>
+
+<div class="slick">
+	<div><img src="images/1.jpg" alt=""></div>
+	<div><img src="images/2.jpg" alt=""></div>
+	<div><img src="images/3.jpg" alt=""></div>
+	<div><img src="images/4.jpg" alt=""></div>
+	<div><img src="images/5.jpg" alt=""></div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script>
+$(function(){
+	$('.slick').slick({
+		dots: true
+	});
+});
+</script>
+</body>
+</html>
