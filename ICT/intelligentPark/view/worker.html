@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>员工视图</title>
+		<link rel="stylesheet" type="text/css" href="../css/worker.css" />
+	</head>
+
+	<body>
+		<header></header>
+		<div class="worker-left">
+			<section class="worker-canteen">
+				<div class="con-top-right-bottom-title"><span>食堂服务</span></div>
+				<article>
+					<div class="con-top-left-box">
+						<div id="humanNum"></div>
+					</div>
+					<div class="con-left-bottom" id="info">
+						<h4><i></i>优惠信息</h4>
+					</div>
+				</article>
+				<article>
+					<div class="con-left-center">
+						<div class="con-left-txtbox" id="south">
+							<div class="con-left-tboxl">
+								<h3><span>南食堂</span></h3>
+								<div class="con-left-tboxr mymove time">
+									<div class="mtext"></div>
+									<div class="timebox"><span class="" style="height: 0;"></span></div>
+								</div>
+								<div class="tboxl-info">当前人数<span></span></div>
+							</div>
+						</div>
+						<div class="con-left-txtbox" id="north">
+							<div class="con-left-tboxl">
+								<h3><span>北食堂</span></h3>
+								<div class="con-left-tboxr mymove time2">
+									<div class="maxtext"></div>
+									<div class="timebox"><span class="" style="height:45;"><!--78%等于100%--></span></div>
+								</div>
+								<div class="tboxl-info">当前人数<span></span></div>
+							</div>
+						</div>
+					</div>
+					<div class="con_top_center">
+						<div class="con_topc_img" id="arealine">
+
+						</div>
+					</div>
+				</article>
+				<article>
+					<div class="con_bottom_right">
+						<ul class="bottom_r_nav">
+							<li id="dd1"><i>早餐</i></li>
+							<li id="dd2"><i>午餐</i></li>
+							<li id="dd3"><i>晚餐</i></li>
+						</ul>
+						<div class="bottom_r_table">
+							<div class="table-title1">
+								<p></p><span id="meals_time"></span></div>
+							<div class="table-title2" style="display: none;">
+								<span class="meals_fun" name="meal_t4">特色面食</span>
+								<span class="meals_fun" name="meal_t1">套餐</span>
+								<span class="meals_fun" name="meal_t2">自选菜</span>
+								<span class="meals_fun" name="meal_t3">花式窗口</span>
+							</div>
+							<table id="meals">
+								<thead>
+									<tr style="border: 0;">
+										<th>菜名</th>
+										<th>价格</th>
+										<th>赞</th>
+										<th>踩</th>
+										<th>展示</th>
+									</tr>
+								</thead>
+								<tbody id="breakfast" style="display: none;"></tbody>
+								<tbody id="lunch" style="display: none;"></tbody>
+								<tbody id="dinner" style="display: none;"></tbody>
+							</table>
+							<img style="display: none;" />
+						</div>
+					</div>
+				</article>
+			</section>
+			<section class="worker-publicinfo">
+				<div class="con-top-right-bottom-title"><span>园区公开</span></div>
+				<div id="workerPublicinfo">
+					<!--<div class="con-bottom-left-info">
+						<div class="con-img-box"><img src="../img/worker-info-img1.png" /> </div>
+						<ul>
+							<li title="2018年首届电信包粽子大赛">2018年首届电信包粽子大赛</li>
+							<li title="时间：本周四（6月14日）下午2-4点">时间：本周四（6月14日）下午2-4点</li>
+							<li title="地点：南食堂">地点：南食堂</li>
+							<li title="报名：部门统一报名">报名：部门统一报名</li>
+							<li title="备注：望大家踊跃参加">备注：望大家踊跃参加</li>
+						</ul>
+					</div>
+					<div class="con-bottom-left-info">
+						<div class="con-img-box"><img src="../img/worker-info-img2.png" /> </div>
+						<ul>
+							<li title="停水通知">停水通知</li>
+							<li title="时间：下周五（6月22日）下午3点">时间：下周五（6月22日）下午3点</li>
+							<li title="内容：停水1小时，洗水箱，望各部门做好相关准备工作。">内容：停水1小时，洗水箱，望各部门做好相关准备工作。</li>
+						</ul>
+					</div>
+					<div class="con-bottom-left-info">
+						<div class="con-img-box"><img src="../img/worker-info-img3.png" /> </div>
+						<ul>
+							<li title="电信亲子欢乐暑期夏令营">电信亲子欢乐暑期夏令营</li>
+							<li title="时间：7月20-23日">时间：7月20-23日</li>
+							<li title="地点：川沙番茄农庄">地点：川沙番茄农庄</li>
+							<li title="报名：部门统一报名">报名：部门统一报名</li>
+							<li title="备注：4-15岁儿童,">备注：4-15岁儿童,</li>
+						</ul>
+					</div>-->
+				</div>
+			</section>
+			<section class="worker-park">
+				<div class="con-top-right-bottom-title"><span>车辆服务</span></div>
+				<article class="con-right-box con-top-right-box">
+					<!--<div class="searchbox">
+						<input type="text" name="searchinfo" id="searchipt" class="searchipt" value="" placeholder="请输入车牌号" />
+						<span class="searchbtn" id="searchbtn"><i class="searchicon"></i></span>
+					</div>-->
+					<div class="con-top-right-1">
+						<span>园区停车占比</span>
+						<div class="boxdtai">
+							<div class="boxkuang2"></div>
+							<div class="boxkuang3">
+								<div class="waveWrapper waveAnimation">
+									<div class="waveWrapperInner bgMiddle boxhuan">
+										<div class="wave waveMiddle" style="background-image: url('../img/wave-mid.png')"></div>
+									</div>
+									<div class="waveWrapperInner bgBottom boxhuan">
+										<div class="wave waveBottom " style="background-image: url('../img/wave-bot.png')"></div>
+									</div>
+								</div>
+							</div>
+							<div class="boxkuang4" id="parkcarpercent"></div>
+						</div>
+					</div>
+					<div class="park-js-right">
+						<div class="con-top-right-2 data-B3">
+							<div class="top-right-b3"><img src="../img/park-bg-top-B3.png" /><em>剩余车位</em></div>
+							<div class="top-right-tubiao">
+								<span class="top-right-txt top-right-dimian">地面剩余<em id="underCount"></em></span>
+								<div class="top-right-zhuxingtu chart-B3">
+									<div class="cube-wapper">
+										<div class="cube-box">
+											<div class="cube2 cube" style="background-color: rgba(37,81,37,0.4);">
+												<div class="cube21 underheight undercubedata" style="background-color: #255125;"></div>
+											</div>
+											<div class="cube4 cube" style="background-color: rgba(63,140,63,0.4);">
+												<div class="cube41 underheight undercubedata" style="background-color: #3F8C3F;"></div>
+											</div>
+											<div class="cube5 cube" style="background-color: rgba(79,178,84,0.4);"></div>
+											<div class="cube51 cube undercubedata" style="background-color: #4FB254;"></div>
+										</div>
+									</div>
+									<div class="cube-wapper">
+										<div class="cube-box">
+											<div class="cube2 cube" style="background-color: rgba(37,81,37,0.4);">
+												<div class="cube21 innerheight innercubedata" style="background-color: #255125;"></div>
+											</div>
+											<div class="cube4 cube" style="background-color: rgba(63,140,63,0.4);">
+												<div class="cube41 innerheight innercubedata" style="background-color: #3F8C3F;"></div>
+											</div>
+											<div class="cube5 cube" style="background-color: rgba(79,178,84,0.4);"></div>
+											<div class="cube51 cube innercubedata" style="background-color: #4FB254;"></div>
+										</div>
+									</div>
+								</div>
+								<span class="top-right-txt top-right-dixia">地下剩余<em id="innerCount"></em></span>
+							</div>
+						</div>
+						<div class="con-top-right-2 data-B4">
+							<div class="top-right-b3"><img src="../img/park-bg-top-B4.png" /><em>剩余车位</em></div>
+							<div class="top-right-tubiao">
+								<span class="top-right-txt top-right-dimian">地面剩余<em id="underCount"></em></span>
+								<div>
+									<div class="top-right-zhuxingtu chart-B4">
+										<div class="cube-wapper">
+											<div class="cube-box">
+												<div class="cube2 cube">
+													<div class="cube21 underheight undercubedata"></div>
+												</div>
+												<div class="cube4 cube">
+													<div class="cube41 underheight undercubedata"></div>
+												</div>
+												<div class="cube5 cube">
+												</div>
+												<div class="cube51 cube undercubedata"></div>
+											</div>
+										</div>
+										<div class="cube-wapper">
+											<div class="cube-box">
+												<div class="cube2 cube">
+													<div class="cube21 innerheight innercubedata"></div>
+												</div>
+												<div class="cube4 cube">
+													<div class="cube41 innerheight innercubedata"></div>
+												</div>
+												<div class="cube5 cube">
+												</div>
+												<div class="cube51 cube innercubedata"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="top-right-txt top-right-dixia">地下剩余<em id="innerCount"></em></span>
+							</div>
+						</div>
+						<div class="con-top-right-2 data-B6">
+							<div class="top-right-b3"><img src="../img/park-bg-top-B6.png" /><em>剩余车位</em></div>
+							<div class="top-right-tubiao">
+								<span class="top-right-txt top-right-dimian">地面剩余<em id="underCount"></em></span>
+								<div class="top-right-zhuxingtu chart-b6">
+									<div class="cube-wapper">
+										<div class="cube-box">
+											<div class="cube2 cube" style="background-color: rgba(37,81,37,0.4);">
+												<div class="cube21 underheight undercubedata" style="background-color: #255125;"></div>
+											</div>
+											<div class="cube4 cube" style="background-color: rgba(63,140,63,0.4);">
+												<div class="cube41 underheight undercubedata" style="background-color: #3F8C3F;"></div>
+											</div>
+											<div class="cube5 cube" style="background-color: rgba(79,178,84,0.4);"></div>
+											<div class="cube51 cube undercubedata" style="background-color: #4FB254;"></div>
+										</div>
+									</div>
+									<div class="cube-wapper">
+										<div class="cube-box">
+											<div class="cube2 cube" style="background-color: rgba(37,81,37,0.4);">
+												<div class="cube21 innerheight innercubedata" style="background-color: #255125;"></div>
+											</div>
+											<div class="cube4 cube" style="background-color: rgba(63,140,63,0.4);">
+												<div class="cube41 innerheight innercubedata" style="background-color: #3F8C3F;"></div>
+											</div>
+											<div class="cube5 cube" style="background-color: rgba(79,178,84,0.4);"></div>
+											<div class="cube51 cube innercubedata" style="background-color: #4FB254;"></div>
+										</div>
+									</div>
+								</div>
+								<span class="top-right-txt top-right-dixia">地下剩余<em id="innerCount"></em></span>
+							</div>
+						</div>
+						<div class="con-top-right-2 data-B1">
+							<div class="top-right-b3"><img src="../img/park-bg-top-B1.png" /><em>剩余车位</em></div>
+							<div class="top-right-tubiao">
+								<span class="top-right-txt top-right-dimian">地面剩余<em id="underCount"></em></span>
+								<div>
+									<div class="top-right-zhuxingtu chart-b1">
+										<div class="cube-wapper">
+											<div class="cube-box">
+												<div class="cube2 cube">
+													<div class="cube21 underheight undercubedata"></div>
+												</div>
+												<div class="cube4 cube">
+													<div class="cube41 underheight undercubedata"></div>
+												</div>
+												<div class="cube5 cube">
+												</div>
+												<div class="cube51 cube undercubedata"></div>
+											</div>
+										</div>
+										<div class="cube-wapper">
+											<div class="cube-box">
+												<div class="cube2 cube">
+													<div class="cube21 innerheight innercubedata"></div>
+												</div>
+												<div class="cube4 cube">
+													<div class="cube41 innerheight innercubedata"></div>
+												</div>
+												<div class="cube5 cube">
+												</div>
+												<div class="cube51 cube innercubedata"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="top-right-txt top-right-dixia">地下剩余<em id="innerCount"></em></span>
+							</div>
+						</div>
+						<i class="btn-next" id="parkCountBtnNext"></i>
+					</div>
+				</article>
+				<article class="con-right-box con-center-right-box">
+					<div style="width:100%;height:100%;">
+						<iframe src="" width="100%" height="100%" id="map"></iframe>
+					</div>
+				</article>
+			</section>
+		</div>
+		<div class="worker-right">
+			<section class="worker-car">
+				<div class="con-top-right-bottom-title"><span>班车服务</span></div>
+				<!--<article class="con-left-box">
+					<div id="containerLines" class="mapLines content1"></div>
+					<div id="containerLines1" class="mapLines mapLines1"></div>
+					<div id="container" class="map"></div>
+					<div id="clearMakers">删除</div>
+					<div id="setCenter">设置中心点</div>
+					<div class="bigCar content2">
+						<img class="bigCarImg" src="../img/car-bg-left-bigCar.png" />
+					</div>
+					<div class="rightBottomIcon" id="changeIcon"><img class="rightBottomIconImg" src="../img/icon/icon-car-map-rightBottom.png" /></div>
+					<div class="peoplePercent" style="display: none;">
+						<div class="peopleTitle"><span>此区域人数占比</span></div>
+						<div class="peopleNum"><span class="peopleNumber">25.9</span><span class="peoplePer">%</span></div>
+					</div>
+				</article>-->
+				<article class="con-right-box">
+					<div class="con-top-right">
+						<div class="con-top-right-title"><span>运行中班车</span></div>
+						<div class="con-top-right-fourDiv fourDivPick" data=1>
+							<div class="leftTop">
+								<img class="leftTopIcon" src="../img/icon/icon-car-position-yellow.png" />
+								<div class="leftTopText"><span>福山路</span></div>
+							</div>
+							<div class="con-top-right-fourDiv-num"><span class="number" id="carNumber"></span></span>
+								<!--<span class="text">辆</span>--></div>
+						</div>
+						<div class="con-top-right-fourDiv rightDiv" data=2>
+							<div class="leftTop">
+								<img class="leftTopIcon" src="../img/icon/icon-car-position-purple.png" />
+								<div class="leftTopText"><span>信息大楼</span></div>
+							</div>
+							<div class="con-top-right-fourDiv-num"><span class="number">0</span>
+								<!--<span class="text">辆</span>--></div>
+						</div>
+						<div class="con-top-right-fourDiv rightDiv" data=3>
+							<div class="leftTop">
+								<img class="leftTopIcon" src="../img/icon/icon-car-position-blue.png" />
+								<div class="leftTopText"><span>杨思路</span></div>
+							</div>
+							<div class="con-top-right-fourDiv-num"><span class="number">0</span>
+								<!--<span class="text">辆</span>--></div>
+						</div>
+						<div class="con-top-right-fourDiv rightDiv" data=4>
+							<div class="leftTop">
+								<img class="leftTopIcon" src="../img/icon/icon-car-position-red.png" />
+								<div class="leftTopText"><span>东明路</span></div>
+							</div>
+							<div class="con-top-right-fourDiv-num"><span class="number">0</span>
+								<!--<span class="text">辆</span>--></div>
+						</div>
+						<div class="con-top-right-fourDiv rightDiv lastOne" data=6>
+							<div class="leftTop">
+								<img class="leftTopIcon" src="../img/icon/icon-car-position-purple.png" />
+								<div class="leftTopText"><span>浦星公路</span></div>
+							</div>
+							<div class="con-top-right-fourDiv-num"><span class="number">0</span>
+								<!--<span class="text">辆</span>--></div>
+						</div>
+					</div>
+					<div class="con-middle-right">
+						<div class="con-middle-right-1" id="caroutdetail">
+							<div class="con-middle-right-title">
+								<div class="titleLeft">
+									<div class="bigTitle"><span>园区上车点</span></div>
+									<div class="smallTitle"><span>还有6分钟</span></div>
+								</div>
+								<div class="titleMiddle">
+									<div class="roadBroad"><span>浦三路</span></div>
+									<div class="smallTitle"><span>还有4分钟</span></div>
+								</div>
+								<div class="titleMiddle">
+									<div class="roadBroad"><span>杨高南路站</span></div>
+									<div class="smallTitle"><span>还有4分钟</span></div>
+								</div>
+								<div class="titleRight">
+									<div class="roadBroad roadBroad1"><span>世纪大道站</span></div>
+									<div class="smallTitle"><span>还有10分钟</span></div>
+								</div>
+							</div>
+							<div class="con-middle-right-smallTitle"><span>班车时刻表</span></div>
+							<!--style="position: relative;overflow-x: scroll;height: 30px;"-->
+							<!--style="position: absolute;width: 10000000px;height: 100%;"-->
+							<div class="con-middle-right-progress">
+								<div id="caroutclock">
+									<!--<div class="con-middle-right-progressDiv stationPass"><span>17：00</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv stationNow"><span>17：05</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：15</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：20</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：25</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：30</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>18：00</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>18：15</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv lastOneDiv"><span>18：30</span></div>-->
+								</div>
+							</div>
+							<table class="con-middle-right-table" id="caroutnextbus">
+								<thead>
+									<tr>
+										<td><span>实际出发时间</span></td>
+										<td><span>时刻表时间</span></td>
+										<td><span>车牌号</span></td>
+										<td><span>行驶速度</span></td>
+										<td><span>下一站点</span></td>
+										<td><span>抵达终点站</span></td>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+						<div class="con-middle-right-1" id="carindetail">
+							<div class="con-middle-right-title con-middle-right-title1">
+								<div class="titleLeft">
+									<div class="bigTitle"><span>世纪大道站</span></div>
+									<div class="smallTitle"><span>还有26分钟</span></div>
+								</div>
+								<div class="titleMiddle">
+									<div class="roadBroad"><span>杨高南路站</span></div>
+									<div class="smallTitle"><span>还有8分钟</span></div>
+								</div>
+								<div class="titleMiddle">
+									<div class="roadBroad"><span>浦三路</span></div>
+									<div class="smallTitle"><span>还有4分钟</span></div>
+								</div>
+								<div class="titleRight">
+									<div class="roadBroad roadBroad1"><span>园区</span></div>
+									<div class="smallTitle"><span>还有9分钟</span></div>
+								</div>
+							</div>
+							<div class="con-middle-right-smallTitle"><span>班车时刻表</span></div>
+							<div class="con-middle-right-progress">
+								<div id="carinclock">
+									<!--<div class="con-middle-right-progressDiv stationPass"><span>17：00</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv stationNow"><span>17：05</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：15</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：20</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：25</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：30</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>18：00</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>18：15</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv lastOneDiv"><span>18：30</span></div>-->
+								</div>
+							</div>
+							<table class="con-middle-right-table" id="carinnextbus">
+								<thead>
+									<tr>
+										<td><span>实际出发时间</span></td>
+										<td><span>时刻表时间</span></td>
+										<td><span>车牌号</span></td>
+										<td><span>行驶速度</span></td>
+										<td><span>下一站点</span></td>
+										<td><span>抵达终点站</span></td>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+					<div class="con-bottom-right">
+						<div id="container" class="map"></div>
+					</div>
+				</article>
+			</section>
+		</div>
+		<script src="../lib/jQuery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/Echarts/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=eb03f496c6611450a26bea78b5819b6a"></script>
+		<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+		<script src="../js/worker.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

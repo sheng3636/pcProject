@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--<base href="//webapi.amap.com/ui/1.0/ui/misc/PathSimplifier/examples/" />-->
+		<meta charset="UTF-8">
+		<title>登录页</title>
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<!--<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>-->
+		<style type="text/css">
+			input::-webkit-input-placeholder {
+				/* WebKit browsers*/
+				color: #57848C;
+			}
+			
+			input:-moz-placeholder {
+				/* Mozilla Firefox 4 to 18*/
+				color: #57848C;
+			}
+			
+			input::-moz-placeholder {
+				/* Mozilla Firefox 19+*/
+				color: #57848C;
+			}
+			
+			input:-ms-input-placeholder {
+				/* Internet Explorer 10+*/
+				color: #57848C;
+			}
+		</style>
+	</head>
+
+	<body>
+		<section>
+			<article class="con-top-box">
+				<img src="../img/login-title1.png"/>
+			</article>
+			<article class="con-left-box">
+				<img src="../img/login-map.png">
+			</article>
+			<article class="con-right-box">
+				<!--<div class="inputDiv">
+					<div class="inputTitle"><span>请选择进入角色</span></div>
+					<div class="loginBtn firstBtn"><img src="../img/login-button-admin.png"/></div>
+					<div class="loginBtn"><img src="../img/login-button-company.png"/></div>
+					<div class="loginBtn"><img src="../img/login-button-staff.png"/></div>
+				</div>-->
+				<div class="inputDiv">
+					<div class="inputTitle inputaccount"><span>账号登录</span></div>
+					<div class="loginipt fristipt"><i class="usericon"></i><input type="text" name="username" id="username" value="" placeholder="请输入用户名"/></div>
+					<div class="loginipt"><i class="passwordicon"></i><input type="password" name="password" id="passward" value="" placeholder="请输入密码"/></div>
+					<div class="loginmes" style="visibility: hidden;"><i class="warn"></i><span>错误信息</span></div>
+					<div class="loginbtn" id="loginbtn">登&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+				</div>
+			</article>
+            <!--<div class="progress-bg"></div>-->
+
+		</section>
+		<script src="../lib/jQuery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/login.js" type="text/javascript" charset="UTF-8"></script>
+		<!--<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=eb03f496c6611450a26bea78b5819b6a"></script>-->
+		<!--<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>-->
+		<!--<script src="../js/car.js" type="text/javascript" charset="utf-8"></script>-->
+	</body>
+</html>
