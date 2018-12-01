@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--<base href="//webapi.amap.com/ui/1.0/ui/misc/PathSimplifier/examples/" />-->
+		<meta charset="UTF-8">
+		<title>班车服务</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/car.css" />
+		<!--<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>-->
+	</head>
+
+	<body>
+		<header></header>
+		<section>
+			<article class="con-left-box">
+				<div id="containerLines" class="mapLines content1"></div>
+				<div id="containerLines1" class="mapLines mapLines1"></div>
+				<div id="container" class="map"></div>
+				<div id="clearMakers">删除</div>
+				<div id="setCenter">设置中心点</div>
+				<!--<div id="container1" class="map content2"></div>-->
+				<!--<div id="container2" class="map content3"></div>-->
+				<div class="bigCar content2">
+					<img class="bigCarImg" src="../img/car-bg-left-bigCar.png" />
+				</div>
+				<div class="rightBottomIcon" id="changeIcon"><img class="rightBottomIconImg" src="../img/icon/icon-car-map-rightBottom.png" /></div>
+				<!--<div class="carTime content3">
+					<div class="carTimeDiv">
+						<div class="carTimeTitle1"><span>下一辆班车</span></div>
+						<div class="doubleLines"></div>
+					</div>
+					<div class="carTimeTable">
+						<div class="fourDiv greyRow"><span>发车时间</span></div>
+						<div class="fourDiv"><span>17:00</span></div>
+						<div class="fourDiv greyRow"><span>剩余时间</span></div>
+						<div class="fourDiv"><span>还有5分钟</span></div>
+					</div>
+				</div>
+				<div class="carTime carTime1 content3">
+					<div class="carTimeDiv">
+						<div class="carTimeTitle1"><span>下一辆班车</span></div>
+						<div class="doubleLines"></div>
+					</div>
+					<div class="carTimeTable">
+						<div class="fourDiv greyRow"><span>发车时间</span></div>
+						<div class="fourDiv"><span>17:00</span></div>
+						<div class="fourDiv greyRow"><span>剩余时间</span></div>
+						<div class="fourDiv"><span>还有5分钟</span></div>
+					</div>
+				</div>-->
+				<div class="peoplePercent" style="display: none;">
+					<div class="peopleTitle"><span>此区域人数占比</span></div>
+					<div class="peopleNum"><span class="peopleNumber">25.9</span><span class="peoplePer">%</span></div>
+				</div>
+			</article>
+			<article class="con-right-box">
+				<div class="con-top-right">
+					<div class="con-top-right-title"><span>运行中班车</span></div>
+					<div class="con-top-right-fourDiv fourDivPick" data=1>
+						<div class="leftTop">
+							<img class="leftTopIcon" src="../img/icon/icon-car-position-yellow.png" />
+							<div class="leftTopText"><span>福山路</span></div>
+						</div>
+						<div class="con-top-right-fourDiv-num"><span class="number" id="carNumber"></span></span>
+							<!--<span class="text">辆</span>--></div>
+					</div>
+					<div class="con-top-right-fourDiv rightDiv" data=2>
+						<div class="leftTop">
+							<img class="leftTopIcon" src="../img/icon/icon-car-position-purple.png" />
+							<div class="leftTopText"><span>信息大楼</span></div>
+						</div>
+						<div class="con-top-right-fourDiv-num"><span class="number">0</span>
+							<!--<span class="text">辆</span>--></div>
+					</div>
+					<div class="con-top-right-fourDiv rightDiv" data=3>
+						<div class="leftTop">
+							<img class="leftTopIcon" src="../img/icon/icon-car-position-blue.png" />
+							<div class="leftTopText"><span>杨思路</span></div>
+						</div>
+						<div class="con-top-right-fourDiv-num"><span class="number">0</span>
+							<!--<span class="text">辆</span>--></div>
+					</div>
+					<div class="con-top-right-fourDiv rightDiv" data=4>
+						<div class="leftTop">
+							<img class="leftTopIcon" src="../img/icon/icon-car-position-red.png" />
+							<div class="leftTopText"><span>东明路</span></div>
+						</div>
+						<div class="con-top-right-fourDiv-num"><span class="number">0</span>
+							<!--<span class="text">辆</span>--></div>
+					</div>
+					<div class="con-top-right-fourDiv rightDiv lastOne" data=6>
+						<div class="leftTop">
+							<img class="leftTopIcon" src="../img/icon/icon-car-position-purple.png" />
+							<div class="leftTopText"><span>浦星公路</span></div>
+						</div>
+						<div class="con-top-right-fourDiv-num"><span class="number">0</span>
+							<!--<span class="text">辆</span>--></div>
+					</div>
+				</div>
+				<div class="con-middle-right">
+					<div class="con-middle-right-1" id="caroutdetail">
+						<div class="con-middle-right-title">
+							<div class="titleLeft">
+								<div class="bigTitle"><span>园区上车点</span></div>
+								<div class="smallTitle"><span>还有6分钟</span></div>
+							</div>
+							<div class="titleMiddle">
+								<div class="roadBroad"><span>浦三路</span></div>
+								<div class="smallTitle"><span>还有4分钟</span></div>
+							</div>
+							<div class="titleMiddle">
+								<div class="roadBroad"><span>杨高南路站</span></div>
+								<div class="smallTitle"><span>还有4分钟</span></div>
+							</div>
+							<div class="titleRight">
+								<div class="roadBroad roadBroad1"><span>世纪大道站</span></div>
+								<div class="smallTitle"><span>还有10分钟</span></div>
+							</div>
+						</div>
+						<div class="con-middle-right-smallTitle"><span>班车时刻表</span></div>
+						<!--style="position: relative;overflow-x: scroll;height: 30px;"-->
+						 <!--style="position: absolute;width: 10000000px;height: 100%;"-->
+						<div class="con-middle-right-progress">
+							<div id="caroutclock">
+								<!--<div class="con-middle-right-progressDiv stationPass"><span>17：00</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv stationNow"><span>17：05</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：15</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：20</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：25</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：30</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>18：00</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>18：15</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv lastOneDiv"><span>18：30</span></div>-->
+							</div>
+						</div>
+						<table class="con-middle-right-table" id="caroutnextbus">
+							<thead>
+								<tr>
+									<td><span>实际出发时间</span></td>
+									<td><span>时刻表时间</span></td>
+									<td><span>车牌号</span></td>
+									<td><span>行驶速度</span></td>
+									<td><span>下一站点</span></td>
+									<td><span>抵达终点站</span></td>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+					<div class="con-middle-right-1" id="carindetail">
+						<div class="con-middle-right-title con-middle-right-title1">
+							<div class="titleLeft">
+								<div class="bigTitle"><span>世纪大道站</span></div>
+								<div class="smallTitle"><span>还有26分钟</span></div>
+							</div>
+							<div class="titleMiddle">
+								<div class="roadBroad"><span>杨高南路站</span></div>
+								<div class="smallTitle"><span>还有8分钟</span></div>
+							</div>
+							<div class="titleMiddle">
+								<div class="roadBroad"><span>浦三路</span></div>
+								<div class="smallTitle"><span>还有4分钟</span></div>
+							</div>
+							<div class="titleRight">
+								<div class="roadBroad roadBroad1"><span>园区</span></div>
+								<div class="smallTitle"><span>还有9分钟</span></div>
+							</div>
+						</div>
+						<div class="con-middle-right-smallTitle"><span>班车时刻表</span></div>
+						<div class="con-middle-right-progress">
+							<div id="carinclock">
+								<!--<div class="con-middle-right-progressDiv stationPass"><span>17：00</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv stationNow"><span>17：05</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：15</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：20</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：25</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>17：30</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>18：00</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv"><span>18：15</span></div>
+								<div class="con-middle-right-progressLine"></div>
+								<div class="con-middle-right-progressDiv lastOneDiv"><span>18：30</span></div>-->
+							</div>
+						</div>
+						<table class="con-middle-right-table" id="carinnextbus">
+							<thead>
+								<tr>
+									<td><span>实际出发时间</span></td>
+									<td><span>时刻表时间</span></td>
+									<td><span>车牌号</span></td>
+									<td><span>行驶速度</span></td>
+									<td><span>下一站点</span></td>
+									<td><span>抵达终点站</span></td>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+				<div class="con-bottom-right">
+					<div class="con-bottom-right-title"><span>乘坐班车人员数量分析</span></div>
+					<div class="con-bottom-right-echart" id="mychart1"></div>
+				</div>
+			</article>
+		</section>
+		<script src="../lib/jQuery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/Echarts/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=eb03f496c6611450a26bea78b5819b6a"></script>
+		<!--<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>-->
+		<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+		<script src="../lib/Echarts/china.js"></script>
+		<script src="../js/car.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

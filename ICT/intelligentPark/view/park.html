@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>停车管理</title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/park.css" />
+		<style type="text/css">
+			input::-webkit-input-placeholder {
+				/* WebKit browsers*/
+				color: #A3C7FF;
+			}
+			
+			input:-moz-placeholder {
+				/* Mozilla Firefox 4 to 18*/
+				color: #A3C7FF;
+			}
+			
+			input::-moz-placeholder {
+				/* Mozilla Firefox 19+*/
+				color: #A3C7FF;
+			}
+			
+			input:-ms-input-placeholder {
+				/* Internet Explorer 10+*/
+				color: #A3C7FF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header></header>
+		<section>
+			<div style="float: left;width: 40%;">
+				<article class="con-left-box con-top-left-box">
+					<div>
+						<span class="con-top-left-title">园区</span>
+						<span class="con-top-left-1">园区车辆</span>
+						<span class="con-top-left con-top-left-2" id="yuanquCarInCount">进<em></em></span>
+						<span class="con-top-left con-top-left-3" id="yuanquCarOutCount">出<em></em></span>
+					</div>
+					<div>
+						<span class="con-top-left-title">北门</span>
+						<span class="con-top-left-1" id="xiuyanName">秀沿西路口</span>
+						<span class="con-top-left con-top-left-2" id="xiuyanCarInCount">进<em></em></span>
+						<span class="con-top-left con-top-left-3" id="xiuyanCarOutCount">出<em></em></span>
+					</div>
+					<div>
+						<span class="con-top-left-title">南门</span>
+						<span class="con-top-left-1" id="shangnanName">上南路口</span>
+						<!--<span class="con-top-twoin">-->
+						<span class="con-top-left con-top-left-2" id="shangnanCarInCount1">进<em></em></span>
+						<!--<span class="con-top-left con-top-left-2" id="shangnanCarInCount2">进2<em></em></span>-->
+						<!--</span>-->
+						<span class="con-top-left con-top-left-3" id="shangnanCarOutCount">出<em></em></span>
+					</div>
+				</article>
+				<article class="con-left-box con-bottom-left-box">
+					<h4>车辆进入数量分析</h4>
+					<div id="carOutChart" style="width: 26vw;height: 24vh;float: left;margin-top: 1.4vh;"></div>
+					<div class="con-park-carcount">
+						<span id="personnelcar" style="width: 45%;height: 100%;white-space: nowrap;"></span>
+						<span class="con-park-carcount-info">员工车辆</span>
+					</div>
+					<div class="con-park-carcount">
+						<span id="visitorcar" style="width: 45%;height: 100%;white-space: nowrap;"></span>
+						<span class="con-park-carcount-info">访客车辆</span>
+					</div>
+					<div class="con-park-wt">
+						<div class="con-park-carinfo con-park-carwtchart">
+							<ul class="changeTitle">
+								<li class="active" data-index="0"></li>
+								<li data-index="1"></li>
+							</ul>
+							<h3>违停处理</h3>
+							<div class="con-park-carchart" id="weiTingChart">
+								<table cellpadding="0" cellspacing="0">
+									<!--<tr>
+										<th>违停企业Top5</th>
+										<th>违停人员Top5</th>
+									</tr>
+									<tr>
+										<td>
+											<p>企业1</p>
+											<div class="jindubg">
+												<div class="jindu"></div>
+											</div>
+										</td>
+										<td class="active">
+											<span class="picturebg">
+											<span class="picture">
+												<img src="../img/park-people-picture.png"/>
+											</span>
+											</span>
+											<span class="pictureinfo">
+											王国华 | 
+											<em>5次</em>
+										</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>企业2</p>
+											<div class="jindubg">
+												<div class="jindu" style="width: 80%;"></div>
+											</div>
+										</td>
+										<td>
+											<span class="picturebg">
+											<span class="picture">
+												<img src="../img/park-people-picture.png"/>
+											</span>
+											</span>
+											<span class="pictureinfo">
+											王国华 | 
+											<em>4次</em>
+										</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>企业3</p>
+											<div class="jindubg">
+												<div class="jindu" style="width: 75%;"></div>
+											</div>
+										</td>
+										<td>
+											<span class="picturebg">
+											<span class="picture">
+												<img src="../img/park-people-picture.png"/>
+											</span>
+											</span>
+											<span class="pictureinfo">
+											王国华 | 
+											<em>4次</em>
+										</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>企业4</p>
+											<div class="jindubg">
+												<div class="jindu" style="width: 70%;"></div>
+											</div>
+										</td>
+										<td>
+											<span class="picturebg">
+											<span class="picture">
+												<img src="../img/park-people-picture.png"/>
+											</span>
+											</span>
+											<span class="pictureinfo">
+											王国华 | 
+											<em>3次</em>
+										</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>企业5</p>
+											<div class="jindubg">
+												<div class="jindu" style="width: 60%;"></div>
+											</div>
+										</td>
+										<td>
+											<span class="picturebg">
+											<span class="picture">
+												<img src="../img/park-people-picture.png"/>
+											</span>
+											</span>
+											<span class="pictureinfo">
+											王国华 | 
+											<em>2次</em>
+										</span>
+										</td>
+									</tr>-->
+								</table>
+							</div>
+						</div>
+						<div class="con-park-carinfo con-park-carwtlist" style="display: none;">
+							<ul class="changeTitle">
+								<li data-index="0"></li>
+								<li class="active" data-index="1"></li>
+							</ul>
+							<h3>违停处理</h3>
+							<div class="issue1-table">
+								<table cellpadding="0" cellspacing="0" class="dlb_table">
+									<!--<tr>
+										<th>触发设备</th>
+										<th>上报时间</th>
+										<th>地 点</th>
+										<th>处理结果</th>
+									</tr>
+									<tr style="height: 5px;border-top: 3px solid #368CFF;border-bottom: 1px solid #368CFF;">
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>地磁</td>
+										<td>
+											<p>2018-04-27</p>
+											<p>14:26:04</p>
+										</td>
+										<td>A2楼</td>
+										<td>车主已开走</td>
+									</tr>
+									<tr>
+										<td>摄像头</td>
+										<td>
+											<p>2018-04-27</p>
+											<p>14:26:04</p>
+										</td>
+										<td>A2楼</td>
+										<td>车主未开走</td>
+									</tr>
+									<tr class="active">
+										<td>摄像头</td>
+										<td>
+											<p>2018-04-27</p>
+											<p>14:26:04</p>
+										</td>
+										<td>B7楼</td>
+										<td>车主未开走</td>
+									</tr>
+									<tr>
+										<td>地磁</td>
+										<td>
+											<p>2018-04-27</p>
+											<p>14:26:04</p>
+										</td>
+										<td>A2楼</td>
+										<td>车主已开走</td>
+									</tr>
+									<tr>
+										<td>地磁</td>
+										<td>
+											<p>2018-04-27</p>
+											<p>14:26:04</p>
+										</td>
+										<td>B1楼</td>
+										<td>车主已开走</td>
+									</tr>-->
+								</table>
+							</div>
+						</div>
+						<div class="con-park-carinfo con-park-carwtinfo" style="display: none;">
+							<h3>违停车辆</h3>
+							<div class="carinfo-table">
+
+								<div class="tablec1">
+									<table cellpadding="0" cellspacing="0" align="center">
+										<!--<tr>
+											<th><span class="tablet1">王国强</span> <span>18912748599</span></th>
+											<th><i class="tableic1">沪AKN888</i>
+											</th>
+										</tr>
+										<tr>
+											<td>上海理想集团 软件一部</td>
+											<td></td>
+										</tr>
+
+										<tr>
+											<td>2018-04-28 13:03:16</td>
+											<td>处理时效:10分钟</td>
+										</tr>
+										<tr>
+											<td>违停地点:A4楼门口</td>
+											<td>负 责 人:林经理</td>
+										</tr>
+										<tr>
+											<td>触发设备:地磁</td>
+											<td style="text-align: right;">18973738382</td>
+										</tr>-->
+									</table>
+								</div>
+								<div class="topbox_tul1" id="weitingLog">
+									<ul>
+										<!--<li>
+											<p>生成违停日志</p><span>2018-04-28  13:13:03</span>
+										</li>
+										<li>
+											<p>联动视频复核车辆已开走<i class="tul1_i1"></i></p><span>2018-04-28  13:13:03</span>
+										</li>
+										<li>
+											<p>地磁智能审核车辆已开走<i class="tul1_i2"></i></p><span>2018-04-28  13:13:03</span></li>
+										<li>
+											<p>生成违停日志</p><span>2018-04-28  13:13:03</span></li>
+										<li>
+											<p>地磁智能审核车辆已开走 </p><span>2018-04-28  13:13:03</span></li>
+										<li>
+											<p>生成违停日志</p><span>2018-04-28  13:13:03</span></li>-->
+									</ul>
+								</div>
+
+								<!-- 图片 -->
+								<div class="topbox_tul1" id="weitingimg" style="display: none;">
+									<div class="stimg"><img src="../img/park-bg-bottom-7.png">
+										<a href="#"></a>
+									</div>
+								</div>
+
+								<div class="topbox_tul2" id="returnback">
+									<a href="#">返 回</a>
+									<!--<a href="#">上一条</a>-->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="con-park-cs">
+						<div class="con-park-carinfo con-park-carcs">
+							<ul class="changeTitle">
+								<li class="active" data-index="0"></li>
+								<li data-index="1"></li>
+							</ul>
+							<h3>超速处理</h3>
+							<div class="con-park-carchart" id="chaoSuChart">
+								<table cellpadding="0" cellspacing="0">
+									<!--<tr>
+										<th>超速企业Top5</th>
+										<th>超速人员Top5</th>
+									</tr>
+									<tr>
+										<td>
+											<p>企业1</p>
+											<div class="jindubg">
+												<div class="jindu"></div>
+											</div>
+										</td>
+										<td class="active">
+											<span class="picturebg">
+											<span class="picture">
+												<img src="../img/park-people-picture.png"/>
+											</span>
+											</span>
+											<span class="pictureinfo">
+											王国华 | 
+											<em>5次</em>
+										</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>企业2</p>
+											<div class="jindubg">
+												<div class="jindu" style="width: 80%;"></div>
+											</div>
+										</td>
+										<td>
+											<span class="picturebg">
+											<span class="picture">
+												<img src="../img/park-people-picture.png"/>
+											</span>
+											</span>
+											<span class="pictureinfo">
+											王国华 | 
+											<em>4次</em>
+										</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>企业3</p>
+											<div class="jindubg">
+												<div class="jindu" style="width: 75%;"></div>
+											</div>
+										</td>
+										<td>
+											<span class="picturebg">
+											<span class="picture">
+												<img src="../img/park-people-picture.png"/>
+											</span>
+											</span>
+											<span class="pictureinfo">
+											王国华 | 
+											<em>4次</em>
+										</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>企业4</p>
+											<div class="jindubg">
+												<div class="jindu" style="width: 70%;"></div>
+											</div>
+										</td>
+										<td>
+											<span class="picturebg">
+											<span class="picture">
+												<img src="../img/park-people-picture.png"/>
+											</span>
+											</span>
+											<span class="pictureinfo">
+											王国华 | 
+											<em>3次</em>
+										</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>企业5</p>
+											<div class="jindubg">
+												<div class="jindu" style="width: 60%;"></div>
+											</div>
+										</td>
+										<td>
+											<span class="picturebg">
+											<span class="picture">
+												<img src="../img/park-people-picture.png"/>
+											</span>
+											</span>
+											<span class="pictureinfo">
+											王国华 | 
+											<em>2次</em>
+										</span>
+										</td>
+									</tr>-->
+								</table>
+							</div>
+						</div>
+						<div class="con-park-carinfo con-park-carcslist" style="display: none;">
+							<ul class="changeTitle">
+								<li data-index="0"></li>
+								<li class="active" data-index="1"></li>
+							</ul>
+							<h3>超速处理</h3>
+							<div class="issue1-table">
+								<table cellpadding="0" cellspacing="0" class="dlb_table">
+									<!--<tr>
+										<th>车牌</th>
+										<th>上报时间</th>
+										<th>速度</th>
+									</tr>
+									<tr style="height: 5px;border-top: 3px solid #368CFF;border-bottom: 1px solid #368CFF;">
+										<td style="height: 5px;"></td>
+										<td style="height: 5px;"></td>
+										<td style="height: 5px;"></td>
+									</tr>
+									<tr>
+										<td>沪ADW283</td>
+										<td>
+											<p>2018-04-27 14:26:04</p>
+										</td>
+										<td>35码</td>
+									</tr>
+									<tr>
+										<td>沪ADW283</td>
+										<td>
+											<p>2018-04-27 14:26:04</p>
+										</td>
+										<td>35码</td>
+									</tr>
+									<tr class="active">
+										<td>沪ADW283</td>
+										<td>
+											<p>2018-04-27 14:26:04</p>
+										</td>
+										<td>35码</td>
+									</tr>
+									<tr>
+										<td>沪ADW283</td>
+										<td>
+											<p>2018-04-27 14:26:04</p>
+										</td>
+										<td>35码</td>
+									</tr>
+									<tr>
+										<td>沪ADW283</td>
+										<td>
+											<p>2018-04-27 14:26:04</p>
+										</td>
+										<td>35码</td>
+									</tr>-->
+								</table>
+							</div>
+						</div>
+						<div class="con-park-carinfo con-park-carcsinfo" style="display: none;">
+							<h3>超速车辆</h3>
+							<div class="carinfo-table">
+
+								<div class="tablec1">
+									<table cellpadding="0" cellspacing="0" align="center">
+										<!--<tr>
+											<th><span class="tablet1">王国强</span> <span>18912748599</span></th>
+											<th><i class="tableic2">沪AKN888</i>
+											</th>
+										</tr>
+										<tr>
+											<td>上海理想集团 软件一部</td>
+											<td></td>
+										</tr>
+
+										<tr>
+											<td>2018-04-28 13:03:16</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>超速速度：35码</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>累积超速次数：3次</td>
+											<td></td>
+										</tr>-->
+									</table>
+								</div>
+
+								<!-- 图片 -->
+								<div class="topbox_tul1" id="chaosuimg">
+									<div class="stimg" style="display: none;"><img src="../img/park-bg-bottom-6.png">
+										<!--<a href="#"></a>-->
+									</div>
+								</div>
+
+								<div class="topbox_tul2" id="returnback">
+									<a href="#">返 回</a>
+									<!--<a href="#">上一条</a>-->
+								</div>
+							</div>
+						</div>
+				</article>
+				</div>
+			</div>
+			<div style="float: left;width: 60%;height: 95%;">
+				<article class="con-right-box con-top-right-box">
+					<div class="con-top-right-1">
+						<span>园区停车占比</span>
+						<div class="boxdtai">
+							<div class="boxkuang2"></div>
+							<div class="boxkuang3">
+								<div class="waveWrapper waveAnimation">
+									<div class="waveWrapperInner bgMiddle boxhuan">
+										<div class="wave waveMiddle" style="background-image: url('../img/wave-mid.png')"></div>
+									</div>
+									<div class="waveWrapperInner bgBottom boxhuan">
+										<div class="wave waveBottom " style="background-image: url('../img/wave-bot.png')"></div>
+									</div>
+								</div>
+							</div>
+							<div class="boxkuang4" id="parkcarpercent"><em></em></div>
+						</div>
+						<!--<div style="position: relative;">
+							<span>72<em>%</em></span>
+							<div class="waveWrapper waveAnimation">
+								<div class="waveWrapperInner bgMiddle boxhuan">
+									<div class="wave waveMiddle" style="background-image: url('../img/wave-mid.png')"></div>
+								</div>
+								<div class="waveWrapperInner bgBottom boxhuan">
+									<div class="wave waveBottom " style="background-image: url('../img/wave-bot.png')"></div>
+								</div>
+							</div>
+						</div>-->
+					</div>
+					<div class="park-js-right">
+						<div class="con-top-right-2 data-B3">
+							<div class="top-right-b3"><img src="../img/park-bg-top-B3.png" /><em>剩余车位</em></div>
+							<div class="top-right-tubiao">
+								<span class="top-right-txt top-right-dimian">地面剩余<em id="underCount"></em></span>
+								<div class="top-right-zhuxingtu chart-B3">
+									<div class="cube-wapper">
+										<div class="cube-box">
+											<div class="cube2 cube" style="background-color: rgba(37,81,37,0.4);">
+												<div class="cube21 underheight undercubedata" style="background-color: #255125;"></div>
+											</div>
+											<div class="cube4 cube" style="background-color: rgba(63,140,63,0.4);">
+												<div class="cube41 underheight undercubedata" style="background-color: #3F8C3F;"></div>
+											</div>
+											<div class="cube5 cube" style="background-color: rgba(79,178,84,0.4);"></div>
+											<div class="cube51 cube undercubedata" style="background-color: #4FB254;"></div>
+										</div>
+									</div>
+									<div class="cube-wapper">
+										<div class="cube-box">
+											<div class="cube2 cube" style="background-color: rgba(37,81,37,0.4);">
+												<div class="cube21 innerheight innercubedata" style="background-color: #255125;"></div>
+											</div>
+											<div class="cube4 cube" style="background-color: rgba(63,140,63,0.4);">
+												<div class="cube41 innerheight innercubedata" style="background-color: #3F8C3F;"></div>
+											</div>
+											<div class="cube5 cube" style="background-color: rgba(79,178,84,0.4);"></div>
+											<div class="cube51 cube innercubedata" style="background-color: #4FB254;"></div>
+										</div>
+									</div>
+								</div>
+								<span class="top-right-txt top-right-dixia">地下剩余<em id="innerCount"></em></span>
+							</div>
+						</div>
+						<div class="con-top-right-2 data-B4">
+							<div class="top-right-b3"><img src="../img/park-bg-top-B4.png" /><em>剩余车位</em></div>
+							<div class="top-right-tubiao">
+								<span class="top-right-txt top-right-dimian">地面剩余<em id="underCount"></em></span>
+								<div>
+									<div class="top-right-zhuxingtu chart-B4">
+										<div class="cube-wapper">
+											<div class="cube-box">
+												<div class="cube2 cube">
+													<div class="cube21 underheight undercubedata"></div>
+												</div>
+												<div class="cube4 cube">
+													<div class="cube41 underheight undercubedata"></div>
+												</div>
+												<div class="cube5 cube">
+												</div>
+												<div class="cube51 cube undercubedata"></div>
+											</div>
+										</div>
+										<div class="cube-wapper">
+											<div class="cube-box">
+												<div class="cube2 cube">
+													<div class="cube21 innerheight innercubedata"></div>
+												</div>
+												<div class="cube4 cube">
+													<div class="cube41 innerheight innercubedata"></div>
+												</div>
+												<div class="cube5 cube">
+												</div>
+												<div class="cube51 cube innercubedata"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="top-right-txt top-right-dixia">地下剩余<em id="innerCount"></em></span>
+							</div>
+						</div>
+						<div class="con-top-right-2 data-B6">
+							<div class="top-right-b3"><img src="../img/park-bg-top-B6.png" /><em>剩余车位</em></div>
+							<div class="top-right-tubiao">
+								<span class="top-right-txt top-right-dimian">地面剩余<em id="underCount"></em></span>
+								<div class="top-right-zhuxingtu chart-b6">
+									<div class="cube-wapper">
+										<div class="cube-box">
+											<div class="cube2 cube" style="background-color: rgba(37,81,37,0.4);">
+												<div class="cube21 underheight undercubedata" style="background-color: #255125;"></div>
+											</div>
+											<div class="cube4 cube" style="background-color: rgba(63,140,63,0.4);">
+												<div class="cube41 underheight undercubedata" style="background-color: #3F8C3F;"></div>
+											</div>
+											<div class="cube5 cube" style="background-color: rgba(79,178,84,0.4);"></div>
+											<div class="cube51 cube undercubedata" style="background-color: #4FB254;"></div>
+										</div>
+									</div>
+									<div class="cube-wapper">
+										<div class="cube-box">
+											<div class="cube2 cube" style="background-color: rgba(37,81,37,0.4);">
+												<div class="cube21 innerheight innercubedata" style="background-color: #255125;"></div>
+											</div>
+											<div class="cube4 cube" style="background-color: rgba(63,140,63,0.4);">
+												<div class="cube41 innerheight innercubedata" style="background-color: #3F8C3F;"></div>
+											</div>
+											<div class="cube5 cube" style="background-color: rgba(79,178,84,0.4);"></div>
+											<div class="cube51 cube innercubedata" style="background-color: #4FB254;"></div>
+										</div>
+									</div>
+								</div>
+								<span class="top-right-txt top-right-dixia">地下剩余<em id="innerCount"></em></span>
+							</div>
+						</div>
+						<div class="con-top-right-2 data-B1">
+							<div class="top-right-b3"><img src="../img/park-bg-top-B1.png" /><em>剩余车位</em></div>
+							<div class="top-right-tubiao">
+								<span class="top-right-txt top-right-dimian">地面剩余<em id="underCount"></em></span>
+								<div>
+									<div class="top-right-zhuxingtu chart-b1">
+										<div class="cube-wapper">
+											<div class="cube-box">
+												<div class="cube2 cube">
+													<div class="cube21 underheight undercubedata"></div>
+												</div>
+												<div class="cube4 cube">
+													<div class="cube41 underheight undercubedata"></div>
+												</div>
+												<div class="cube5 cube">
+												</div>
+												<div class="cube51 cube undercubedata"></div>
+											</div>
+										</div>
+										<div class="cube-wapper">
+											<div class="cube-box">
+												<div class="cube2 cube">
+													<div class="cube21 innerheight innercubedata"></div>
+												</div>
+												<div class="cube4 cube">
+													<div class="cube41 innerheight innercubedata"></div>
+												</div>
+												<div class="cube5 cube">
+												</div>
+												<div class="cube51 cube innercubedata"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="top-right-txt top-right-dixia">地下剩余<em id="innerCount"></em></span>
+							</div>
+						</div>
+						<i class="btn-next" id="parkCountBtnNext"></i>
+					</div>
+				</article>
+				<article class="con-right-box" style="height: 76%;position: relative;">
+					<div class="searchbox">
+						<input type="text" name="searchinfo" id="searchipt" class="searchipt" value="" placeholder="请输入车牌号" />
+						<span class="searchbtn" id="searchbtn"><i class="searchicon"></i></span>
+					</div>
+					<div style="width:100%;height:100%;">
+						<iframe src="" width="100%" height="100%" id="map"></iframe>
+					</div>
+					<div class="trail" style="display: none;">
+						<i class="btn-close"></i>
+						<div class="title">
+							<h3></h3>
+						</div>
+						<div class="table table1 trailTableTitle">
+							<table>
+								<tr>
+									<td><span class="tablet1"></span> <span></span></td>
+									<td><i class="tableic1"></i></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+						<div class="table">
+							<table style="border-bottom: 2px solid rgb(54,140,255);">
+								<tr>
+									<th>时间</th>
+									<th>地点</th>
+								</tr>
+							</table>
+							<table style="border-top: 1px solid rgb(54,140,255);" class="trailTableList">
+								<tr>
+									<td style="height: 1px;"></td>
+									<td style="height: 1px;"></td>
+								</tr>
+								<tr class="datalist">
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="detail" style="display: none;">
+						<i class="btn-close"></i>
+						<div class="title">
+							<h3>视频监测</h3>
+						</div>
+						<div id="parkplayer" style="width: 98%;height: 98%;margin: 0 auto;"></div>
+						<div class="videoImage">
+							<div class="table">
+								<table>
+									<!--<tr>
+										<th>上南路进口</th>
+										<th>2018-05-23</th>
+										<th>291辆</th>
+									</tr>-->
+								</table>
+							</div>
+							<img src="" />
+						</div>
+						<!--<div class="title">
+      			<h3>车牌识别</h3>
+      		</div>
+      		<div class="text">
+      			<span style="font-size: 20px;">王国强</span>&nbsp;&nbsp;<em>18912748599</em>
+      			<p>
+					上海理想集团  软件一部<br/>
+					2018-04-28 13:03:16<br/>
+					超速速度：35码<br/>
+					累计超速次数：3次
+				</p>
+      		</div>
+      		<div class="image">
+      			<h3>车牌识别</h3><h3 style="float: right;color: white;">B4楼路面停车</h3>
+      			<img src="../img/park-bg-bottom-6.png"/>
+      			<div class="plate">
+      				<span>
+      					沪AKN888
+      				</span>
+      			</div>
+      		</div>-->
+						<!--<div class="title">
+      			<h3>车辆信息</h3>
+      		</div>
+      		<div class="text">
+      			<span style="font-size: 20px;">王国强</span>&nbsp;&nbsp;<em>18912748599</em>
+      			<p>
+					上海理想集团  软件一部<br/>
+					2018-04-28 13:03:16<br/>
+					超速速度：35码<br/>
+					累计超速次数：3次
+				</p>
+      		</div>
+      		<div class="image">
+      			<h3>实时视频</h3>
+      			<img src="../img/park-bg-bottom-6.png"/>
+      			<div class="plate">
+      				<span>
+      					沪AKN888
+      				</span>
+      			</div>
+      		</div>-->
+						<!--<div class="title">
+      			<h3>实时视频</h3>
+      		</div>
+      		<div class="video">
+      			<img src="../img/park-bg-bottom-7.png"/>
+      		</div>-->
+					</div>
+				</article>
+			</div>
+
+		</section>
+		<script src="../lib/jQuery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/Echarts/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/player/cyberplayer.js" type="text/javascript"></script>
+		<script src="../util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/park.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

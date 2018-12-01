@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--<base href="//webapi.amap.com/ui/1.0/ui/misc/PathSimplifier/examples/" />-->
+		<meta charset="UTF-8">
+		<title>设备概况</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/equipment.css" />
+		<!--<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>-->
+
+	</head>
+
+	<body>
+		<header></header>
+		<section>
+			<article class="con-left-box">
+				<div class="con-left-box-top">
+					<div class="fourDiv firstDiv">
+						<div class="fourDivTitle"><span>数据量</span></div>
+						<div class="fourDivContent"><span class="bigNum" id="dataQuantity"></span><span class="smallNum" id="dataQuantityUnit">条</span></div>
+					</div>
+					<div class="fourDiv">
+						<div class="fourDivTitle"><span>物联设备</span></div>
+						<div class="fourDivContent"><span class="bigNum" id="equipmentCount"></span><span class="smallNum">个</span></div>
+					</div>
+					<div class="fourDiv">
+						<div class="fourDivTitle"><span>报警数</span></div>
+						<div class="fourDivContent"><span class="bigNum" id="warnCount"></span><span
+								class="smallNum">个</span></div>
+					</div>
+					<div class="fourDiv">
+						<div class="fourDivTitle"><span>失联数</span></div>
+						<div class="fourDivContent"><span class="bigNum" id="totalLostCount"></span><span class="smallNum">个</span></div>
+					</div>
+				</div>
+				<div class="con-left-box-map">
+					<iframe src="" width="100%" height="100%" id="map"></iframe>
+				</div>
+			</article>
+			<article class="con-right-box">
+				<div class="dataTables_wrapper scroll active" role="grid">
+					<table class="table-striped table-condensed pre-scrollable divrightTable" id="table1">
+						<tbody>
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="智能电梯">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-dianti.png"/>
+										</div>
+										<div class="iconTitle" typeId="6"><span class="iconName">智能电梯</span><span class="iconNum"></span></div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent bigThanFive">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg" src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText">
+														<span class="fiveDivTextTop">在线设备</span>
+														<span class="fiveDivTextNum online"></span>
+													</div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span class="fiveDivTextTop outCon">失联告警</span><span class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">速度告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">运行开门</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-purple.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">停梯告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-red.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">关人告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon">
+										<img class="rightBottomIconImg imageOne"
+											 src="../img/icon/icon-equipment-list-light-one.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<div class="tableTitle"><span>监测日志</span></div>
+									<table class="dropDownTable" id="elevatorTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable "
+											   id="elevator">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow titleShow1">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>智慧电梯</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>实时监测电梯运行状态，减少电梯伤人事故发生。</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="智能烟感">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-yangan.png"/>
+										</div>
+										<div class="iconTitle" typeId="1"><span class="iconName">智能烟感</span><span
+												class="iconNum"></span>
+										</div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop outCon">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">高温预警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">湿度告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-purple.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">烟雾度告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-red.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">信号告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg"
+																	  src="../img/icon/icon-equipment-list-light-two.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<div class="tableTitle"><span>烟雾度监测统计</span></div>
+									<div class="chartContent">
+										<div class="myCharts" id="yanganBar" name="yanganBar"></div>
+										<div class="myCharts" id="yanganLine1" name="yanganLine1"></div>
+										<div class="myCharts" id="yanganLine2" name="yanganLine2"></div>
+										<div class="preButton"><img src="../img/icon/icon-equipment-leftarrow.png"/>
+										</div>
+										<div class="nextButton"><img src="../img/icon/icon-equipment-rightarrow.png"/>
+										</div>
+									</div>
+									<div class="tableTitle"><span>监测日志</span></div>
+									<table class="dropDownTable" id="smokeTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="smoke">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>智能烟感</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>智能判断火灾烟雾并报警，利用长距离低功耗的数据传输，实时将烟感所有状态数据发送至管理平台。</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="智能消防栓">
+									<!--<div class="warnText"><span>预计6月10日 12:00-14:00 温度过高</span></div>-->
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-xiaofangshuan.png"/>
+										</div>
+										<div class="iconTitle" typeId="4"><span class="iconName">智能消防栓</span><span
+												class="iconNum"></span>
+										</div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight" >
+										<table class="fiveDivContent">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop outCon">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">水压告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">旋角告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-purple.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">倾角告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-red.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">信号告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg imageOne"
+																	  src="../img/icon/icon-equipment-list-light-one.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<div class="tableTitle"><span>监测日志</span></div>
+									<table class="dropDownTable" id="hydrantTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="hydrant">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>智能消防栓</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>对消防栓进行自动化在线监测，实现消防栓阀门状态监测。对消防安全状况多方位感知监控，提前发现故障，降低风险隐患。</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="电气灭弧">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-dianqimiehu.png"/>
+										</div>
+										<div class="iconTitle" typeId="5"><span class="iconName">电器灭弧</span><span
+												class="iconNum"></span></div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop outCon">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">漏电报警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电压告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-purple.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">温度告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-red.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电流告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg imageOne"
+																	  src="../img/icon/icon-equipment-list-light-one.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<div class="tableTitle"><span>监测日志</span></div>
+									<table class="dropDownTable" id="electricalFireTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="electricalFire">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>电气灭弧</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>电气安全数据从用电现场到云端，远程精确定位，消除短路故障引起的危险性火花，有效防止电气火灾发生。</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="地下车库">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-dixiacheku.png"/>
+										</div>
+										<div class="iconTitle" typeId="22" equipmentName="智能地下停车库"><span class="iconName">地下车库积水</span><span
+												class="iconNum"></span></div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop outCon">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">液位警告</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">信号告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg imageOne"
+																	  src="../img/icon/icon-equipment-list-light-one.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<div class="tableTitle"><span>监测日志</span></div>
+
+									<table class="dropDownTable" id="parkWaterLevelTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="parkWaterLevel">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>地下车库积水</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>对车库积水点进行实时的水位监测、降雨量监测，通过无线物联网传输给远程终端。水位达到告警阈值时进行告警，提高排水效率，减少积水情况产生。</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="智能井盖开关">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-jinggai.png"/>
+										</div>
+										<div class="iconTitle" typeId="2"><span class="iconName">智能井盖</span><span
+												class="iconNum"></span>
+										</div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop outCon">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">异常打开告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">井盖倾斜告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-purple.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">信号告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td></td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg imageOne"
+																	  src="../img/icon/icon-equipment-list-light-one.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<div class="tableTitle"><span>监测日志</span></div>
+									<table class="dropDownTable" id="manholeCoverTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="manholeCover">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>智能井盖</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>远程监控井盖的开启和关闭状态。当井盖被打开以及发生位移时，及时发送告警信息至远程终端。</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="污水房">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-wushuifangshuiwei.png"/>
+										</div>
+										<div class="iconTitle" typeId="25"><span class="iconName">污水房水位</span><span
+												class="iconNum"></span>
+										</div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop outCon">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">液位警告</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">信号告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg imageOne"
+																	  src="../img/icon/icon-equipment-list-light-one.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<div class="tableTitle"><span>监测日志</span></div>
+									<table class="dropDownTable" id="buildingWaterLevelTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="buildingWaterLevel">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>污水房水位</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>实时检测污水房水位情况，水位到达告警阈值时进行告警。</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="河道无线液位">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-hedaojiance.png"/>
+										</div>
+										<div class="iconTitle" typeId="22" equipmentName="智能河道液位监测"><span
+												class="iconName">河道监测</span>
+											<span class="iconNum"></span>
+										</div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop outCon">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">液位警告</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">信号告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg"
+																	  src="../img/icon/icon-equipment-list-light-two.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<div class="tableTitle" id="riverTitle"><span>液位监测统计</span></div>
+									<div class="myChartsOne" id="yeweiLine"></div>
+									<div class="tableTitle"><span>监测日志-液位</span></div>
+									<div class="tableChange">
+										<div class="tableChangeYe"><span>液</span></div>
+										<div class="tableChangeZhuo"><span>浊</span></div>
+									</div>
+									<table class="dropDownTable ye" id="riverWaterLevelTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small ye"
+										 role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="riverWaterLevel">
+											<tbody></tbody>
+										</table>
+									</div>
+									<table class="dropDownTable zhuo" id="riverTurbidityTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small zhuo"
+										 role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="riverTurbidity">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>河道水质</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>实时监测园区河道的水位、水质情况，为河道水位变化因素分析、河道清洁治理提供依据。</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<!--<tr>
+							<td>
+								<div class="con-right-box-list" data="二次供水">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-ercigongshui.png"/>
+										</div>
+										<div class="iconTitle" typeId=""><span class="iconName">二次供水水质</span><span
+												class="iconNum"></span></div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">浑浊度告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg"
+																	  src="../img/icon/icon-equipment-list-light-two.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<div class="tableTitle"><span>园区整体水质分析</span></div>
+									<div class="chart">
+										<div class="myChartsTwo" id="ercigongshuiBar"></div>
+										<div class="myChartsTwo" id="ercigongshuiLine"></div>
+									</div>
+									<div class="tableTitle"><span>监测日志</span></div>
+									<table class="dropDownTable" id="shuizhiTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="shuizhi">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>二次供水水质</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>实现对二次供水的饮用水水质的实时连续监测，掌握水源地水质状况、预警水质污染事件，保障饮水安全。</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>-->
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="环境监测">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-huanjingjiance.png"/>
+										</div>
+										<div class="iconTitle" typeId="15"><span class="iconName">环境监测</span><span
+												class="iconNum"></span></div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop outCon">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">空气质量预警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">高温预警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-purple.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">大风预警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-red.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">噪声预警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg"
+																	  src="../img/icon/icon-equipment-list-light-two.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<!--<div class="tableTitle"><span>空气质量检测统计</span></div>-->
+									<!--<div class="tableTitle"><span>未来4天天气趋势</span></div>-->
+									<div class="chart">
+										<div class="myChartsTwoBig" id="huanjingBar"></div>
+										<div class="myChartsTwoSmall" id="huanjingLine"></div>
+									</div>
+									<div class="tableTitle"><span>监测日志</span></div>
+									<table class="dropDownTable" id="environmentTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="environment">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>环境监测</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight">
+													<span>实时测量园区多项环境参数指标、空气污染物等，实现园区环境长期在线监测。</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="智能垃圾桶">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-lajitong.png"/>
+										</div>
+										<div class="iconTitle" typeId="14"><span class="iconName">智能垃圾桶</span><span
+												class="iconNum"></span>
+										</div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent bigThanFive">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop outCon">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">装满告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">着火告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-purple.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">倾斜告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td></td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg"
+																	  src="../img/icon/icon-equipment-list-light-two.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<!--<div class="tableTitle"><span>空气质量检测统计</span></div>-->
+									<!--<div class="tableTitle"><span>未来4天天气趋势</span></div>-->
+									<div class="chart">
+										<div class="myChartsTwoSmall" id="lajitongBar"></div>
+										<div class="myChartsTwoBig" id="lajitongLine"></div>
+									</div>
+									<div class="tableTitle"><span>监测日志</span></div>
+									<table class="dropDownTable" id="trashTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="trash">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow titleShow2">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>智能垃圾桶</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>通过超声波技术来检测垃圾桶的火灾隐患、倾倒状态等，实时告警，提高清运效率，节省维护成本。</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="con-right-box-list" data="古树名木">
+									<div class="listLeft">
+										<div class="iconList"><img class="iconListImg"
+																   src="../img/icon/icon-equipment-list-gushumingmu.png"/>
+										</div>
+										<div class="iconTitle" typeId="20"><span class="iconName">古树名木保护</span><span
+												class="iconNum"></span></div>
+										<div class="iconLine"></div>
+									</div>
+									<div class="listRight">
+										<table class="fiveDivContent bigThanFive">
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-green.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">在线设备</span><span
+															class="fiveDivTextNum online"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-yellow.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">电量告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop outCon">失联告警</span><span
+															class="fiveDivTextNum"></span></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-orange.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">白蚁告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-blue.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">倾角告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-purple.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">温度告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-red.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">风速告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+												<td>
+													<div class="fiveDivIcon"><img class="fiveDivIconImg"
+																				  src="../img/icon/icon-equipment-list-white.png"/>
+													</div>
+													<div class="fiveDivText"><span
+															class="fiveDivTextTop">其他告警</span><span
+															class="fiveDivTextNum warnNum"></span></div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="rightBottomIcon"><img class="rightBottomIconImg"
+																	  src="../img/icon/icon-equipment-list-light-two.png"/>
+									</div>
+								</div>
+								<div class="dropDown">
+									<div class="tableTitle"><span>古树名木监测统计</span></div>
+									<!--<div class="tableTitle"><span>未来4天天气趋势</span></div>-->
+									<div class="chart">
+										<div class="myChartsOne" id="gushuBar"></div>
+									</div>
+									<div class="tableTitle"><span>监测日志</span></div>
+									<table class="dropDownTable" id="treeWoodTitle">
+										<thead>
+										<tr>
+											<th>设备id</th>
+											<th>上报时间</th>
+											<th>状态</th>
+											<th>设备详细地址</th>
+										</thead>
+									</table>
+									<div class="dataTables_wrapper scroll active dataTables_wrapper_small" role="grid">
+										<table class="table-striped table-condensed pre-scrollable dropDownTable"
+											   id="treeWood">
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+								<div class="titleShow titleShow2">
+									<div class="titleContent">
+										<div class="titleShowcontent">
+											<div class="titleShowTitle"><span>名树古木保护</span></div>
+											<div class="hr1"></div>
+											<div class="titleAffect">
+												<div class="titleAffectLeft"><span>设备作用:</span></div>
+												<div class="titleAffectRight"><span>实时监测园区古树名木的各项环境因素指标，克服人工测量多样环境参数的局限性，提高工作效率，满足植被环境监测基本需求。</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</article>
+			<!--<div class="progress-bg"></div>-->
+			<div class="equipmentDetail">
+				<i class="btn-close"></i>
+				<div class="equipmentDetailTitle"><span>设备详情</span></div>
+				<div class="equipmentDetailImage"><img src="../img/equipment-bg-equipment-detail-title.png" /></div>
+				<div class="equipmentContent">
+					<div class="detailTitle"><span>智能电梯</span></div>
+					<div class="detailStatus"><span><img src="../img/icon/icon-equipment-list-yellow.png"/>&nbsp;&nbsp;失联告警</span></div>
+					<table class="detailText" id="detailText">
+						<tr>
+							<td class="detailLeft"><span class="detailLeftTitle">设备地址:</span></td>
+							<td class="detailCenter" colspan="3"><span class="detailleftContent address"></span></td>
+						</tr>
+						<tr>
+							<td class="detailLeft"><span class="detailLeftTitle">告警时间:</span></td>
+							<td class="detailCenter" colspan="3"><span class="detailleftContent reportTime"></span></td>
+						</tr>
+						<tr>
+							<td class="detailLeft"><span class="detailLeftTitle">告警原因:</span></td>
+							<td class="detailCenter" colspan="3"><span class="detailleftContent detailLeftLong"></span></td>
+						</tr>
+					</table>
+					<table class="detailText" id="environmentText" style="display: none">
+						<tr>
+							<td class="detailLeft"><span class="detailLeftTitle">设备地址:</span></td>
+							<td class="detailCenter" colspan="3"><span class="detailleftContent address"></span></td>
+						</tr>
+						<tr>
+							<td class="detailLeft environText"><span class="detailLeftTitle">园区PM2.5:</span></td>
+							<td class="detailCenter"><span class="detailleftContent park25"></span></td>
+							<td class="detailLeft environText"><span class="detailLeftTitle">市区PM2.5:</span></td>
+							<td class="detailCenter"><span class="detailleftContent city25"></span></td>
+						</tr>
+						<tr>
+							<td class="detailLeft environText"><span class="detailLeftTitle">园区PM10:</span></td>
+							<td class="detailCenter"><span class="detailleftContent park10"></span></td>
+							<td class="detailLeft environText"><span class="detailLeftTitle">市区PM10:</span></td>
+							<td class="detailCenter"><span class="detailleftContent city10"></span></td>
+						</tr>
+					</table>
+					<div class="hr"></div>
+					<div class="detailVideo" id="detailVideo">
+						<!--<img src="../img/equipment-bg-video-pic.png" />-->
+					</div>
+					<div class="detailVideo" id="detailImg" style="display: none;">
+						<img src="" />
+					</div>
+				</div>
+			</div>
+		</section>
+		<script src="../lib/jQuery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/Echarts/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/player/cyberplayer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../data/equipmentError.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="../js/equipment.js" type="text/javascript" charset="UTF-8"></script>
+		<!--<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=eb03f496c6611450a26bea78b5819b6a"></sscript>-->
+		<!--<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>-->
+		<!--<script src="../js/car.js" type="text/javascript" charset="utf-8"></script>-->
+	</body>
+
+</html>

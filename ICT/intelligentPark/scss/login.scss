@@ -1,0 +1,145 @@
+@charset "UTF-8";
+@import "style.scss";
+html {
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    background: url(../img/login-bg.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+section {
+    padding: $scaleH*17 $scaleW*30 $scaleW*30;
+    box-sizing: border-box;
+    font-family: "microsoft yahei";
+    .con-top-box {
+        position: relative;
+        width: 100%;
+        margin: auto;
+        margin-top: $scaleH*150;
+        text-align: center;
+    }
+    .con-top-box img {
+        width: $scaleW*980;
+    }
+    .con-left-box {
+        float: left;
+        position: relative;
+        margin-top: $scaleH*115;
+        margin-left: $scaleW*100;
+        width: 60%;
+        text-align: center;
+    }
+    .con-left-box img {
+        width: $scaleW*854;
+    }
+    .con-right-box {
+        float: right;
+        width: 34%;
+    }
+    .inputDiv {
+        position: relative;
+        padding: $scaleW*1;
+        margin-top: 100px;
+        margin-left: 60px;
+        width: $scaleW*385;
+        height: $scaleH*376;
+        background: url(../img/login-input-bg.png) no-repeat center center;
+        background-size: 100% 100%;
+//      padding-top: $scaleH*25;
+        .loginipt{
+            width: 84%;
+            height: $scaleH*78;
+            background: rgba(0,125,145,0.1);
+            margin: 0 auto;
+            margin-top: $scaleH*25;
+            line-height: $scaleH*78;
+            i{
+                display: inline-block;
+                width: $scaleW*40;
+                height: $scaleW*40;
+                vertical-align: middle;
+                margin-left: $scaleW*25;
+                margin-right: $scaleW*10;
+            }
+            .usericon{
+                background: url(../img/login-button-name.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .passwordicon{
+                background: url(../img/login-button-password.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            input{
+                font-size: $scaleH*18;
+                width: 66%;
+                height: 50%;
+                background: none;
+                border: 0;
+                border-bottom: 1px solid #077B8E;
+                color: #57848C;
+            }
+        }
+        .fristipt{
+            margin-top: $scaleH*50;
+        }
+        .loginmes{
+            margin: 0 auto;
+            width: 84%;
+            height: $scaleH*45;
+            font-size: $scaleH*12;
+            color: #9B8D80;
+            text-align: right;
+            padding-top: $scaleH*5;
+            i{
+                display: inline-block;
+                width: $scaleW*18;
+                height: $scaleW*18;
+                vertical-align: middle;
+                margin-right: $scaleW*10;
+            }
+            .warn{
+                background: url(../img/login-button-error.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+        .loginbtn{
+            margin: 0 auto;
+            width: 84%;
+            height: $scaleH*56;
+            line-height: $scaleH*56;
+            text-align: center;
+            background: url(../img/login-button-bg.png) center center no-repeat;
+            background-size: 100% 100%;
+            font-size: $scaleH*22;
+            color: #00FFFF;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+    .inputTitle {
+        position: absolute;
+        left: 0;
+        margin-top: $scaleH*-10;
+        color: #02C6F2;
+    }
+    .inputTitle span {
+        display: inline-block;
+        font-size: $scaleH*18;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .inputaccount span{
+        font-size: $scaleW*26;
+    }
+    .loginBtn {
+        position: relative;
+        margin-top: $scaleH*40;
+        margin-left: $scaleW*40;
+        cursor: pointer;
+    }
+    .loginBtn img {
+        width: $scaleW*305;
+    }
+}

@@ -1,0 +1,100 @@
+@charset "utf-8";
+$scaleH: 100vh/1080;
+$scaleW: 100vw/1920;
+@import "reset.scss";
+html,
+body {
+    height: $scaleH * 1080;
+}
+
+body {
+    background: url(../img/bg-1.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+header {
+    height: $scaleH * 75;
+    background: url(../img/bg-header.png) no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    ul {
+        height: 100%;
+        display: inline-block;
+        .ict-nav {
+            float: left;
+            display: inline-block;
+            height: $scaleH * 53;
+            width: $scaleW * 147;
+            margin-top: $scaleH * 24;
+            a {
+                line-height: $scaleH * 53;
+                font-family: "微软雅黑";
+                font-weight: bold;
+                font-size: $scaleH * 22;
+                color: #8CA8A5;
+                text-align: center;
+                text-decoration: none;
+            }
+        }
+        .ict-nav-0 {
+            width: $scaleW * 580;
+            height: 100%;
+            margin-top: 0;
+            background: url(../img/bg-nav-0.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .ict-nav-1 {
+            background: url(../img/bg-nav-1.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .ict-nav-2 {
+            background: url(../img/bg-nav-2.png) no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+        .ict-nav-1.active {
+            background: url(../img/bg-nav-1-active.png) no-repeat;
+            background-size: 100% 100%;
+            margin-top: $scaleH * 14;
+        }
+        .ict-nav-2.active {
+            background: url(../img/bg-nav-2-active.png) no-repeat;
+            background-size: 100% 100%;
+            margin-top: $scaleH * 14;
+        }
+        .wait {
+            position: absolute;
+            top: $scaleH * 5;
+            right: $scaleW * 5;
+            display: inline-block;
+            height: $scaleH * 25;
+            width: $scaleW * 25;
+            background: url(../img/bg-test.png) no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+section {
+    height: $scaleH * 1005;
+    width: 100%;
+    padding: $scaleH*10 $scaleW*15;
+    box-sizing: border-box;
+}
+
+.hide {
+    display: none !important;
+}
+
+.btn-close {
+    position: absolute;
+    display: block;
+    width: $scaleW*32;
+    height: $scaleW*32;
+    background: url(../img/icon/icon-close.png);
+    background-size: 100% 100%;
+    top: $scaleW*6;
+    right: $scaleW*6;
+    z-index: 999;
+    cursor: pointer;
+}

@@ -1,0 +1,215 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+center,
+u,
+b,
+i {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+:focus {
+  outline: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+
+blockquote,
+q {
+  quotes: "";
+}
+
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #000;
+  background-color: #000;
+  height: 1px;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background: url(../img/bg-1.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+header {
+  height: 6.9444444444vh;
+  background: url(../img/bg-header.png) no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+}
+header ul {
+  height: 100%;
+  display: inline-block;
+}
+header ul .ict-nav {
+  float: left;
+  display: inline-block;
+  height: 4.9074074074vh;
+  width: 7.65625vw;
+  margin-top: 2.2222222222vh;
+}
+header ul .ict-nav a {
+  line-height: 4.9074074074vh;
+  font-family: "微软雅黑";
+  font-weight: bold;
+  font-size: 2.037037037vh;
+  color: #8CA8A5;
+  text-align: center;
+  text-decoration: none;
+}
+header ul .ict-nav-0 {
+  width: 30.2083333333vw;
+  height: 100%;
+  margin-top: 0;
+  background: url(../img/bg-nav-0.png) no-repeat;
+  background-size: 100% 100%;
+}
+header ul .ict-nav-1 {
+  background: url(../img/bg-nav-1.png) no-repeat;
+  background-size: 100% 100%;
+}
+header ul .ict-nav-2 {
+  background: url(../img/bg-nav-2.png) no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+header ul .ict-nav-1.active {
+  background: url(../img/bg-nav-1-active.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 1.2962962963vh;
+}
+header ul .ict-nav-2.active {
+  background: url(../img/bg-nav-2-active.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 1.2962962963vh;
+}
+header ul .wait {
+  position: absolute;
+  top: 0.462962963vh;
+  right: 0.2604166667vw;
+  display: inline-block;
+  height: 2.3148148148vh;
+  width: 1.3020833333vw;
+  background: url(../img/bg-test.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+section {
+  height: 93.0555555556vh;
+  width: 100%;
+  padding: 0.9259259259vh 0.78125vw;
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none !important;
+}
+
+.btn-close {
+  position: absolute;
+  display: block;
+  width: 1.6666666667vw;
+  height: 1.6666666667vw;
+  background: url(../img/icon/icon-close.png);
+  background-size: 100% 100%;
+  top: 0.3125vw;
+  right: 0.3125vw;
+  z-index: 999;
+  cursor: pointer;
+}

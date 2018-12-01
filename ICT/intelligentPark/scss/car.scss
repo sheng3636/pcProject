@@ -1,0 +1,588 @@
+@charset "UTF-8";
+@import "style.scss";
+html {
+    -webkit-text-size-adjust: none;
+}
+
+section {
+    padding: $scaleH*45 $scaleW*30 $scaleW*30;
+    box-sizing: border-box;
+    .con-left-box {
+        position: relative;
+        float: left;
+        width: $scaleW*1100;
+        height: $scaleH*941;
+        tabindex: "0";
+        background: rgba(18, 16, 94, .4);
+        border: 1px solid #0B5EB3
+    }
+    .map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: $scaleW*1070;
+        height: $scaleH*897;
+        //line-height:$scaleH*897;
+    }
+    .amap-container img {
+        /*width:$scaleW*52;
+                height:$scaleH*54;*/
+    }
+    .mapLines {
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .mapLines1 {
+        //display:none;
+        visibility: hidden;
+    }
+    .content1 {
+        display: block;
+    }
+    .content2,
+    .content3 {
+        display: none;
+    }
+    .bigCar {
+        position: absolute;
+        left: 30%;
+        top: 34%;
+        display: none;
+    }
+    #clearMakers {
+        display: none;
+    }
+    #setCenter {
+        display: none;
+    }
+    .bigCarImg {
+        width: $scaleW*238.2;
+        height: $scaleH*178.4;
+    }
+    .rightBottomIcon {
+        z-index: 20;
+        position: absolute;
+        right: $scaleW*12;
+        bottom: $scaleH*16;
+        cursor: pointer;
+    }
+    .rightBottomIconImg {
+        width: $scaleW*46;
+        height: $scaleH*46;
+    }
+    .mapBoard {
+        width: $scaleW*500;
+    }
+    .carBoard1 {
+        //position: absolute;
+        //left:32%;
+        //top: 28%;
+        //display: none;
+    }
+    .carBoard2 {}
+    .carTitle {
+        display: inline-block;
+        width: $scaleW*165;
+        height: $scaleH*50;
+        line-height: $scaleH*50;
+        text-align: center;
+        color: #A7D7FF;
+        //font-size:$scaleH*22.45;
+        background: url('../img/car-bg-map-title-blue.png') no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .carTitle span {
+        display: inline-block;
+        font-size: $scaleH*26;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .carTitle1 {
+        margin-left: $scaleW*200 !important;
+        margin-top: $scaleH*70 !important;
+        background: url('../img/car-bg-map-title-green.png') no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .carLine {
+        width: $scaleW*170;
+        height: $scaleH*86;
+        display: none;
+    }
+    .carLine1 {
+        width: $scaleW*177;
+        height: $scaleH*69;
+        position: absolute;
+        display: none;
+    }
+    .carTime {
+        //display: none;
+        //position: absolute;
+        //top: 10%;
+        //left: 55%;
+        width: 35%;
+        //height:$scaleH*103;
+        border: 1px solid #fff;
+        background: rgba(26, 26, 45, .9);
+    }
+    .carTime1 {
+        //top: 75%;
+        //left: 15%;
+    }
+    .carTimeDiv {
+        width: 90%;
+        margin: auto;
+    }
+    .carTimeTitle1 {
+        width: 100%;
+        margin-top: $scaleH*10;
+        margin-bottom: $scaleH*10;
+        color: #fff;
+        //font-size:$scaleH*14;
+        text-align: left;
+    }
+    .carTimeTitle1 span {
+        display: inline-block;
+        font-size: $scaleH*17;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .doubleLines {
+        margin-bottom: $scaleH*12;
+        width: 100%;
+        height: 1%;
+        border-top: $scaleW*2 solid #368CFF;
+        border-bottom: $scaleW*1 solid #368CFF;
+        display: none;
+    }
+    .carTimeTable {
+        text-align: center;
+    }
+    .fourDiv {
+        width: $scaleW*70;
+        //height:$scaleH*25;
+        line-height: $scaleH*25;
+        display: inline-block;
+        text-align: left;
+        color: #fff;
+        font-size: $scaleH*12;
+    }
+    .fourDiv span {
+        display: inline-block;
+        font-size: $scaleH*15;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .greyRow {
+        color: #C7CDE0;
+    }
+    .peoplePercent {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        width: $scaleW*150;
+        height: $scaleH*73;
+        border: $scaleW*1 solid #BABABA;
+        background: rgba(26, 26, 45, .9);
+        color: #fff;
+    }
+    .peopleTitle {
+        height: $scaleH*40;
+        line-height: $scaleH*40;
+        text-align: center;
+    }
+    .peopleTitle span {
+        display: inline-block;
+        font-size: $scaleH*20;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .peopleNum {
+        text-align: center;
+    }
+    .peopleNumber {
+        display: inline-block;
+        font-size: $scaleH*25;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .peoplePer {
+        display: inline-block;
+        font-size: $scaleH*16;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .con-right-box {
+        float: right;
+        //margin-left: $scaleW*15;
+        width: $scaleW*724;
+        height: $scaleH*941;
+    }
+    .con-top-right {
+        width: 100%;
+        //height:$scaleH*102;
+    }
+    .con-top-right-title {
+        //margin-left: -35px;
+        //width:$scaleW*85;
+        //height:$scaleH*15;
+        //line-height:$scaleH*15; ;
+        //font-size:$scaleH*16;
+        //margin-left: -400px;
+        //height: 10px;
+        //line-height: 10px;
+        color: #C6D8FF;
+    }
+    .con-top-right-title span {
+        width: $scaleW*50;
+        display: block;
+        font-size: $scaleH*20;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .con-top-right-fourDiv {
+        position: relative;
+        margin-top: $scaleH*13;
+        padding-left: $scaleW*4;
+        display: inline-block;
+        width: 18.5%;
+        height: $scaleH*67;
+        background: url(../img/car-bg-right-1.png) no-repeat center center;
+        background-size: 100% 100%;
+        cursor: pointer;
+        //box-sizing: border-box;
+    }
+    .fourDivPick {
+        background: url(../img/car-bg-right-pick.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .lastOne {
+        //float:right;
+    }
+    .leftTop {
+        float: left;
+        margin-top: $scaleH*4;
+        margin-left: $scaleW*1;
+        display: inline-block;
+        width: 57%;
+        height: $scaleH*31;
+        border-bottom: $scaleW*1 solid #2E7ACC;
+        border-right: $scaleW*1 solid #2E7ACC;
+        background: rgba(23, 40, 61, .5);
+    }
+    .leftTopIcon {
+        float: left;
+        margin-top: $scaleH*5;
+        margin-left: $scaleW*2;
+        width: $scaleW*21.3;
+        height: $scaleH*22.5;
+        display: inline-block;
+    }
+    .leftTopText {
+        //margin-left: $scaleW*-145;
+        margin: $scaleH*7 $scaleW*5;
+        //margin-top:$scaleH*-85;
+        //margin-left:$scaleW*-265;
+        //display: inline-block;
+        width: $scaleW*54;
+        //height:$scaleH*31;
+        //line-height:$scaleH*31;
+        //font-size:$scaleH*14;
+        color: #C6D8FF;
+    }
+    .leftTopText span {
+        display: block;
+        font-size: $scaleH*13;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .con-top-right-fourDiv-num {
+        float: right;
+        margin-left: $scaleW*-5;
+        display: inline-block;
+        width: 37%;
+        height: $scaleH*67;
+        line-height: $scaleH*67;
+        //font-size:$scaleH*49;
+        color: #fff;
+        box-sizing: border-box;
+    }
+    .con-top-right-fourDiv-num .number {
+        display: inline-block;
+        font-size: $scaleH*37;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .con-top-right-fourDiv-num .text {
+        display: inline-block;
+        height: $scaleH*67;
+        line-height: $scaleH*67;
+        //font-size:$scaleH*12;
+        font-size: $scaleH*15;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+        color: #C6D8FF;
+    }
+    .con-middle-right {
+        width: 100%;
+        //height:$scaleH*441;
+        margin-top: $scaleH*20;
+    }
+    .con-middle-right-1 {
+        width: 100%;
+        //height:$scaleH*220;
+    }
+    .con-middle-right-title {
+        width: 98%;
+        height: $scaleH*70;
+        background: url(../img/car-bg-middle-1.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .con-middle-right-title1 {
+        background: url(../img/car-bg-middle-2.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .con-middle-right-progress {
+        height: $scaleH*40;
+        width: 100%;
+        overflow-x: scroll;
+        #caroutclock {
+            height: 100%;
+            width: 410%;
+            overflow: hidden;
+        }
+        #carinclock {
+            height: 100%;
+            width: 480%;
+            overflow: hidden;
+        }
+    }
+    .con-middle-right-progress::-webkit-scrollbar {
+        height: 10px;
+        width: 100%;
+    }
+    .con-middle-right-progress::-webkit-scrollbar-track {
+        background-color: rgba(0, 120, 229, 0.2);
+    }
+    .con-middle-right-progress::-webkit-scrollbar-thumb {
+        background-color: rgba(54, 140, 255, 0.2);
+    }
+    .titleLeft {
+        float: left;
+        margin-left: $scaleW*71;
+        display: inline-block;
+        width: $scaleW*111;
+    }
+    .bigTitle {
+        //margin-left: -48px;
+        width: 100%;
+        height: $scaleH*35;
+        line-height: $scaleH*39;
+        //font-size: $scaleH*22;
+        text-align: center;
+        color: #8AFFFF;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .bigTitle span {
+        display: inline-block;
+        font-size: $scaleH*24;
+        -webkit-transform: scale(0.9);
+        width: 100%;
+    }
+    .smallTitle {
+        width: 100%;
+        height: $scaleH*25;
+        line-height: $scaleH*25;
+        //font-size:$scaleH*11;
+        text-align: center;
+        color: #C8E9FC;
+    }
+    .smallTitle span {
+        display: block;
+        font-size: $scaleH*13;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .titleMiddle {
+        margin-left: $scaleW*35;
+        display: inline-block;
+    }
+    .roadBroad {
+        //margin-top: $scaleH*10;
+        width: $scaleW*95;
+        //height:$scaleH*25;
+        line-height: $scaleH*25;
+        text-align: center;
+        color: #fff;
+        //font-size:$scaleH*13;
+        border-radius: $scaleW*7;
+        border: $scaleW*1 solid #00ACE5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .roadBroad span {
+        display: inline-block;
+        font-size: $scaleH*15;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .titleRight {
+        float: right;
+        //margin-left: $scaleW*193;
+        display: inline-block;
+    }
+    .roadBroad1 {
+        border: $scaleW*1 solid #FF9F2A;
+    }
+    .con-middle-right-smallTitle {
+        margin-left: $scaleW*26;
+        height: $scaleH*32;
+        line-height: $scaleH*32;
+        //font-size:$scaleH*12;
+        color: #C6D8FF;
+    }
+    .con-middle-right-smallTitle span {
+        display: inline-block;
+        font-size: $scaleH*14;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .con-middle-right-progress {
+        //      margin: auto;
+        //      text-align: center;
+    }
+    .con-middle-right-progressDiv {
+        display: inline-block;
+        width: $scaleW*57;
+        //height:$scaleH*20;
+        line-height: $scaleH*22;
+        border: $scaleW*1 solid #00ACE5;
+        text-align: center;
+        //font-size:$scaleH*12;
+        color: #fff;
+        border-radius: $scaleW*4;
+        //box-sizing: border-box;
+    }
+    .stationNow {
+        color: #fff;
+        background: rgba(0, 172, 229, .3);
+    }
+    .stationPass {
+        color: #8C919B;
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid #8C919B;
+    }
+    .con-middle-right-progressDiv span {
+        //width:$scaleW*50;
+        display: inline-block;
+        font-size: $scaleH*12;
+        -webkit-transform: scale(0.8);
+        white-space: nowrap;
+    }
+    .con-middle-right-progressLine {
+        margin: 0px $scaleW*(-3) 0px 0px;
+        display: inline-block;
+        width: $scaleW*11;
+        height: $scaleH*6;
+        line-height: $scaleH*10;
+        border-top: $scaleW*1 solid #00ACE5;
+        box-sizing: border-box;
+    }
+    .con-middle-right-table {
+        margin: $scaleH*22 auto;
+        width: $scaleW*700;
+        text-align: center;
+        //font-size:$scaleH*12;
+        tr {
+            display: table;
+            text-align: center;
+        }
+    }
+    .con-middle-right-table td {
+        line-height: $scaleH*20;
+    }
+    .con-middle-right-table span {
+        display: inline-block;
+        font-size: $scaleH*15;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .con-middle-right-table thead {
+        width: 100%;
+        display: block;
+        height: $scaleH*25;
+//      line-height: $scaleH*25;
+        background: rgba(200, 233, 252, .1);
+        color: #8CA8A5;
+        tr{
+            height: $scaleH*25;
+            table-layout: fixed;
+            td {
+                line-height: $scaleH*25;
+            }
+//          line-height: $scaleH*25;
+        }
+    }
+    .con-middle-right-table tbody {
+        width: 100%;
+        height: $scaleH*55;
+//      line-height: $scaleH*22;
+        color: #C8E9FC;
+        display: block;
+        overflow-y: scroll;
+    }
+    .con-middle-right-table tbody::-webkit-scrollbar {
+        width: 3px;
+        height: 100%;
+    }
+    .con-middle-right-table tbody::-webkit-scrollbar-track {
+        background-color: rgba(0, 120, 229, 0.2);
+    }
+    .con-middle-right-table tbody::-webkit-scrollbar-thumb {
+        background-color: rgba(54, 140, 255, 0.2);
+    }
+    .con-middle-right-table tbody,
+    .con-middle-right-table thead {
+        tr{
+            width: 100%;
+            td {
+                width: 15%;
+            }
+            td:nth-child(5) {
+                width: 20%;
+            }
+            td:nth-child(6) {
+                width: 20%;
+            }
+        }
+    }
+    .con-bottom-right {
+        width: 100%;
+        //height:$scaleH*364;
+    }
+    .con-bottom-right-title {
+        color: #C6D8FF;
+        //font-size:$scaleH*16;
+    }
+    .con-bottom-right-title span {
+        display: inline-block;
+        font-size: $scaleH*20;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .con-bottom-right-echart {
+        width: 100%;
+        height: $scaleH*255;
+    }
+}

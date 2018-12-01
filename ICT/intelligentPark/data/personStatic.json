@@ -1,0 +1,1523 @@
+{
+	"index": {
+		"code": 200,
+		"data": {
+			"peopleCount": [{
+				"in": "1369",
+				"out": "607"
+			}],
+			"peopleFlow": {
+				"lastWeek": [{
+					"date": "2018-09-10 00:00:00",
+					"num": 1522
+				}, {
+					"date": "2018-09-11 00:00:00",
+					"num": 1440
+				}, {
+					"date": "2018-09-12 00:00:00",
+					"num": 1607
+				}, {
+					"date": "2018-09-13 00:00:00",
+					"num": 1433
+				}, {
+					"date": "2018-09-14 00:00:00",
+					"num": 1368
+				}, {
+					"date": "2018-09-15 00:00:00",
+					"num": 331
+				}, {
+					"date": "2018-09-16 00:00:00",
+					"num": 308
+				}],
+				"currentWeek": [{
+					"date": "2018-09-17 00:00:00",
+					"num": 1499
+				}, {
+					"date": "2018-09-18 00:00:00",
+					"num": 1468
+				}, {
+					"date": "2018-09-19 00:00:00",
+					"num": 1369
+				}],
+				"forecastWeek": [{
+					"date": "2018-09-17 00:00:00",
+					"num": 871
+				}, {
+					"date": "2018-09-18 00:00:00",
+					"num": 968
+				}, {
+					"date": "2018-09-19 00:00:00",
+					"num": 890
+				}, {
+					"date": "2018-09-20 00:00:00",
+					"num": 1023
+				}, {
+					"date": "2018-09-21 00:00:00",
+					"num": 981
+				}, {
+					"date": "2018-09-22 00:00:00",
+					"num": 143
+				}, {
+					"date": "2018-09-23 00:00:00",
+					"num": 90
+				}]
+			},
+			"stopTime": [{
+				"times": "0",
+				"percent": "64.97"
+			}, {
+				"times": "1",
+				"percent": "3.4"
+			}, {
+				"times": "2",
+				"percent": "3.63"
+			}, {
+				"times": "3",
+				"percent": "4.07"
+			}, {
+				"times": "4",
+				"percent": "3.28"
+			}, {
+				"times": "5",
+				"percent": "3.18"
+			}, {
+				"times": "6",
+				"percent": "1.67"
+			}, {
+				"times": "7",
+				"percent": "2.44"
+			}, {
+				"times": "8",
+				"percent": "6.31"
+			}, {
+				"times": "9",
+				"percent": "4.93"
+			}, {
+				"times": "10",
+				"percent": "1.16"
+			}, {
+				"times": "11",
+				"percent": "0.53"
+			}, {
+				"times": "12",
+				"percent": "0.28"
+			}, {
+				"times": "13",
+				"percent": "0.08"
+			}, {
+				"times": "14",
+				"percent": "0.08"
+			}],
+			"transportAnalysis": [{
+				"name": "公共交通",
+				"num": "62"
+			}, {
+				"name": "班车",
+				"num": "5"
+			}, {
+				"name": "开车",
+				"num": "31"
+			}],
+			"frequency": [{
+				"times": 1,
+				"percent": "55.66"
+			}, {
+				"times": 2,
+				"percent": "13.67"
+			}, {
+				"times": 3,
+				"percent": "6.61"
+			}, {
+				"times": 4,
+				"percent": "4.91"
+			}, {
+				"times": 5,
+				"percent": "3.66"
+			}, {
+				"times": 6,
+				"percent": "2.03"
+			}, {
+				"times": 7,
+				"percent": "2.49"
+			}, {
+				"times": 8,
+				"percent": "1.31"
+			}, {
+				"times": 9,
+				"percent": "1.7"
+			}, {
+				"times": 10,
+				"percent": "1.44"
+			}, {
+				"times": 11,
+				"percent": "0.72"
+			}, {
+				"times": 12,
+				"percent": "1.44"
+			}, {
+				"times": 13,
+				"percent": "0.85"
+			}, {
+				"times": 14,
+				"percent": "0.46"
+			}, {
+				"times": 15,
+				"percent": "0.26"
+			}, {
+				"times": 16,
+				"percent": "0.59"
+			}, {
+				"times": 17,
+				"percent": "0.26"
+			}, {
+				"times": 18,
+				"percent": "0.26"
+			}, {
+				"times": 19,
+				"percent": "0.07"
+			}, {
+				"times": 20,
+				"percent": "0.2"
+			}, {
+				"times": 21,
+				"percent": "0.26"
+			}, {
+				"times": 22,
+				"percent": "0.26"
+			}, {
+				"times": 23,
+				"percent": "0.07"
+			}, {
+				"times": 24,
+				"percent": "0.13"
+			}, {
+				"times": 26,
+				"percent": "0.07"
+			}, {
+				"times": 27,
+				"percent": "0.07"
+			}, {
+				"times": 30,
+				"percent": "0.13"
+			}, {
+				"times": 31,
+				"percent": "0.2"
+			}, {
+				"times": 32,
+				"percent": "0.13"
+			}, {
+				"times": 55,
+				"percent": "0.07"
+			}, {
+				"times": 74,
+				"percent": "0.07"
+			}],
+			"visitor": [{
+				"companyName": "理想集团",
+				"percent": 16.86
+			}, {
+				"companyName": "沪 信网@IDC维护中心",
+				"percent": 13.05
+			}, {
+				"companyName": "上海研究院",
+				"percent": 9.23
+			}, {
+				"companyName": "沪 NOC",
+				"percent": 5.78
+			}, {
+				"companyName": "企业信息化部",
+				"percent": 4.54
+			}],
+			"peopleRecognition": [{
+				"classification": "员工",
+				"percent": 13
+			}, {
+				"classification": "陌生人",
+				"percent": 78
+			}, {
+				"classification": "访客",
+				"percent": 9
+			}]
+		},
+		"message": "请求成功",
+		"subcode": 0,
+		"B3": {
+			"code": 200,
+			"data": {
+				"peopleCount": [{
+					"in": "124",
+					"out": "62"
+				}],
+				"peopleFlow": {
+					"lastWeek": [{
+						"date": "2018-09-17 00:00:00",
+						"num": 33
+					}, {
+						"date": "2018-09-18 00:00:00",
+						"num": 37
+					}, {
+						"date": "2018-09-19 00:00:00",
+						"num": 51
+					}, {
+						"date": "2018-09-20 00:00:00",
+						"num": 37
+					}, {
+						"date": "2018-09-21 00:00:00",
+						"num": 79
+					}, {
+						"date": "2018-09-22 00:00:00",
+						"num": 13
+					}, {
+						"date": "2018-09-23 00:00:00",
+						"num": 28
+					}],
+					"currentWeek": [{
+						"date": "2018-09-24 00:00:00",
+						"num": 12
+					}, {
+						"date": "2018-09-25 00:00:00",
+						"num": 124
+					}],
+					"forecastWeek": [{
+						"date": "2018-09-26 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-09-27 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-09-28 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-09-29 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-09-30 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-10-01 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-10-02 00:00:00",
+						"num": ""
+					}]
+				},
+				"stopTime": [{
+					"times": "0",
+					"percent": "86.16"
+				}, {
+					"times": "1",
+					"percent": "2.87"
+				}, {
+					"times": "2",
+					"percent": "2.61"
+				}, {
+					"times": "3",
+					"percent": "3.13"
+				}, {
+					"times": "4",
+					"percent": "1.57"
+				}, {
+					"times": "5",
+					"percent": "1.04"
+				}, {
+					"times": "6",
+					"percent": "1.57"
+				}, {
+					"times": "7",
+					"percent": "0.26"
+				}, {
+					"times": "8",
+					"percent": "0.26"
+				}, {
+					"times": "9",
+					"percent": "0.26"
+				}, {
+					"times": "10",
+					"percent": "0.26"
+				}],
+				"transportAnalysis": [{
+					"name": "公共交通",
+					"num": "36"
+				}, {
+					"name": "班车",
+					"num": "12"
+				}, {
+					"name": "开车",
+					"num": "51"
+				}],
+				"frequency": [{
+					"times": 1,
+					"percent": "68.97"
+				}, {
+					"times": 2,
+					"percent": "12.07"
+				}, {
+					"times": 3,
+					"percent": "6.32"
+				}, {
+					"times": 4,
+					"percent": "2.87"
+				}, {
+					"times": 5,
+					"percent": "1.72"
+				}, {
+					"times": 6,
+					"percent": "1.72"
+				}, {
+					"times": 7,
+					"percent": "2.3"
+				}, {
+					"times": 8,
+					"percent": "0.57"
+				}, {
+					"times": 9,
+					"percent": "0.57"
+				}, {
+					"times": 11,
+					"percent": "0.57"
+				}, {
+					"times": 13,
+					"percent": "0.57"
+				}, {
+					"times": 14,
+					"percent": "0.57"
+				}, {
+					"times": 15,
+					"percent": "0.57"
+				}, {
+					"times": 21,
+					"percent": "0.57"
+				}],
+				"visitor": [{
+					"companyName": "沪 信息园区开发建设部",
+					"percent": 12.64
+				}, {
+					"companyName": "沪 信网@IDC维护中心",
+					"percent": 12.26
+				}, {
+					"companyName": "上海研究院",
+					"percent": 11.49
+				}, {
+					"companyName": "沪 NOC",
+					"percent": 11.49
+				}, {
+					"companyName": "理想集团",
+					"percent": 7.66
+				}],
+				"peopleRecognition": [{
+					"classification": "员工",
+					"percent": 40
+				}, {
+					"classification": "陌生人",
+					"percent": 47
+				}, {
+					"classification": "访客",
+					"percent": 13
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"B4": {
+			"code": 200,
+			"data": {
+				"peopleCount": [{
+					"in": "220",
+					"out": "513"
+				}],
+				"peopleFlow": {
+					"lastWeek": [{
+						"date": "2018-09-17 00:00:00",
+						"num": 123
+					}, {
+						"date": "2018-09-18 00:00:00",
+						"num": 103
+					}, {
+						"date": "2018-09-19 00:00:00",
+						"num": 111
+					}, {
+						"date": "2018-09-20 00:00:00",
+						"num": 123
+					}, {
+						"date": "2018-09-21 00:00:00",
+						"num": 169
+					}, {
+						"date": "2018-09-22 00:00:00",
+						"num": 13
+					}, {
+						"date": "2018-09-23 00:00:00",
+						"num": 3
+					}],
+					"currentWeek": [{
+						"date": "2018-09-24 00:00:00",
+						"num": 7
+					}, {
+						"date": "2018-09-25 00:00:00",
+						"num": 220
+					}],
+					"forecastWeek": [{
+						"date": "2018-09-26 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-09-27 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-09-28 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-09-29 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-09-30 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-10-01 00:00:00",
+						"num": ""
+					}, {
+						"date": "2018-10-02 00:00:00",
+						"num": ""
+					}]
+				},
+				"stopTime": [{
+					"times": "0",
+					"percent": "95.98"
+				}, {
+					"times": "2",
+					"percent": "1.15"
+				}, {
+					"times": "3",
+					"percent": "1.15"
+				}, {
+					"times": "4",
+					"percent": "0.29"
+				}, {
+					"times": "5",
+					"percent": "1.15"
+				}, {
+					"times": "8",
+					"percent": "0.29"
+				}],
+				"transportAnalysis": [{
+					"name": "公共交通",
+					"num": "38"
+				}, {
+					"name": "班车",
+					"num": "11"
+				}, {
+					"name": "开车",
+					"num": "50"
+				}],
+				"frequency": [{
+					"times": 1,
+					"percent": "80.25"
+				}, {
+					"times": 2,
+					"percent": "9.88"
+				}, {
+					"times": 3,
+					"percent": "7.41"
+				}, {
+					"times": 4,
+					"percent": "2.47"
+				}],
+				"visitor": [{
+					"companyName": "理想集团",
+					"percent": 38.39
+				}, {
+					"companyName": "上海研究院",
+					"percent": 4.46
+				}, {
+					"companyName": "信息园区 集团 运营部",
+					"percent": 4.02
+				}, {
+					"companyName": "软件一部",
+					"percent": 4.02
+				}, {
+					"companyName": "集成业务部",
+					"percent": 3.57
+				}],
+				"peopleRecognition": [{
+					"classification": "员工",
+					"percent": 57
+				}, {
+					"classification": "陌生人",
+					"percent": 39
+				}, {
+					"classification": "访客",
+					"percent": 3
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		}
+	},
+	"getPicture": {
+		"code": 200,
+		"data": [{
+			"imgUrl": "../img/static/image/person/personInfo01.jpg",
+			"date": "2018-09-25 16:12:00",
+			"address": "园区北大门-东出口",
+			"lng": "121.5321583563977\r\n",
+			"build": "all",
+			"name": "刘XX",
+			"company": "理想集团",
+			"type": "员工",
+			"userId": "104190",
+			"lat": "31.131578628238586\r\n",
+			"direction": "出"
+		}, {
+			"imgUrl": "../img/static/image/person/personInfo02.jpg",
+			"date": "2018-09-25 16:11:10",
+			"address": "园区北大门-西入口",
+			"lng": "121.53141996556963\r\n",
+			"build": "all",
+			"name": "王XX",
+			"company": "总部门",
+			"type": "员工",
+			"userId": "108028",
+			"lat": "31.131416332341786\r\n",
+			"direction": "进"
+		}, {
+			"imgUrl": "../img/static/image/person/personInfo03.jpg",
+			"date": "2018-09-25 16:07:49",
+			"address": "园区北大门-东出口",
+			"lng": "121.5321583563977\r\n",
+			"build": "all",
+			"name": "肖XX",
+			"company": "集 号百",
+			"type": "员工",
+			"userId": "105331",
+			"lat": "31.131578628238586\r\n",
+			"direction": "出"
+		}, {
+			"imgUrl": "../img/static/image/person/personInfo04.jpg",
+			"date": "2018-09-25 16:06:50",
+			"address": "园区北大门-西入口",
+			"lng": "121.53141996556963\r\n",
+			"build": "all",
+			"name": "董XX",
+			"company": "总部门",
+			"type": "员工",
+			"userId": "101543",
+			"lat": "31.131416332341786\r\n",
+			"direction": "进"
+		}, {
+			"imgUrl": "../img/static/image/person/personInfo05.jpg",
+			"date": "2018-09-25 16:04:41",
+			"address": "园区北大门-东出口",
+			"lng": "121.5321583563977\r\n",
+			"build": "all",
+			"name": "仇XX",
+			"company": "总部门",
+			"type": "员工",
+			"userId": "100015",
+			"lat": "31.131578628238586\r\n",
+			"direction": "出"
+		}, {
+			"imgUrl": "../img/static/image/person/personInfo06.jpg",
+			"date": "2018-09-25 16:04:06",
+			"address": "园区北大门-东出口",
+			"lng": "121.5321583563977\r\n",
+			"build": "all",
+			"name": "黄XX",
+			"company": "理想集团",
+			"type": "员工",
+			"userId": "104764",
+			"lat": "31.131578628238586\r\n",
+			"direction": "出"
+		}],
+		"message": "请求成功",
+		"subcode": 0,
+		"B3": {
+			"code": 200,
+			"data": [{
+				"imgUrl": "../img/static/image/person/personInfo07.jpg",
+				"date": "2018-09-25 15:28:37",
+				"address": "园区B3地下一层车库出口-出",
+				"lng": "121.53160979472995\r\n",
+				"build": "B3",
+				"name": "孙XX",
+				"company": "沪 信息园区开发建设部",
+				"type": "员工",
+				"userId": "101440",
+				"lat": "31.128400406765138\r\n",
+				"direction": "出"
+			}, {
+				"imgUrl": "../img/static/image/person/personInfo08.jpg",
+				"date": "2018-09-25 15:17:43",
+				"address": "园区B3正门右侧通道-入",
+				"lng": "121.53160979472995\r\n",
+				"build": "B3",
+				"name": "赵XX",
+				"company": "个人",
+				"type": "访客",
+				"userId": "1029897",
+				"lat": "31.128400406765138\r\n",
+				"direction": "进"
+			}, {
+				"imgUrl": "../img/static/image/person/personInfo09.jpg",
+				"date": "2018-09-25 15:13:09",
+				"address": "园区B3正门右侧通道-入",
+				"lng": "121.53160979472995\r\n",
+				"build": "B3",
+				"name": "张XX",
+				"company": "国安中心",
+				"type": "员工",
+				"userId": "105885",
+				"lat": "31.128400406765138\r\n",
+				"direction": "进"
+			}, {
+				"imgUrl": "../img/static/image/person/personInfo10.jpg",
+				"date": "2018-09-25 15:13:08",
+				"address": "园区B3正门右侧通道-入",
+				"lng": "121.53160979472995\r\n",
+				"build": "B3",
+				"name": "崔XX",
+				"type": "员工",
+				"userId": "109534",
+				"lat": "31.128400406765138\r\n",
+				"direction": "进"
+			}, {
+				"imgUrl": "../img/static/image/person/personInfo11.jpg",
+				"date": "2018-09-25 15:12:43",
+				"address": "园区B3正门右侧立杆-出",
+				"lng": "121.53160979472995\r\n",
+				"build": "B3",
+				"name": "夏XX",
+				"company": "理想集团",
+				"type": "员工",
+				"userId": "107287",
+				"lat": "31.128400406765138\r\n",
+				"direction": "出"
+			}, {
+				"imgUrl": "../img/static/image/person/personInfo12.jpg",
+				"date": "2018-09-25 15:12:43",
+				"address": "园区B3正门右侧立杆-出",
+				"lng": "121.53160979472995\r\n",
+				"build": "B3",
+				"name": "黄XX",
+				"company": "个人",
+				"type": "访客",
+				"userId": "1165335",
+				"lat": "31.128400406765138\r\n",
+				"direction": "出"
+			}],
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"B4": {
+			"code": 200,
+			"data": [{
+				"imgUrl": "../img/static/image/person/personInfo13.jpg",
+				"date": "2018-09-25 16:34:18",
+				"address": "园区B4正门右侧通道2-出",
+				"lng": "121.53184617889343\r\n",
+				"build": "B4",
+				"name": "金XX",
+				"company": "集 号百",
+				"type": "员工",
+				"userId": "105367",
+				"lat": "31.12783853969188\r\n",
+				"direction": "出"
+			}, {
+				"imgUrl": "../img/static/image/person/personInfo14.jpg",
+				"date": "2018-09-25 16:29:36",
+				"address": "园区B4地下一层南电梯通道3-出",
+				"lng": "121.53184617889343\r\n",
+				"build": "B4",
+				"name": "何XX",
+				"company": "个人",
+				"type": "访客",
+				"userId": "1164457",
+				"lat": "31.12783853969188\r\n",
+				"direction": "出"
+			}, {
+				"imgUrl": "../img/static/image/person/personInfo15.jpg",
+				"date": "2018-09-25 16:19:20",
+				"address": "园区B4地下一层南电梯通道1-出",
+				"lng": "121.53184617889343\r\n",
+				"build": "B4",
+				"name": "朱XX",
+				"company": "理想集团",
+				"type": "员工",
+				"userId": "103465",
+				"lat": "31.12783853969188\r\n",
+				"direction": "出"
+			}, {
+				"imgUrl": "../img/static/image/person/personInfo16.jpg",
+				"date": "2018-09-25 16:19:18",
+				"address": "园区B4地下一层南电梯通道1-出",
+				"lng": "121.53184617889343\r\n",
+				"build": "B4",
+				"name": "王XX",
+				"company": "理想集团",
+				"type": "员工",
+				"userId": "102991",
+				"lat": "31.12783853969188\r\n",
+				"direction": "出"
+			}, {
+				"imgUrl": "../img/static/image/person/personInfo17.jpg",
+				"date": "2018-09-25 16:14:39",
+				"address": "园区B4地下一层南电梯通道1-出",
+				"lng": "121.53184617889343\r\n",
+				"build": "B4",
+				"name": "奚XX",
+				"company": "孵化基地",
+				"type": "员工",
+				"userId": "108114",
+				"lat": "31.12783853969188\r\n",
+				"direction": "出"
+			}, {
+				"imgUrl": "../img/static/image/person/personInfo18.jpg",
+				"date": "2018-09-25 16:07:57",
+				"address": "B4大厅/3通道出",
+				"lng": "121.53184617889343\r\n",
+				"build": "B4",
+				"name": "张XX",
+				"company": "理想集团",
+				"type": "员工",
+				"userId": "1243",
+				"lat": "31.12783853969188\r\n",
+				"direction": "出"
+			}],
+			"message": "请求成功",
+			"subcode": 0
+		}
+	},
+	"getEmployee": {
+		"105367": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 5
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:34:18",
+					"address": "园区B4正门右侧通道2-出",
+					"lng": "121.53184617889343\r\n",
+					"lat": "31.12783853969188\r\n",
+					"direction": "出"
+				}, {
+					"date": "2018-09-25 11:35:15",
+					"address": "园区北大门-西入口",
+					"lng": "121.53141996556963\r\n",
+					"lat": "31.131416332341786\r\n",
+					"direction": "进"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo13.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "金XX",
+					"company": "集 号百",
+					"stopTime": 5,
+					"id": "105367",
+					"transport": "未知",
+					"department": "电信传媒事业部",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"103465": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 0
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:19:20",
+					"address": "园区B4地下一层南电梯通道1-出",
+					"lng": "121.53184617889343\r\n",
+					"lat": "31.12783853969188\r\n",
+					"direction": "出"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo15.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "朱XX",
+					"company": "理想集团",
+					"stopTime": "",
+					"id": "103465",
+					"transport": "未知",
+					"department": "软件二部",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"102991": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 0
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:19:18",
+					"address": "园区B4地下一层南电梯通道1-出",
+					"lng": "121.53184617889343\r\n",
+					"lat": "31.12783853969188\r\n",
+					"direction": "出"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo16.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "王XX",
+					"company": "理想集团",
+					"stopTime": "",
+					"id": "102991",
+					"transport": "未知",
+					"department": "总部",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"108114": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 6
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:14:39",
+					"address": "园区B4地下一层南电梯通道1-出",
+					"lng": "121.53184617889343\r\n",
+					"lat": "31.12783853969188\r\n",
+					"direction": "出"
+				}, {
+					"date": "2018-09-25 10:17:21",
+					"address": "园区B7正门门卫亭柱子-入",
+					"lng": "121.53283736758459\r\n",
+					"lat": "31.12559354944227\r\n",
+					"direction": "进"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo17.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "奚XX",
+					"company": "孵化基地",
+					"stopTime": 6,
+					"id": "108114",
+					"transport": "未知",
+					"department": "上海易可智联信息科技有限责任公司",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"1243": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 0
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:07:57",
+					"address": "B4大厅/3通道出",
+					"lng": "121.53184617889343\r\n",
+					"lat": "31.12783853969188\r\n",
+					"direction": "出"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo18.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "张XX",
+					"company": "理想集团",
+					"stopTime": "",
+					"id": "1243",
+					"transport": "未知",
+					"department": "物业",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"104190": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 8
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 7
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:12:00",
+					"address": "园区北大门-东出口",
+					"lng": "121.5321583563977\r\n",
+					"lat": "31.131578628238586\r\n",
+					"direction": "出"
+				}, {
+					"date": "2018-09-25 12:10:10",
+					"address": "园区B4侧门通道1-出",
+					"lng": "121.53184617889343\r\n",
+					"lat": "31.12783853969188\r\n",
+					"direction": "出"
+				}, {
+					"date": "2018-09-25 11:00:01",
+					"address": "园区B4侧门通道1-出",
+					"lng": "121.53184617889343\r\n",
+					"lat": "31.12783853969188\r\n",
+					"direction": "出"
+				}, {
+					"date": "2018-09-25 08:44:39",
+					"address": "园区B4正门左侧通道1-入",
+					"lng": "121.53184617889343\r\n",
+					"lat": "31.12783853969188\r\n",
+					"direction": "进"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo01.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "刘XX",
+					"company": "理想集团",
+					"stopTime": 7,
+					"id": "104190",
+					"transport": "未知",
+					"department": "商务领航部",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 2,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"108028": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 8
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 0
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:11:10",
+					"address": "园区北大门-西入口",
+					"lng": "121.53141996556963\r\n",
+					"lat": "31.131416332341786\r\n",
+					"direction": "进"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo02.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "王XX",
+					"company": "总部门",
+					"stopTime": 0,
+					"id": "108028",
+					"transport": "未知",
+					"department": "集 中国电信上海NOC",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 2,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"105331": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 8
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:07:49",
+					"address": "园区北大门-东出口",
+					"lng": "121.5321583563977\r\n",
+					"lat": "31.131578628238586\r\n",
+					"direction": "出"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo03.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "肖XX",
+					"company": "集 号百",
+					"stopTime": 8,
+					"id": "105331",
+					"transport": "未知",
+					"department": "综合部",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"101543": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 15
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 0
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:06:50",
+					"address": "园区北大门-西入口",
+					"lng": "121.53141996556963\r\n",
+					"lat": "31.131416332341786\r\n",
+					"direction": "进"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo04.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "董XX",
+					"company": "总部门",
+					"stopTime": 0,
+					"id": "101543",
+					"transport": "未知",
+					"department": "集 中国电信上海NOC",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 2,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"100015": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 8
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:04:41",
+					"address": "园区北大门-东出口",
+					"lng": "121.5321583563977\r\n",
+					"lat": "31.131578628238586\r\n",
+					"direction": "出"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo05.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "仇XX",
+					"company": "总部门",
+					"stopTime": 8,
+					"id": "100015",
+					"transport": "未知",
+					"department": "集 中国电信上海NOC",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"104764": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 8
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 16:04:06",
+					"address": "园区北大门-东出口",
+					"lng": "121.5321583563977\r\n",
+					"lat": "31.131578628238586\r\n",
+					"direction": "出"
+				}, {
+					"date": "2018-09-25 15:40:39",
+					"address": "园区B15-a正门右侧墙壁-出",
+					"lng": "121.53399304232113\r\n",
+					"lat": "31.128239736738323\r\n",
+					"direction": "出"
+				}, {
+					"date": "2018-09-25 15:39:32",
+					"address": "园区B15-a正门右侧墙壁-出",
+					"lng": "121.53399304232113\r\n",
+					"lat": "31.128239736738323\r\n",
+					"direction": "出"
+				}, {
+					"date": "2018-09-25 14:18:35",
+					"address": "园区B15-a正门右侧墙壁-出",
+					"lng": "121.53399304232113\r\n",
+					"lat": "31.128239736738323\r\n",
+					"direction": "出"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo06.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "黄XX",
+					"company": "理想集团",
+					"stopTime": 8,
+					"id": "104764",
+					"transport": "未知",
+					"department": "软件一部",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"101440": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 0
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 15:28:37",
+					"address": "园区B3地下一层车库出口-出",
+					"lng": "121.53160979472995\r\n",
+					"lat": "31.128400406765138\r\n",
+					"direction": "出"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo07.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "孙XX",
+					"company": "沪 信息园区开发建设部",
+					"stopTime": "",
+					"id": "101440",
+					"transport": "未知",
+					"department": "驾驶班",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"105885": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 1
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 15:13:09",
+					"address": "园区B3正门右侧通道-入",
+					"lng": "121.53160979472995\r\n",
+					"lat": "31.128400406765138\r\n",
+					"direction": "进"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo09.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "张XX",
+					"company": "国安中心",
+					"stopTime": 1,
+					"id": "105885",
+					"transport": "未知",
+					"department": "技术处",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"109534": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 4
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 15:13:08",
+					"address": "园区B3正门右侧通道-入",
+					"lng": "121.53160979472995\r\n",
+					"lat": "31.128400406765138\r\n",
+					"direction": "进"
+				}, {
+					"date": "2018-09-25 12:12:07",
+					"address": "园区B7正门门卫亭柱子-入",
+					"lng": "121.53283736758459\r\n",
+					"lat": "31.12559354944227\r\n",
+					"direction": "进"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo10.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "崔XX",
+					"company": "",
+					"stopTime": 4,
+					"id": "109534",
+					"transport": "未知",
+					"department": "MSS项目组",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"107287": {
+			"code": 200,
+			"data": {
+				"duration": [{
+					"date": "2018-09-24 00:00:00",
+					"time": 0
+				}, {
+					"date": "2018-09-25 00:00:00",
+					"time": 5
+				}],
+				"trajectory": [{
+					"date": "2018-09-25 15:12:43",
+					"address": "园区B3正门右侧立杆-出",
+					"lng": "121.53160979472995\r\n",
+					"lat": "31.128400406765138\r\n",
+					"direction": "出"
+				}, {
+					"date": "2018-09-25 11:10:58",
+					"address": "园区北大门-西入口",
+					"lng": "121.53141996556963\r\n",
+					"lat": "31.131416332341786\r\n",
+					"direction": "进"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo11.jpg",
+					"gender": "",
+					"phone": "",
+					"name": "夏XX",
+					"company": "理想集团",
+					"stopTime": 5,
+					"id": "107287",
+					"transport": "未知",
+					"department": "软件二部",
+					"type": "员工"
+				},
+				"frequency": [{
+					"times": 1,
+					"percent": 100
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		}
+	},
+	"vistor": {
+		"1164457": {
+			"code": 200,
+			"data": {
+				"viewerInfo": {
+					"imgUrl": "../img/static/image/person/personInfo.jpg",
+					"gender": "",
+					"phone": "18918807555",
+					"name": "杨XX",
+					"company": "软件二部",
+					"id": "103456",
+					"department": "业务",
+					"type": "员工"
+				},
+				"trajectory": [{
+					"date": "2018-09-25 16:29:36",
+					"address": "园区B4地下一层南电梯通道3-出",
+					"lng": "121.53184617889343\r\n",
+					"id": "",
+					"lat": "31.12783853969188\r\n",
+					"direction": "出"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo14.jpg",
+					"reason": "业务",
+					"gender": "",
+					"phone": "18817718444",
+					"name": "何XX",
+					"company": "个人",
+					"id": "1164457",
+					"type": "访客"
+				},
+				"frequency": [{
+					"date": "4",
+					"times": "1"
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"1029897": {
+			"code": 200,
+			"data": {
+				"viewerInfo": {
+					"imgUrl": "",
+					"gender": "",
+					"phone": "50881444",
+					"name": "王XX",
+					"company": "沪 信网@IDC维护中心",
+					"id": "105817",
+					"department": "业务",
+					"type": "员工"
+				},
+				"trajectory": [{
+					"date": "2018-09-25 15:17:43",
+					"address": "园区B3正门右侧通道-入",
+					"lng": "121.53160979472995\r\n",
+					"id": "",
+					"lat": "31.128400406765138\r\n",
+					"direction": "进"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo08.jpg",
+					"reason": "业务",
+					"gender": "",
+					"phone": "13917227333",
+					"name": "赵XX",
+					"company": "个人",
+					"id": "1029897",
+					"type": "访客"
+				},
+				"frequency": [{
+					"date": "4",
+					"times": "1"
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		},
+		"1165335": {
+			"code": 200,
+			"data": {
+				"viewerInfo": {
+					"imgUrl": "",
+					"gender": "",
+					"phone": "18918588222",
+					"name": "张XX",
+					"company": "总部门@集 号百@信息订制部",
+					"id": "105823",
+					"department": "业务",
+					"type": "员工"
+				},
+				"trajectory": [{
+					"date": "2018-09-25 15:12:43",
+					"address": "园区B3正门右侧立杆-出",
+					"lng": "121.53160979472995\r\n",
+					"id": "",
+					"lat": "31.128400406765138\r\n",
+					"direction": "出"
+				}],
+				"info": {
+					"imgUrl": "../img/static/image/person/personInfo12.jpg",
+					"reason": "业务",
+					"gender": "",
+					"phone": "18720628111",
+					"name": "黄XX",
+					"company": "个人",
+					"id": "1165335",
+					"type": "访客"
+				},
+				"frequency": [{
+					"date": "4",
+					"times": "1"
+				}]
+			},
+			"message": "请求成功",
+			"subcode": 0
+		}
+	}
+}

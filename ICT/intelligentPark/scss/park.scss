@@ -1,0 +1,1122 @@
+@charset "UTF-8";
+@import "style.scss";
+html {
+    -webkit-text-size-adjust: none;
+}
+
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+
+.waveWrapper {
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+}
+
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+
+.bgBottom {
+    z-index: 5;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.waveTop {
+    background-size: 50% 60px;
+}
+
+.waveAnimation .waveTop {
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.waveMiddle {
+    background-size: 50% 60px;
+}
+
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+
+.waveBottom {
+    background-size: 50% 60px;
+}
+
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+
+section {
+    padding: $scaleH*45 $scaleW*30 $scaleW*30;
+    box-sizing: border-box;
+    .con-left-box {
+        width: $scaleW*750;
+    }
+    .con-right-box {
+        width: $scaleW*1100;
+    }
+    article {
+        //      display: inline-block;
+        box-sizing: border-box;
+        float: left;
+        //柱形图
+        .cube-wapper {
+            transform-style: preserve-3d;
+            position: relative;
+            width: $scaleW*35;
+            height: $scaleH*170;
+            transform: rotateX(-30deg) rotateY(45deg);
+            display: inline-block;
+            margin-right: $scaleW*20;
+        }
+        .cube-box {
+            transform-style: preserve-3d;
+            width: 20px;
+            height: 120px;
+            position: absolute;
+            bottom: 0;
+        }
+        .cube {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        //      .cube1 {
+        //          width: 100%;
+        //          height: 100%;
+        //          /*background: red;*/
+        //          background: #5FAAC1;
+        //          transform-origin: left top;
+        //          transform: rotateY(-90deg);
+        //      }
+        .cube2 {
+            width: 100%;
+            height: 100%;
+            /*background: green;*/
+            background: rgba(95, 170, 193, 0.4);
+            transform-origin: left top;
+            transform: rotateY(-90deg);
+        }
+        .cube21 {
+            width: 100%;
+            height: 80%;
+            background: #5FAAC1;
+        }
+        //      .cube3 {
+        //          width: 100%;
+        //          height: 100%;
+        //          /*background: blue;*/
+        //          background: #5FAAC1;
+        //          transform-origin: left top;
+        //          transform: rotateY(-90deg);
+        //          transform-origin: right top;
+        //          transform: rotateY(90deg);
+        //      }
+        .cube4 {
+            width: 100%;
+            height: 100%;
+            /*background: gray;*/
+            background: rgba(112, 201, 229, 0.4);
+            transform-origin: left top;
+            transform: rotateY(-90deg);
+            transform-origin: right top;
+            transform: translateZ(20px);
+        }
+        .cube41 {
+            width: 100%;
+            height: 80%;
+            /*background: gray;*/
+            background: #70C9E5;
+        }
+        .cube5 {
+            width: 100%;
+            padding-top: 100%;
+            background: rgba(119, 210, 255, 0.4);
+            transform-origin: left top;
+            transform: rotateX(90deg);
+        }
+        .cube51 {
+            width: 100%;
+            padding-top: 100%;
+            background: #77D2FF;
+            transform-origin: left top;
+            transform: rotateX(90deg);
+        }
+        .con-top-right-2 .underheight {
+            height: 0%;
+        }
+        .con-top-right-2 .undercubedata {
+            position: absolute;
+            top: 100%;
+        }
+        .con-top-right-2 .innerheight {
+            height: 0%;
+        }
+        .con-top-right-2 .innercubedata {
+            position: absolute;
+            top: 100%;
+        }
+//      .data-b4 .underheight {
+//          height: 0%;
+//      }
+//      .data-b4 .undercubedata {
+//          position: absolute;
+//          top: 100%;
+//      }
+//      .data-b4 .innerheight {
+//          height: 0%;
+//      }
+//      .data-b4 .innercubedata {
+//          position: absolute;
+//          top: 100%;
+//      }
+        //      .cube6 {
+        //          width: 100%;
+        //          padding-top: 100%;
+        //          background: #5FAAC1;
+        //          opacity: 0;
+        //          top: inherit;
+        //          bottom: 0;
+        //          transform-origin: left bottom;
+        //          transform: rotateX(-90deg);
+        //      }
+    }
+    article.con-top-left-box {
+        div {
+            float: left;
+            position: relative;
+            width: $scaleW*176;
+            height: $scaleH*220;
+            background-color: rgba(54, 140, 255, 0.1);
+            border: 1px solid rgb(54, 140, 255);
+            margin-right: $scaleW*30;
+            margin-left: $scaleW*24;
+            padding: $scaleH*20 $scaleW*15;
+            box-sizing: border-box;
+            .con-top-left-title {
+                display: block;
+                box-sizing: border-box;
+                position: absolute;
+                top: 1px;
+                left: $scaleW*-24;
+                width: $scaleW*30;
+                height: $scaleH*52;
+                line-height: $scaleH*22;
+                z-index: -1;
+                background: url(../img/park-bg-top-1.png) no-repeat;
+                background-size: 100% 100%;
+                font-size: $scaleH*12;
+                color: #fff;
+                padding: $scaleH*5 $scaleW*5;
+                -webkit-transform: scale(0.8);
+            }
+            span {
+                display: inline-block;
+                font-size: $scaleH*14;
+                color: #C6D8FF;
+                width: 100%;
+                padding-left: $scaleW*10;
+                em {
+                    font-size: $scaleH*40;
+                    margin-left: $scaleW*5;
+                }
+            }
+            .con-top-left-1 {
+                height: $scaleH*46;
+                font-size: $scaleH*20;
+                color: #C6D8FF;
+                background: url(../img/park-bg-top-2.png) no-repeat $scaleW*10 bottom;
+            }
+            .con-top-left {
+                padding-top: $scaleH*15;
+                padding-bottom: $scaleH*20;
+                em {
+                    color: #7BFFFF;
+                }
+            }
+            .con-top-left-2 {
+                border-bottom: 1px solid #2E3870;
+                //              em {
+                //                  color: #7BFFFF;
+                //              }
+            }
+            .con-top-left-3 em {
+                color: #69F822;
+            }
+            .con-top-twoin {
+                padding-left: 0;
+                .con-top-left {
+                    box-sizing: border-box;
+                    padding-top: $scaleH*8;
+                    padding-bottom: 0;
+                    em {
+                        font-size: $scaleH*26;
+                    }
+                }
+                .con-top-left-2 {
+                    box-sizing: border-box;
+                    padding-bottom: $scaleH*10;
+                }
+            }
+        }
+    }
+    article.con-top-right-box {
+        height: $scaleH*220;
+        div {
+            float: left;
+        }
+        div:nth-child {
+            height: $scaleH*220;
+        }
+        .con-top-right-1 {
+            font-size: $scaleH*16;
+            color: #C6D8FF;
+            width: 15%;
+//          height: 10%;
+            span {
+                display: block;
+                width: $scaleW*161;
+                text-align: center;
+            }
+            //           :nth-child(2) {
+            //              margin-top: $scaleH*20;
+            //              height: $scaleH*161;
+            //              line-height: $scaleH*161;
+            //              background: url(../img/park-bg-top-3.png) no-repeat center center;
+            //              background-size: contain;
+            //              font-size: $scaleH*50;
+            //              text-align: center;
+            //              em {
+            //                  font-size: $scaleH*20;
+            //              }
+            //          }
+            .boxdtai {
+                width: $scaleW*140;
+                height: $scaleW*140;
+                float: left;
+            }
+            .boxkuang2 {
+                background: url(../img/c_bg6.png) center no-repeat;
+                background-size: 100% 100%;
+                width: $scaleW*132;
+                height: $scaleW*132;
+                float: left;
+                position: absolute;
+            }
+            .boxkuang3 {
+                width: $scaleW*90;
+                height: $scaleW*90;
+                float: left;
+                overflow: hidden;
+                border-radius: 100%;
+                margin: $scaleH*24 0 0 $scaleH*24;
+                position: relative;
+            }
+            .boxkuang4 {
+                width: $scaleW*90;
+                height: $scaleW*90;
+                float: left;
+                color: #fff;
+                text-align: center;
+                font-size: $scaleH*30;
+                position: absolute;
+                margin: $scaleH*24 0 0 $scaleH*24;
+                line-height: $scaleW*90;
+                z-index: 999;
+            }
+            .boxkuang4 em {
+                font-size: $scaleH*16;
+            }
+            .boxdtai .boxhuan {
+                border-radius: 100%;
+                overflow: hidden;
+            }
+        }
+        .park-js-right{
+            width: 85%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            .btn-next{
+                position: absolute;
+                display: block;
+                width: $scaleW*40;
+                height: $scaleW*40;
+                background: url(../img/icon/icon-next.png) center center;
+                background-size: 100% 100%;
+                right:0;
+                top: 50%;
+                margin-top: -$scaleW*20;
+                cursor: pointer;
+            }
+        }
+        .con-top-right-2 {
+            margin-left: $scaleW*30;
+            height: 100%;
+            .top-right-b3 {
+                width: $scaleW*74;
+                margin-left: $scaleW*40;
+                margin-right: $scaleW*10;
+                text-align: center;
+                img {
+                    display: block;
+                    width: $scaleW*74;
+                    height: $scaleH*74;
+                    margin-top: $scaleH*40;
+                    margin-bottom: $scaleH*15;
+                }
+                em {
+                    font-size: $scaleH*16;
+                    color: #C6D8FF;
+                    white-space: nowrap;
+                }
+            }
+            .top-right-tubiao {
+                position: relative;
+                width: $scaleW*255;
+                background: url(../img/park-bg-top-4.png) no-repeat center bottom;
+                background-size: contain;
+                text-align: center;
+                span {
+                    font-size: $scaleH*14;
+                    color: #C6D8FF;
+                    display: inline-block;
+                    width: $scaleW*30;
+                    em {
+                        font-size: $scaleH*28;
+                        color: #F5FB00;
+                        margin-top: $scaleH*15;
+                        display: inline-block;
+                    }
+                }
+                div {
+                    float: none;
+                }
+                .top-right-txt {
+                    position: absolute;
+                    top: $scaleH*20;
+                    width: $scaleW*40.5;
+                    line-height: $scaleH*20;
+                    -webkit-transform: scale(0.8);
+                }
+                .top-right-dimian {
+                    left: 0;
+                }
+                .top-right-dixia {
+                    right: 0;
+                }
+                .top-right-zhuxingtu {
+                    height: $scaleH*185;
+                    //                  margin-bottom: $scaleH*15;
+                }
+            }
+        }
+    }
+    article.con-bottom-left-box {
+        h4 {
+            font-size: $scaleH*16;
+            color: #C6D8FF;
+            margin-top: $scaleH*35;
+        }
+        .changeTitle {
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            margin-left: 14px;
+        }
+        .changeTitle li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.6);
+            margin-left: 6px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .changeTitle li.active {
+            background: rgba(255, 255, 255, 1);
+        }
+        .con-park-carcount {
+            width: $scaleW*195;
+            height: $scaleH*50;
+            background: url(../img/park-bg-bottom-1.png) no-repeat;
+            background-size: contain;
+            float: left;
+            margin: $scaleH*40 0 $scaleH*5 $scaleW*30;
+            text-align: center;
+            line-height: $scaleH*50;
+            font-size: $scaleH*24;
+            color: #30C5FF;
+            padding-left: $scaleW*24;
+            box-sizing: border-box;
+            span {
+                float: left;
+            }
+            em {
+                font-size: $scaleH*14;
+                margin-left: $scaleW*10;
+            }
+            .con-park-carcount-info {
+                display: block;
+                width: $scaleW*46;
+                font-size: $scaleH*18;
+                color: #0ACCC6;
+                margin-left: $scaleW*18;
+                line-height: $scaleH*25;
+                -webkit-transform: scale(0.8);
+            }
+            .ml_43 {
+                margin-left: $scaleW*43;
+            }
+        }
+        .con-park-carinfo {
+            //          display: inline-block;
+            float: left;
+            width: 45%;
+            height: $scaleH*360;
+            margin-top: $scaleH*20;
+            text-align: center;
+            position: relative;
+            h3 {
+                width: $scaleW*120;
+                height: $scaleH*30;
+                font-size: $scaleH*16;
+                color: #C6D8FF;
+                background: url(../img/canteen-bg8.png) no-repeat;
+                background-size: 100% 100%;
+                line-height: $scaleH*30;
+                margin: 0 auto;
+            }
+            .issue1-table {
+                background-color: rgba(97, 70, 152, 0.1);
+                width: 96%;
+                height: 92%;
+                //              padding: 15px 20px;
+                box-sizing: border-box;
+                table {
+                    width: 105%;
+                    -webkit-transform: scale(0.85);
+                    white-space: nowrap;
+                    margin-left: -0.8vw;
+                    tr.datalist:hover {
+                        background: rgba(54, 140, 255, 0.2);
+                        border: 1px solid #368CFF;
+                        box-shadow: rgba(0, 0, 0, 0.3) 6.5px 6.5px 5px 5px; //边框阴影
+                    }
+                }
+            }
+            table {
+                width: 100%;
+                height: 100%;
+                //              font-size: $scaleH*80;
+                //              -webkit-transform:scale(0.1);
+                //              white-space: nowrap;
+                font-size: $scaleH*12;
+                color: #C7CDE0;
+                tr th {
+                    color: #A6D8FF;
+                    font-size: $scaleH*14;
+                    font-weight: bolder;
+                    padding-bottom: $scaleH*10;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+                tr td {
+                    line-height: $scaleH*28;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+            }
+        }
+        .con-park-carcslist {
+            .issue1-table table {
+                -webkit-transform: scale(0.85);
+                white-space: nowrap;
+            }
+            .issue1-table table tr th {
+                font-size: $scaleH*18;
+            }
+            .issue1-table table tr td {
+                font-size: $scaleH*18;
+                height: $scaleH*58;
+            }
+        }
+        .con-park-carwtchart,
+        .con-park-carcs {
+            .con-park-carchart {
+                width: 96%;
+                height: 92%;
+                //              padding: 15px 20px;
+                box-sizing: border-box;
+                table {
+                    tr th,
+                    tr td {
+                        font-size: $scaleH*20;
+                    }
+                }
+            }
+            table {
+                width: 100%;
+                tr th,
+                tr td {
+                    text-align: left;
+                    height: 100%;
+                    line-height: none;
+                    color: #95BBC1;
+                    -webkit-transform: scale(0.8);
+                    white-space: nowrap;
+                }
+                tr th:first-of-type,
+                tr td:first-of-type {
+                    width: 52%;
+                }
+                tr {
+                    height: $scaleH*40;
+                    border-collapse: separate;
+                    border-spacing: 0px 5px;
+                    .jindubg {
+                        width: 90%;
+                        height: $scaleH*13;
+                        border-radius: $scaleH*13;
+                        padding-top: $scaleH*3;
+                        padding-left: $scaleH*3;
+                        background: #11233D;
+                    }
+                    .jindu {
+                        width: 90%;
+                        height: $scaleH*10;
+                        border-radius: $scaleH*10;
+                        background: #008EE9;
+                    }
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    .picturebg {
+                        width: $scaleW*36;
+                        height: $scaleW*36;
+                        border-radius: 50%;
+                        background: #26486D;
+                        padding: $scaleW*5;
+                    }
+                    .picture {
+                        width: $scaleW*26;
+                        height: $scaleW*26;
+                        border-radius: 50%;
+                        background: #65CCF8;
+                        padding: $scaleW*5;
+                        overflow: hidden;
+                        img {
+                            width: $scaleW*38;
+                            height: $scaleW*50;
+                            margin-left: $scaleW*-6;
+                            margin-top: $scaleW*-6;
+                        }
+                    }
+                    .pictureinfo {
+                        display: inline-block;
+                        margin-left: $scaleW*6;
+                        height: $scaleH*40;
+                        padding-top: $scaleH*10;
+                        em {
+                            color: #00E7E9;
+                        }
+                    }
+                }
+                tr td.active {
+                    .picturebg {
+                        background: #701F56;
+                    }
+                    .picture {
+                        background: #B12D5E;
+                    }
+                    .pictureinfo {
+                        background: url(../img/park-bg-wtinfo.png) no-repeat;
+                        background-size: 100% 100%;
+                        color: #FFDBE0;
+                        em {
+                            color: #FF2D4B;
+                        }
+                    }
+                }
+            }
+        }
+        .con-park-carcs {
+            table tr td {
+                .jindu {
+                    background: #CE752C;
+                }
+                .picturebg {
+                    background: #4C4823;
+                }
+                .picture {
+                    background: #C49A30;
+                }
+            }
+        }
+        .con-park-carwtinfo,
+        .con-park-carcsinfo {
+            .carinfo-table {
+                background-color: rgba(97, 70, 152, 0.1);
+                width: 96%;
+                height: 92%;
+                //              padding: $scaleH*15 $scaleW*20;
+                padding-top: $scaleH*15;
+                box-sizing: border-box;
+            }
+            .tablec1 {
+                width: 100%;
+                height: 43%;
+                float: left;
+            }
+            .tablec1 table {
+                width: 100%;
+                color: #fff;
+                font-size: $scaleH*14;
+            }
+            .tablec1 table tr th,
+            .tablec1 table tr td {
+                color: #fff;
+                width: 42%;
+                margin-bottom: 5px;
+                font-size: $scaleH*20;
+                -webkit-transform: scale(0.7);
+                white-space: nowrap;
+            }
+            .tablec1 table tr th:first-of-type,
+            .tablec1 table tr td:first-of-type {
+                width: 58%;
+                margin-left: -1vw;
+            }
+            .tablec1 table tr th {
+                float: left;
+                height: $scaleH*20;
+                width: 42%;
+                line-height: $scaleH*20;
+            }
+            .tablec1 table tr td {
+                float: left;
+                height: $scaleH*20;
+                width: 42%;
+                text-align: left;
+            }
+            .tablec1 table tr .tablet1 {
+                font-size: $scaleH*20;
+                float: left;
+            }
+            .tablec1 table tr .tablet2 {
+                color: #c7cde0;
+                text-align: right;
+                float: right;
+                margin-right: 2em;
+            }
+            .tablec1 table tr th i {
+                display: inline-block;
+                height: $scaleH*40;
+                width: 100%;
+                color: #a7d7ff;
+                line-height: $scaleH*40;
+                font-style: normal;
+                text-align: right;
+                padding-right: 0.6vw;
+                box-sizing: border-box;
+            }
+            .tablec1 table tr th .tableic1 {
+                background: url(../img/park-bg-bottom-5.png) right top no-repeat;
+                background-size: 100% 100%;
+            }
+            .tablec1 table tr th .tableic2 {
+                background: url(../img/park-bg-bottom-3.png) right top no-repeat;
+                background-size: 100% 100%;
+            }
+            .topbox_tul1 {
+                width: 100%;
+                height: 42%;
+                float: left;
+                overflow: hidden;
+                position: relative;
+                //              margin-top: 1.5vh;
+            }
+            .topbox_tul1 .stimg {
+                width: 80%;
+                height: 100%;
+                padding: 10px;
+                background: rgba(54, 140, 255, 0.1);
+                margin: 0 auto;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+            .topbox_tul1 .stimg img {
+                width: 100%;
+                height: 100%;
+            }
+            .topbox_tul1 .stimg a {
+                background: url(../img/park-bg-bottom-10.png) center no-repeat;
+                width: 17px;
+                height: 20px;
+                position: absolute;
+                right: 4%;
+                bottom: 10px;
+            }
+            .topbox_tul1 ul {
+                padding: 0;
+                height: 122%;
+                margin: 0;
+                list-style-type: none;
+                overflow: scroll;
+                width: 100%;
+                float: left;
+            }
+            .topbox_tul1 ul li:first-of-type {
+                background: url(../img/park-bg-bottom-8.png) top left no-repeat;
+            }
+            .topbox_tul1 ul li:first-of-type p {
+                font-size: $scaleH*20;
+                color: #fff;
+                margin-top: 0;
+            }
+            .topbox_tul1 ul li {
+                background: url(../img/park-bg-bottom-9.png) top left no-repeat;
+                width: 100%;
+                height: $scaleH*48;
+                text-align: left;
+                -webkit-transform: scale(0.75);
+                white-space: nowrap;
+                margin-left: -1vw;
+            }
+            .topbox_tul1 ul li p,
+            .topbox_tul1 ul li span {
+                margin-left: 10%;
+                width: 90%;
+                float: left;
+                color: #cecece;
+                font-size: $scaleH*18;
+                height: $scaleH*26;
+                line-height: $scaleH*26;
+            }
+            .topbox_tul1 ul li p {
+                margin-top: $scaleH*2;
+            }
+            .topbox_tul1 ul li p i {
+                width: $scaleW*16;
+                height: $scaleH*24;
+                margin-left: 5px;
+                display: inline-block;
+            }
+            .topbox_tul1 ul li p .tul1_i1 {
+                background: url(../img/park-bottom-icon1.png) center no-repeat;
+            }
+            .topbox_tul1 ul li p .tul1_i2 {
+                background: url(../img/park-bottom-icon2.png) center no-repeat;
+            }
+            .topbox_tul1 ul::-webkit-scrollbar {
+                width: $scaleW*10;
+            }
+            .topbox_tul1 ul::-webkit-scrollbar-button {}
+            .topbox_tul1 ul::-webkit-scrollbar-track {
+                background: #2097b2;
+            }
+            .topbox_tul1 ul::-webkit-scrollbar-track-piece {
+                background: #a1c6dc;
+                width: $scaleW*10;
+            }
+            .topbox_tul1 ul::-webkit-scrollbar-thumb {
+                background: #62b8d8;
+                width: 6px;
+                margin: 0 2px;
+            }
+            .topbox_tul1 ul::-webkit-scrollbar-corner {
+                background: #2097b2;
+            }
+            .topbox_tul1 ul::-webkit-resizer {
+                background: #2097b2;
+            }
+            .topbox_tul2 {
+                width: 100%;
+                float: left;
+                margin-top: 1vh;
+            }
+            .topbox_tul2 a {
+                float: right;
+                background: url(../img/park-bg-bottom-4.png) center no-repeat;
+                background-size: 100% 100%;
+                line-height: $scaleH*30;
+                font-size: $scaleH*14;
+                width: $scaleW*68;
+                height: $scaleH*30;
+                text-align: center;
+                color: #61c6e9;
+                margin-left: $scaleH*20;
+                text-decoration: none;
+                margin-right: 0.5vw;
+            }
+        }
+        .con-park-carcsinfo .topbox_tul1 {
+            //          margin-top: -0.5vh;
+            -webkit-transform: scale(0.7);
+            height: 49%;
+            margin-top: -1vh;
+            margin-bottom: -1vh;
+            .stimg {
+                float: right;
+                width: 55%;
+            }
+        }
+    }
+    .searchbox {
+        float: right;
+        .searchipt {
+            float: left;
+            width: $scaleW*400;
+            height: $scaleH*50;
+            background: rgba(132, 156, 255, 0.2);
+            border: 0;
+            color: #A3C7FF;
+            font-size: $scaleH*16;
+            padding-left: $scaleW*20;
+        }
+        .searchbtn {
+            display: block;
+            float: left;
+            width: $scaleW*60;
+            height: $scaleH*50;
+            background: rgba(139, 198, 195, 0.2);
+            border-left: 1px solid #0B8BD1;
+            text-align: center;
+            cursor: pointer;
+            .searchicon {
+                display: inline-block;
+                width: $scaleW*30;
+                height: $scaleW*40;
+                background: url(../img/icon/icon-searchbtn.png) center no-repeat;
+                background-size: 90% 90%;
+                vertical-align: middle;
+            }
+        }
+    }
+    .con-right-box {
+        .trail {
+            position: absolute;
+            left: 70%;
+            top: 10%;
+            width: $scaleW*350;
+            height: $scaleH*400;
+            background-color: rgba(23, 26, 54, 0.8);
+            .title {
+                height: $scaleH*40;
+                background: url(../img/park-bg-bottom-20.png) no-repeat;
+                background-position: center;
+                text-align: center;
+                h3 {
+                    color: white;
+                    padding-top: 3%;
+                }
+            }
+            .table {
+                height: $scaleH*316;
+                table,
+                th,
+                td {
+                    color: white;
+                }
+                table {
+                    width: 100%;
+                    margin-bottom: $scaleH*5;
+                }
+                .trailTableList {
+                    height:$scaleH*220;
+                    display: block;
+                    overflow-y: scroll;
+                    tr{
+                        width: 100%;
+                    }
+                    .datalist:hover{
+                        border: 1px solid rgb(54,140,255);
+                        background: rgba(54,140,255,0.1);
+                    }
+                }
+                th {
+                    color: rgb(166, 216, 255);
+                }
+                th,
+                td {
+                    height: $scaleH*40;
+                    text-align: center;
+                    vertical-align: middle;
+                    padding: $scaleH*3;
+                    font-size: $scaleH*15;
+                }
+            }
+            .table.table1 {
+               height: $scaleH*70; 
+               td {
+                    height: $scaleH*25;
+                }
+                .tableic1{
+                    display: inline-block;
+                    height: $scaleH*40;
+                    width: 90%;
+                    color: #a7d7ff;
+                    line-height: $scaleH*40;
+                    font-style: normal;
+                    text-align: right;
+                    padding-right: 0.6vw;
+                    box-sizing: border-box;
+                    background: url(../img/park-bg-bottom-21.png) right top no-repeat;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+        .detail {
+            position: absolute;
+            left: 68%;
+            top: 80%;
+            width: $scaleW*480;
+            height: $scaleH*350;
+            background-color: rgba(23, 26, 54, 0.8);
+            margin-left: -$scaleW*480;
+            margin-top: -$scaleH*170;
+            overflow: hidden;
+            .video {
+                height: 90%;
+                img {
+                    display: block;
+                    width: 70%;
+                    margin: 0 auto;
+                }
+            }
+            .title {
+                height: $scaleH*40;
+                background: url(../img/park-bg-bottom-20.png) no-repeat;
+                background-position: center;
+                text-align: center;
+                h3 {
+                    color: white;
+                    padding-top: 2%;
+                }
+            }
+            .videoImage {
+                .table {
+                    height: $scaleH*50;
+                    table,
+                    th,
+                    td {
+                        color: white;
+                    }
+                    table {
+                        width: 100%;
+                        margin-bottom: $scaleH*5;
+                    }
+                    th,
+                    td {
+                        height: $scaleH*40;
+                        text-align: center;
+                        vertical-align: middle;
+                        padding: $scaleH*3;
+                        font-size: $scaleH*15;
+                    }
+                }
+                img {
+                    display: block;
+                    width: 70%;
+                    margin: 0 auto;
+                }
+                video {
+                    display: block;
+                    width: 70%;
+                    margin: 0 auto;
+                }
+            }
+            .image {
+                h3 {
+                    display: inline-block;
+                    color: rgb(168, 173, 186);
+                }
+                position: absolute;
+                top: $scaleH*90;
+                left: $scaleW*200;
+                float: right;
+                width: 55%;
+                height: $scaleH*225;
+                margin-bottom: $scaleH*10;
+                margin-right: $scaleW*30;
+                img {
+                    width: 100%;
+                }
+            }
+            .plate {
+                margin-top: 3%;
+                margin-left: 35%;
+                height: $scaleH*30;
+                width: $scaleW*90;
+                background: url(../img/park-bg-bottom-21.png) no-repeat;
+                background-size: 100% 100%;
+                span {
+                    display: block;
+                    color: rgb(166, 216, 255);
+                    text-align: center;
+                    line-height: $scaleH*30;
+                    font-size: $scaleH*15;
+                }
+            }
+            .text {
+                padding-left: $scaleW*18;
+                padding-top: $scaleH*18;
+                height: $scaleH*140;
+                color: white;
+                p {
+                    width: 50%;
+                    line-height: $scaleH*25;
+                    margin-top: $scaleH*20;
+                    font-size: $scaleH*15;
+                }
+            }
+        }
+         ::-webkit-scrollbar {
+            width: $scaleW*5;
+        }
+         ::-webkit-scrollbar-track {
+            border-radius: $scaleH*10;
+            background-color: rgb(77, 94, 105);
+        }
+         ::-webkit-scrollbar-thumb {
+            border-radius: $scaleH*10;
+            background-color: rgb(67, 147, 175);
+        }
+    }
+}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>企业视图</title>
+		<link rel="stylesheet" type="text/css" href="../css/company.css" />
+		<style type="text/css">
+			input::-webkit-input-placeholder {
+				/* WebKit browsers*/
+				color: #A3C7FF;
+			}
+			
+			input:-moz-placeholder {
+				/* Mozilla Firefox 4 to 18*/
+				color: #A3C7FF;
+			}
+			
+			input::-moz-placeholder {
+				/* Mozilla Firefox 19+*/
+				color: #A3C7FF;
+			}
+			
+			input:-ms-input-placeholder {
+				/* Internet Explorer 10+*/
+				color: #A3C7FF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header></header>
+		<section class="company-park" style="position: relative;float: left;width: 60%;height: 65%;z-index: 10;">
+			<article class="con-right-box con-top-right-box">
+				<div class="searchbox">
+					<input type="text" name="searchinfo" id="searchipt" class="searchipt" value="" placeholder="请输入车牌号" />
+					<span class="searchbtn" id="searchbtn"><i class="searchicon"></i></span>
+				</div>
+				<div class="con-top-right-2 con-top-right-last data-B4">
+					<div class="top-right-b3"><img src="../img/park-bg-top-B4.png" /><em>剩余车位</em></div>
+					<div class="top-right-tubiao">
+						<span class="top-right-txt top-right-dimian">地面剩余<em id="underCount"></em></span>
+						<div class="top-right-zhuxingtu chart-b4">
+							<div class="cube-wapper">
+								<div class="cube-box">
+									<div class="cube2 cube" style="background-color: rgba(37,81,37,0.4);">
+										<div class="cube21 underheight undercubedata" style="background-color: #255125;"></div>
+									</div>
+									<div class="cube4 cube" style="background-color: rgba(63,140,63,0.4);">
+										<div class="cube41 underheight undercubedata" style="background-color: #3F8C3F;"></div>
+									</div>
+									<div class="cube5 cube" style="background-color: rgba(79,178,84,0.4);"></div>
+									<div class="cube51 cube undercubedata" style="background-color: #4FB254;"></div>
+								</div>
+							</div>
+							<div class="cube-wapper">
+								<div class="cube-box">
+									<div class="cube2 cube">
+										<div class="cube21 innerheight innercubedata"></div>
+									</div>
+									<div class="cube4 cube">
+										<div class="cube41 innerheight innercubedata"></div>
+									</div>
+									<div class="cube5 cube"></div>
+									<div class="cube51 cube innercubedata"></div>
+								</div>
+							</div>
+						</div>
+						<span class="top-right-txt top-right-dixia">地下剩余<em id="innerCount"></em></span>
+					</div>
+				</div>
+				<div class="con-top-right-1">
+					<span>园区停车占比</span>
+					<div class="boxdtai">
+						<div class="boxkuang2"></div>
+						<div class="boxkuang3">
+							<div class="waveWrapper waveAnimation">
+								<div class="waveWrapperInner bgMiddle boxhuan">
+									<div class="wave waveMiddle" style="background-image: url('../img/wave-mid.png')"></div>
+								</div>
+								<div class="waveWrapperInner bgBottom boxhuan">
+									<div class="wave waveBottom " style="background-image: url('../img/wave-bot.png')"></div>
+								</div>
+							</div>
+						</div>
+						<div class="boxkuang4" id="parkcarpercent"></div>
+					</div>
+				</div>
+			</article>
+			<article class="con-right-box con-center-right-box">
+				<div style="width:100%;height:100%;">
+					<iframe src="" width="100%" height="100%" id="map"></iframe>
+				</div>
+				<div class="trail" style="display: none;">
+					<i class="btn-close"></i>
+					<div class="title">
+						<h3>车辆轨迹</h3>
+					</div>
+					<div class="table table1 trailTableTitle">
+						<table>
+							<tr>
+								<td><span class="tablet1"></span> <span></span></td>
+								<td><i class="tableic1"></i></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div class="table">
+						<table style="border-bottom: 2px solid rgb(54,140,255);">
+							<tr>
+								<th>时间</th>
+								<th>地点</th>
+							</tr>
+						</table>
+						<table style="border-top: 1px solid rgb(54,140,255);" class="trailTableList">
+							<tr>
+								<td style="height: 1px;"></td>
+								<td style="height: 1px;"></td>
+							</tr>
+							<tr class="datalist">
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="detail" style="display: none;">
+					<i class="btn-close"></i>
+					<div class="title">
+						<h3>视频监测</h3>
+					</div>
+					<div class="videoImage">
+						<div class="table">
+							<table>
+								<!--<tr>
+										<th>上南路进口</th>
+										<th>2018-05-23</th>
+										<th>291辆</th>
+									</tr>-->
+							</table>
+						</div>
+						<img src="" />
+					</div>
+					<!--<div class="title">
+      			<h3>车牌识别</h3>
+      		</div>
+      		<div class="text">
+      			<span style="font-size: 20px;">王国强</span>&nbsp;&nbsp;<em>18912748599</em>
+      			<p>
+					上海理想集团  软件一部<br/>
+					2018-04-28 13:03:16<br/>
+					超速速度：35码<br/>
+					累计超速次数：3次
+				</p>
+      		</div>
+      		<div class="image">
+      			<h3>车牌识别</h3><h3 style="float: right;color: white;">B4楼路面停车</h3>
+      			<img src="../img/park-bg-bottom-6.png"/>
+      			<div class="plate">
+      				<span>
+      					沪AKN888
+      				</span>
+      			</div>
+      		</div>-->
+					<!--<div class="title">
+      			<h3>车辆信息</h3>
+      		</div>
+      		<div class="text">
+      			<span style="font-size: 20px;">王国强</span>&nbsp;&nbsp;<em>18912748599</em>
+      			<p>
+					上海理想集团  软件一部<br/>
+					2018-04-28 13:03:16<br/>
+					超速速度：35码<br/>
+					累计超速次数：3次
+				</p>
+      		</div>
+      		<div class="image">
+      			<h3>实时视频</h3>
+      			<img src="../img/park-bg-bottom-6.png"/>
+      			<div class="plate">
+      				<span>
+      					沪AKN888
+      				</span>
+      			</div>
+      		</div>-->
+					<!--<div class="title">
+      			<h3>实时视频</h3>
+      		</div>
+      		<div class="video">
+      			<img src="../img/park-bg-bottom-7.png"/>
+      		</div>-->
+				</div>
+			</article>
+		</section>
+		<section class="company-person">
+			<article class="con-top-box con-top-right-box" style="overflow: hidden;">
+				<div class="company-person-worker">
+					<div class="con-top-right-bottom-title"><span>人员分析</span></div>
+					<div class="con-top-right con-top-right-top">
+						<div class="con-top-right-top-1">
+							<label id="person-build-in">进园区</label>
+							<span id="person-count-in"></span>
+						</div>
+						<div class="con-top-right-top-2">
+							<label id="person-build-out">出园区</label>
+							<span id="person-count-out"><!--<em>人</em>--></span>
+						</div>
+					</div>
+					<!--初始板块           开始-->
+					<div class="con-top-right con-top-right-center-index con_top_right_index">
+						<div class="con-top-right-center-1" id="person_traffic">
+						</div>
+						<div class="con-top-right-center-2" id="person_flow">
+						</div>
+					</div>
+				</div>
+				<div class="con-top-right con-top-right-bottom-index con_top_right_index">
+					<div class="con-top-right-bottom-title"><span>访客分析</span></div>
+					<div class="con-top-right-bottom-table visit-company" name="visit_company">
+						<h4 class="title">拜访公司（月）</h4>
+						<ul id="visit_company">
+						</ul>
+					</div>
+					<div class="con-top-right-bottom-table stay-time" id="stay_time" name="stay_time">
+						<h4 class="title">停留时长（月）</h4>
+						<div class="st-chart">
+							<div class="st">
+								<!--<div class="">
+									<div class="bg"></div>
+								</div>-->
+							</div>
+							<hr />
+						</div>
+						<div class="st-lenged">
+							<div class="avg">
+								<span class="avg-title">平均停留</span>
+								<span class="avg-content" id="stay_time_avg"><em>小时</em></span>
+							</div>
+						</div>
+					</div>
+					<div class="con-top-right-bottom-table return-visits" name="return_visits">
+						<h4 class="title">回访次数（月）</h4>
+						<div class="chart" id="return_visits"></div>
+					</div>
+					<!--<div class="con-top-right-bottom-table work-hours" id="work_hours">
+						<h4 class="title">累计工作时长（周）</h4>
+						<div class="wh-chart">
+							<div class="wh"></div>
+							<hr />
+						</div>
+						<div class="wh-lenged"></div>
+					</div>
+					<div class="con-top-right-bottom-table come-times" name="come_times" >
+						<h4 class="title">来园区频次（周）</h4>
+						<div class="chart" id="come_times"></div>
+					</div>
+					<div class="con-top-right-bottom-table" >
+						<h4 class="title">员工平均工作时长TOP5</h4>
+					</div>-->
+					<div class="con-top-right-bottom-fun" id="person_fun_next"></div>
+				</div>
+				<!--初始板块           结束-->
+				<!--员工板块           开始-->
+				<div class="con-top-right con-top-right-center-worker con_top_right_worker ">
+					<div class="con-top-right-center-worker-1">
+						<div class="title">人员分析</div>
+						<div class="content" id="worker_info">
+							<img src="" class="content-img" />
+							<div class="content-info">
+								<!--<p class="content-info-name">黎镇霆 <i>男</i></p>
+								<p class="content-info-hr"></p>
+								<p class="content-info-company">理想集团</p>
+								<p class="content-info-department">软件一部 B3楼401</p>
+								<p class="content-info-type">员工/黑名单</p>
+								<p class="content-info-phone">12321321321</p>
+								<p class="content-info-stay">停留时长：<em>6.5小时</em></p>
+								<p class="content-info-transport">入园交通：<em>班车</em></p>-->
+							</div>
+						</div>
+					</div>
+					<div class="con-top-right-center-worker-2">
+						<div class="title">今日轨迹</div>
+						<div class="content">
+							<table>
+								<thead>
+									<tr class="table-header">
+										<th>轨迹点</th>
+										<th>时间</th>
+										<th>地点</th>
+										<th>进出</th>
+									</tr>
+								</thead>
+								<tbody id="worker_trajectory"></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="con-top-right con-top-right-bottom-worker con_top_right_worker ">
+					<div class="con-top-right-bottom-worker-1">
+						<div class="title">来园区频次（周）</div>
+						<div class="content" id="worker_frequency"></div>
+					</div>
+					<div class="con-top-right-bottom-worker-2">
+						<div class="title">本周在园区时长</div>
+						<div class="content" id="worker_duration"></div>
+					</div>
+				</div>
+				<!--员工板块           结束-->
+				<!--访客板块           开始-->
+				<div class="con-top-right con-top-right-left-vistor con_top_right_vistor">
+					<div class="title">人员分析</div>
+					<div class="content" id="vist_info">
+						<div class="content-top">
+							<img class="content-top-img" />
+							<div class="content-top-info">
+								<!--<p class="content-info-name">黎镇霆<i>男</i></p>
+								<p class="content-info-hr"></p>
+								<p class="content-info-company">理想集团</p>
+								<p class="content-info-department">------</p>
+								<p class="content-info-type">员工/黑名单</p>
+								<p class="content-info-phone">12321321321</p>
+								<p class="content-info-reason">开会</p>
+								<p class="content-info-stay">停留时长：<em>6.5小时</em></p>-->
+							</div>
+						</div>
+						<hr />
+						<div class="content-bottom">
+							<div class="content-bottom-info">
+								<!--<p>被访问人信息</p>
+								<p class="content-info-name">黎镇霆 <i>男</i></p>
+								<p class="content-info-company">理想集团</p>
+								<p class="content-info-department">软件一部 B3楼401</p>
+								<p class="content-info-type">员工/黑名单</p>
+								<p class="content-info-phone">12321321321</p>-->
+							</div>
+							<!--<img src="" class="content-bottom-img" />-->
+						</div>
+					</div>
+				</div>
+				<div class="con-top-right con-top-right-right-vistor con_top_right_vistor">
+					<div class="content-top">
+						<div class="title">今日轨迹</div>
+						<div class="content">
+							<table>
+								<thead>
+									<tr class="table-header">
+										<th>轨迹点</th>
+										<th>时间</th>
+										<th>地点</th>
+										<th>进出</th>
+									</tr>
+								</thead>
+								<tbody id="vist_trajectory">
+									<!--<tr class="table-content">
+									    <td>1</td>
+									    <td>2018-06-21 00:00:00</td>
+									    <td>北门入口</td>
+									    <td>进</td>
+								  	</tr>-->
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="content-bottom">
+						<div class="title">回访次数（月）</div>
+						<div class="content" id="vist_frequency">
+						</div>
+					</div>
+				</div>
+				<!--访客板块           结束-->
+			</article>
+			<article class="con-bottom-box">
+				<div class="con-bottom-box-header">
+					<div id="return_all"><span>人员识别</span></div>
+					<div>
+						<ul id="people_recognition">
+							<li name="员工">
+								<span>员工</span><span class="num">0%</span>
+								<div class="chart">
+									<div></div>
+								</div>
+							</li>
+							<li name="访客">
+								<span>访客</span><span class="num">0%</span>
+								<div class="chart">
+									<div></div>
+								</div>
+							</li>
+							<li name="陌生人">
+								<span>备案</span><span class="num">0%</span>
+								<div class="chart">
+									<div></div>
+								</div>
+							</li>
+							<li name="黑名单">
+								<span>黑名单</span><span class="num">0%</span>
+								<div class="chart">
+									<div></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con-bottom-box-sider">
+					<div class="con-bottom-box-border" id="picture">
+						<!--<div class="con-bottom-box-item" name="" id="" userType="worker">
+							<img src="../img/person-bg-bottom-4.png" class="item-img"/>
+							<div class="item-info">
+								<p class="item-info-name">黎镇霆 <i class="icon-person-worker"></i></p>
+								<p class="item-info-company">理想集团</p>
+								<p class="item-info-date">2018-06-21 00:00:00</p>
+								<p class="item-info-palce">园区B3楼口出</p>
+								<i class="item-info-more"></i>
+							</div>
+						</div>-->
+					</div>
+					<div class="con-bottom-box-next" id="bottom_next"></div>
+				</div>
+			</article>
+		</section>
+		<script src="../lib/jQuery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/Echarts/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/company.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

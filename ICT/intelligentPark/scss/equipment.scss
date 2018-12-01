@@ -1,0 +1,799 @@
+@charset "UTF-8";
+@import "style.scss";
+html {
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    background: url(../img/equipment-bg.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+section {
+    padding: $scaleH*17 $scaleW*30 $scaleW*30;
+    box-sizing: border-box;
+    .con-left-box {
+        position: relative;
+        float: left;
+        width: $scaleW*1020;
+        height: $scaleH*957;
+        tabindex: "0";
+    }
+    .con-left-box-top {
+        width: 100%;
+    }
+    .fourDiv {
+        position: relative;
+        margin-left: $scaleW*20;
+        width: 20%;
+        display: inline-block;
+    }
+    .firstDiv {
+        padding-left: $scaleW*0;
+    }
+    .fourDivTitle {
+        text-align: center;
+        color: #58A8A6;
+    }
+    .fourDivTitle span {
+        display: inline-block;
+        font-size: $scaleH*22;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .fourDivContent {
+        position: relative;
+        margin-top: $scaleH*10;
+        width: 100%;
+        height: $scaleH*136;
+        text-align: center;
+        color: #8AFFFF;
+        background: url(../img/equipment-bg-left-top.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .fourDivContent .bigNum {
+        display: inline-block;
+        font-size: $scaleH*39;
+        -webkit-transform: scale(0.9);
+        white-space: nowrap;
+    }
+    .fourDivContent.smallNum {
+        display: inline-block;
+        font-size: $scaleH*17;
+        -webkit-transform: scale(0.8);
+        white-space: nowrap;
+    }
+    .con-left-box-map {
+        width: 100%;
+        height: $scaleH*750;
+        margin-top: $scaleH*35;
+    }
+    .arrowImg {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        width: $scaleW*48;
+        height: $scaleH*48;
+    }
+    .mapContent {
+        width: 100%;
+        height: 100%;
+    }
+    .leftMap {
+        margin-top: $scaleH*60;
+        width: $scaleW*1000;
+        height: $scaleH*620;
+        cursor: pointer;
+    }
+    .con-right-box {
+        float: right;
+        width: $scaleW*810;
+        height: $scaleH*957;
+    }
+    .dataTables_wrapper {
+        overflow: scroll;
+        width: 100%;
+        height: $scaleH*957;
+        overflow-x: hidden;
+    }
+    .dataTables_wrapper table {
+        width: 96.2%!important;
+        margin-left: $scaleW*20!important;
+    }
+    .dataTables_wrapper_small {
+        height: $scaleH*150 !important;
+    }
+    .divrightTable {
+        width: 100%;
+        color: #C7E1E5;
+    }
+    .divrightTable tr {
+        height: $scaleH*30;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0);
+    }
+    .divrightTable td {
+        text-align: center;
+        font-size: 16px;
+        color: #fff
+    }
+    .divrightTable tr:nth-child(even) {
+        //background-color: rgba(7, 15, 52, .4)
+    }
+    .divrightTable tr:nth-child(odd) {
+        //background-color: rgba(3, 31, 71, .4)
+    }
+    .con-right-box-list {
+        position: relative;
+        width: 98%;
+        //width:12%;
+        height: $scaleH*120;
+        border-top: 1px solid #368CFF;
+        border-left: 1px solid rgba(0, 0, 0, 0);
+        border-right: 1px solid rgba(0, 0, 0, 0);
+        border-bottom: 1px dashed #368CFF;
+        background: rgba(26, 26, 73, .3);
+    }
+    .con-right-box-list:hover {
+        border: 1px solid #368CFF;
+        background: rgba(54, 140, 255, .2);
+    }
+    .con-right-box-list.active {
+        border: 1px solid #368CFF;
+        background: rgba(54, 140, 255, .2);
+    }
+    .dropDown {
+        position: relative;
+        width: 98%;
+        //width:12%;
+        display: none;
+        background: rgba(26, 50, 104, .3);
+    }
+    /*.swiper-container{
+      width:$scaleW*750;
+  }
+      .swiper-slide1{
+          margin-left: $scaleW*60;
+          margin-right: $scaleW*0!important;
+      }
+      .swiper-slide2{
+          margin-left: $scaleW*10;
+          margin-right: $scaleW*0!important;
+      }
+      .swiper-slide3{
+          margin-left: $scaleW*0!important;
+      }
+      .swiper-button-next,.swiper-button-prev {
+          background: none;
+          width: $scaleW*48;
+          text-align: center;
+          height: $scaleH*44;
+          line-height: $scaleH*44;
+          margin-left: $scaleW*-25;
+          margin-right: $scaleW*-25;
+      }*/
+    .chartContent {
+        position: relative;
+        width: 200%;
+        overflow: hidden;
+    }
+    .preButton {
+        position: absolute;
+        top: 30%;
+        left: 1%;
+    }
+    .nextButton {
+        position: absolute;
+        top: 30%;
+        right: 50%;
+    }
+    .myCharts {
+        //width:$scaleW*300;
+        float: left;
+        margin-left: $scaleW*20;
+        width: $scaleW*365;
+        height: $scaleH*200;
+    }
+    .myChartsOne {
+        position: relative;
+        margin: auto;
+        width: $scaleW*780;
+        height: $scaleH*200;
+    }
+    .myChartsTwo {
+        width: $scaleW*350;
+        height: $scaleH*250;
+        display: inline-block;
+    }
+    .myChartsTwoBig {
+        width: $scaleW*410;
+        height: $scaleH*270;
+        display: inline-block;
+    }
+    .myChartsTwoSmall {
+        width: $scaleW*290;
+        height: $scaleH*270;
+        display: inline-block;
+    }
+    .tableTitle {
+        position: relative;
+        padding-top: $scaleH*20;
+        margin-left: $scaleW*-600;
+        margin-bottom: $scaleH*10;
+        display: inline-block;
+        color: #C6D8FF;
+        text-align: left;
+    }
+    .tableTitle span {
+        display: inline-block;
+        font-size: $scaleH*16;
+        -webkit-transform: scale(0.8);
+        white-space: nowrap;
+    }
+    .tableChange {
+        float: right;
+        position: relative;
+        padding-top: $scaleH*20;
+        margin-bottom: $scaleH*10;
+        display: inline-block;
+    }
+    .tableChangeYe {
+        width: $scaleW*17;
+        height: $scaleH*17;
+        line-height: $scaleH*12;
+        display: inline-block;
+        color: #0F102F;
+        background: #C6D8FF;
+        border: $scaleW*1 solid #C6D8FF;
+    }
+    .tableChangeYe span {
+        display: inline-block;
+        font-size: $scaleH*14;
+        -webkit-transform: scale(0.8);
+        white-space: nowrap;
+    }
+    .tableChangeZhuo {
+        margin-right: $scaleW*40;
+        margin-left: $scaleW*-5;
+        width: $scaleW*17;
+        height: $scaleH*17;
+        line-height: $scaleH*12;
+        display: inline-block;
+        color: #C6D8FF;
+        border: $scaleW*1 solid #C6D8FF;
+    }
+}
+
+.tableChangeZhuo span {
+    display: inline-block;
+    font-size: $scaleH*14;
+    -webkit-transform: scale(0.8);
+    white-space: nowrap;
+}
+
+.dropDownTable {
+    position: relative;
+    margin: auto;
+    width: 95%;
+}
+
+.zhuo{
+    display: none;
+}
+
+.dropDownTable thead {
+    background: rgba(26, 50, 104, .6);
+}
+
+.dropDownTable thead th {
+    //width:$scaleW*80;
+    color: #A8ADBA;
+    display: inline-block;
+    font-size: $scaleH*13;
+    -webkit-transform: scale(0.8);
+    white-space: nowrap;
+    /*控制单行显示*/
+    overflow: hidden;
+    /*超出隐藏*/
+    text-overflow: ellipsis;
+    /*隐藏的字符用省略号表示*/
+}
+
+.dropDownTable tbody td {
+    //width:$scaleW*80;
+    color: #CDF7FC;
+    display: inline-block;
+    font-size: $scaleH*13;
+    -webkit-transform: scale(0.8);
+    //white-space: nowrap;
+    white-space: nowrap;
+    /*控制单行显示*/
+    overflow: hidden;
+    /*超出隐藏*/
+    text-overflow: ellipsis;
+    /*隐藏的字符用省略号表示*/
+}
+
+.dropDownTable td,
+.dropDownTable th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.titleShow {
+    position: relative;
+    width: 100%;
+    display: none;
+    //margin-top: $scaleH*-135;
+}
+
+.titleShow1 {
+    margin-top: 0;
+}
+
+.titleShow2 {
+    margin-top: $scaleH*-200;
+}
+
+.titleContent {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 20%;
+    width: 265px;
+    border: $scaleW*1 solid #BABABA;
+    background: rgba(26, 26, 45, .9);
+}
+
+.titleShowcontent {
+    position: relative;
+    margin: auto;
+    width: 90%;
+}
+
+.titleShowTitle {
+    margin-top: $scaleH*15;
+    text-align: left;
+    color: #fff;
+}
+
+.titleShowTitle span {
+    display: inline-block;
+    font-size: $scaleH*20;
+    -webkit-transform: scale(0.8);
+    white-space: nowrap;
+}
+
+.hr1 {
+    margin-top: $scaleH*10;
+    width: 100%;
+    height: $scaleH*8;
+    border-top: $scaleW*1 solid #2366AF;
+    border-bottom: $scaleW*0.5 solid #2366AF;
+}
+
+.titleAffect {
+    width: 100%;
+    margin-top: $scaleH*10;
+    margin-bottom: $scaleH*20;
+    text-align: left;
+}
+
+.titleAffectLeft {
+    display: inline-block;
+    width: 30%;
+    color: #A8ADBA;
+    float: left;
+    height: $scaleH*70;
+    line-height: $scaleH*34;
+}
+
+.titleAffectLeft span {
+    display: inline-block;
+    font-size: $scaleH*16;
+    -webkit-transform: scale(0.8);
+    word-break: normal;
+    width: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.titleAffectRight {
+    ;
+    display: inline-block;
+    width: 68%;
+    color: #fff;
+    height: $scaleH*90;
+    line-height: $scaleH*25;
+}
+
+.titleAffectRight span {
+    margin-left: $scaleW*-10;
+    display: inline-block;
+    font-size: $scaleH*16;
+    -webkit-transform: scale(0.8);
+    word-break: normal;
+    width: auto;
+    //height:$scaleH*70;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.warnFlag {
+    border: 0px solid !important;
+    background: url(../img/equipment-bg-list-warn.png) no-repeat center center !important;
+    background-size: 100% 100% !important;
+}
+
+.warnFlag:hover {
+    background: rgba(54, 140, 255, .2) !important;
+}
+
+.warnText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #EDCCCC;
+    text-align: center;
+    background: url(../img/equipment-bg-list-warn-board.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.warnText span {
+    display: inline-block;
+    font-size: $scaleH*12;
+    -webkit-transform: scale(0.8);
+    white-space: nowrap;
+    margin-left: $scaleW*-10;
+}
+
+.listLeft {
+    float: left;
+    position: relative;
+    width: 29%;
+    height: 100%;
+    display: inline-block;
+}
+
+.iconList {
+    width: 40%;
+    position: absolute;
+    top: 20%;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+}
+
+.iconListImg {
+    width: $scaleW*65;
+    height: $scaleH*65;
+}
+
+.iconTitle {
+    position: absolute;
+    top: 23%;
+    bottom: 0;
+    left: 35%;
+    width: 64%;
+    height:$scaleH*70;
+    display: inline-block;
+    text-align: center;
+}
+
+.iconName {
+    display: block;
+    line-height: $scaleH*30;
+    font-size: $scaleH*17;
+    -webkit-transform: scale(0.9);
+    color: #AEE1FF;
+    text-align: center;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: normal !important;
+}
+
+.iconNum {
+    display: block;
+    font-size: $scaleH*25;
+    -webkit-transform: scale(0.9);
+    white-space: nowrap;
+    color: #fff;
+    text-align: center;
+}
+
+.iconLine {
+    position: absolute;
+    top: 35%;
+    bottom: 0;
+    right: 0;
+    height: 40%;
+    display: block;
+    border: 1px solid #125693;
+}
+
+.listRight {
+    float: right;
+    position: relative;
+    width: 70%;
+    height: 100%;
+}
+
+.fiveDivContent {
+    margin-top: $scaleH*20;
+    width: 100%;
+}
+
+.bigThanFive {
+    margin-top: $scaleH*20;
+}
+
+.fiveDivContent td {
+    width: 20%;
+    vertical-align: middle;
+    word-wrap: break-word
+}
+
+.fiveDivIcon {
+    float: left;
+    display: inline-block;
+    width: 5%;
+    height: 100%;
+}
+
+.fiveDivIconImg {
+    margin: auto;
+    width: $scaleW*18;
+    height: $scaleH*18;
+}
+
+.fiveDivText {
+    //float:right;
+    width: 95%;
+    height:$scaleH*38;
+    display: inline-block;
+}
+
+.fiveDivTextTop {
+    //margin-top: $scaleH*2;
+    //margin-bottom: $scaleH*-3;
+    display: block;
+    line-height: $scaleH*25;
+    font-size: $scaleH*13;
+    -webkit-transform: scale(0.7);
+    white-space: nowrap;
+    color: #AEE1FF;
+    text-align: center;
+    word-wrap: break-word;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: normal !important;
+}
+
+.fiveDivTextNum {
+    display: block;
+    font-size: $scaleH*13;
+    -webkit-transform: scale(0.9);
+    white-space: nowrap;
+    color: #fff;
+    text-align: center;
+}
+
+.rightBottomIcon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.rightBottomIconImg {
+    width: $scaleW*39;
+    height: $scaleH*18;
+}
+
+.imageOne {
+    float: right;
+    width: $scaleW*15;
+    height: $scaleH*15;
+}
+
+
+/*滚动条*/
+
+
+/* 设置滚动条的样式 */
+
+.scroll {
+    overflow-y: auto;
+}
+
+.scrolls {
+    overflow-x: auto;
+}
+
+
+/*.scrolls{overflow-x: auto;}*/
+
+.scroll::-webkit-scrollbar,
+.scrolls::-webkit-scrollbar {
+    margin-left: $scaleW*100;
+    width: $scaleW*10;
+}
+
+.scrolls::-webkit-scrollbar {
+    height: $scaleH*5;
+}
+
+
+/* 滚动槽 */
+
+.scroll::-webkit-scrollbar-track,
+.scrolls::-webkit-scrollbar-track {
+    background: #17203C;
+    border-radius: $scaleW*10;
+}
+
+.scrolls::-webkit-scrollbar-track {
+    border-radius: $scaleW*5;
+}
+
+
+/* 滚动条滑块 */
+
+.scroll::-webkit-scrollbar-thumb,
+.scrolls::-webkit-scrollbar-thumb {
+    border-radius: $scaleW*10;
+    background: #1D2B5E;
+}
+
+.scrolls::-webkit-scrollbar-thumb {
+    border-radius: $scaleW*5;
+}
+
+.equipmentDetail {
+    z-index: 11;
+    position: absolute;
+    top: 27%;
+    left: 10%;
+    right: 0;
+    bottom: 0;
+    display: none;
+    width: $scaleW*372;
+    height: $scaleH*490;
+    border: $scaleW*1 solid #BABABA;
+    background: rgba(26, 26, 45, .9);
+}
+.equipmentDetailImport {
+    height: $scaleH*250!important;
+}
+
+.equipmentDetailTitle {
+    margin-top: $scaleH*20;
+    text-align: center;
+    color: #fff;
+}
+
+.equipmentDetailTitle span {
+    display: inline-block;
+    font-size: $scaleH*22;
+    -webkit-transform: scale(0.8);
+    white-space: nowrap;
+}
+
+.equipmentDetailImage {
+    position: relative;
+    margin: auto;
+    width: $scaleW*325;
+    //height:$scaleH*22;
+}
+
+.equipmentDetailImage img {
+    width: $scaleW*323;
+    height: $scaleH*22;
+}
+
+.equipmentContent {
+    position: relative;
+    margin: auto;
+    margin-top: $scaleH*10;
+    width: 91%;
+}
+
+.detailTitle,
+.detailStatus {
+    display: inline-block;
+    color: #fff;
+}
+
+.detailTitle span {
+    display: inline-block;
+    font-size: $scaleH*30;
+    -webkit-transform: scale(0.8);
+    white-space: nowrap;
+}
+
+.detailStatus span {
+    display: inline-block;
+    font-size: $scaleH*18;
+    -webkit-transform: scale(0.8);
+    white-space: nowrap;
+}
+
+.detailStatus img {
+    display: inline-block;
+    width: $scaleW*18;
+}
+
+.detailText {
+    margin-top: $scaleH*20;
+    width: 100%;
+}
+
+.detailText tr {
+    height: $scaleH*30;
+}
+
+.detailText td {
+    width: $scaleW*70;
+    height: 30px;
+
+    line-height: $scaleH*20;
+    vertical-align: middle;
+}
+
+.detailLeft {
+    text-align: left;
+}
+.environText{
+    width:30%!important;
+}
+.detailCenter {
+    text-align: left;
+}
+
+.detailLeftLong {
+    margin-left: $scaleW*-6;
+}
+
+.detailRight {
+    text-align: right;
+}
+
+.detailText span {
+    display: inline-block;
+    font-size: $scaleH*16;
+    -webkit-transform: scale(0.9);
+    //white-space: nowrap;
+}
+
+.detailLeftTitle {
+    color: #A8ADBA;
+}
+
+.detailleftContent {
+    color: #fff;
+}
+
+.hr {
+    margin-top: $scaleH*10;
+    border-bottom: $scaleW*1 solid #585A60;
+}
+
+.detailVideo {
+    position: relative;
+    margin: auto;
+    width: $scaleW*300;
+    height:$scaleH*220;
+    margin-top: $scaleH*10;
+}
+
+.detailVideo img {
+    width: $scaleW*297;
+    height: $scaleH*198;
+}
+
+@media screen and (max-width: 1200px) {
+    .bigThanFive {
+        margin-top: 0;
+    }
+}

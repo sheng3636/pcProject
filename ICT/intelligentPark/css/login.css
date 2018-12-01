@@ -1,0 +1,345 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+center,
+u,
+b,
+i {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+:focus {
+  outline: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+
+blockquote,
+q {
+  quotes: "";
+}
+
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #000;
+  background-color: #000;
+  height: 1px;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background: url(../img/bg-1.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+header {
+  height: 6.9444444444vh;
+  background: url(../img/bg-header.png) no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+}
+header ul {
+  height: 100%;
+  display: inline-block;
+}
+header ul .ict-nav {
+  float: left;
+  display: inline-block;
+  height: 4.9074074074vh;
+  width: 7.65625vw;
+  margin-top: 2.2222222222vh;
+}
+header ul .ict-nav a {
+  line-height: 4.9074074074vh;
+  font-family: "微软雅黑";
+  font-weight: bold;
+  font-size: 2.037037037vh;
+  color: #8CA8A5;
+  text-align: center;
+  text-decoration: none;
+}
+header ul .ict-nav-0 {
+  width: 30.2083333333vw;
+  height: 100%;
+  margin-top: 0;
+  background: url(../img/bg-nav-0.png) no-repeat;
+  background-size: 100% 100%;
+}
+header ul .ict-nav-1 {
+  background: url(../img/bg-nav-1.png) no-repeat;
+  background-size: 100% 100%;
+}
+header ul .ict-nav-2 {
+  background: url(../img/bg-nav-2.png) no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+header ul .ict-nav-1.active {
+  background: url(../img/bg-nav-1-active.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 1.2962962963vh;
+}
+header ul .ict-nav-2.active {
+  background: url(../img/bg-nav-2-active.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 1.2962962963vh;
+}
+header ul .wait {
+  position: absolute;
+  top: 0.462962963vh;
+  right: 0.2604166667vw;
+  display: inline-block;
+  height: 2.3148148148vh;
+  width: 1.3020833333vw;
+  background: url(../img/bg-test.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+section {
+  height: 93.0555555556vh;
+  width: 100%;
+  padding: 0.9259259259vh 0.78125vw;
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  background: url(../img/login-bg.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+
+section {
+  padding: 1.5740740741vh 1.5625vw 1.5625vw;
+  box-sizing: border-box;
+  font-family: "microsoft yahei";
+}
+section .con-top-box {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  margin-top: 13.8888888889vh;
+  text-align: center;
+}
+section .con-top-box img {
+  width: 51.0416666667vw;
+}
+section .con-left-box {
+  float: left;
+  position: relative;
+  margin-top: 10.6481481481vh;
+  margin-left: 5.2083333333vw;
+  width: 60%;
+  text-align: center;
+}
+section .con-left-box img {
+  width: 44.4791666667vw;
+}
+section .con-right-box {
+  float: right;
+  width: 34%;
+}
+section .inputDiv {
+  position: relative;
+  padding: 0.0520833333vw;
+  margin-top: 100px;
+  margin-left: 60px;
+  width: 20.0520833333vw;
+  height: 34.8148148148vh;
+  background: url(../img/login-input-bg.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+section .inputDiv .loginipt {
+  width: 84%;
+  height: 7.2222222222vh;
+  background: rgba(0, 125, 145, 0.1);
+  margin: 0 auto;
+  margin-top: 2.3148148148vh;
+  line-height: 7.2222222222vh;
+}
+section .inputDiv .loginipt i {
+  display: inline-block;
+  width: 2.0833333333vw;
+  height: 2.0833333333vw;
+  vertical-align: middle;
+  margin-left: 1.3020833333vw;
+  margin-right: 0.5208333333vw;
+}
+section .inputDiv .loginipt .usericon {
+  background: url(../img/login-button-name.png) center center no-repeat;
+  background-size: 100% 100%;
+}
+section .inputDiv .loginipt .passwordicon {
+  background: url(../img/login-button-password.png) center center no-repeat;
+  background-size: 100% 100%;
+}
+section .inputDiv .loginipt input {
+  font-size: 1.6666666667vh;
+  width: 66%;
+  height: 50%;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #077B8E;
+  color: #57848C;
+}
+section .inputDiv .fristipt {
+  margin-top: 4.6296296296vh;
+}
+section .inputDiv .loginmes {
+  margin: 0 auto;
+  width: 84%;
+  height: 4.1666666667vh;
+  font-size: 1.1111111111vh;
+  color: #9B8D80;
+  text-align: right;
+  padding-top: 0.462962963vh;
+}
+section .inputDiv .loginmes i {
+  display: inline-block;
+  width: 0.9375vw;
+  height: 0.9375vw;
+  vertical-align: middle;
+  margin-right: 0.5208333333vw;
+}
+section .inputDiv .loginmes .warn {
+  background: url(../img/login-button-error.png) center center no-repeat;
+  background-size: 100% 100%;
+}
+section .inputDiv .loginbtn {
+  margin: 0 auto;
+  width: 84%;
+  height: 5.1851851852vh;
+  line-height: 5.1851851852vh;
+  text-align: center;
+  background: url(../img/login-button-bg.png) center center no-repeat;
+  background-size: 100% 100%;
+  font-size: 2.037037037vh;
+  color: #00FFFF;
+  font-weight: bold;
+  cursor: pointer;
+}
+section .inputTitle {
+  position: absolute;
+  left: 0;
+  margin-top: -0.9259259259vh;
+  color: #02C6F2;
+}
+section .inputTitle span {
+  display: inline-block;
+  font-size: 1.6666666667vh;
+  -webkit-transform: scale(0.9);
+  white-space: nowrap;
+}
+section .inputaccount span {
+  font-size: 1.3541666667vw;
+}
+section .loginBtn {
+  position: relative;
+  margin-top: 3.7037037037vh;
+  margin-left: 2.0833333333vw;
+  cursor: pointer;
+}
+section .loginBtn img {
+  width: 15.8854166667vw;
+}

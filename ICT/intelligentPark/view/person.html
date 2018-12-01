@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>人员管理</title>
+		<link rel="stylesheet" type="text/css" href="../css/person.css" />
+	</head>
+
+	<body>
+		<header></header>
+		<section name="all">
+			<article class="con-top-box con-top-left-box">
+				<iframe src="" width="100%" height="100%" id="map"></iframe>
+				<div id="showVideo" class="show-video" style="display: none;">
+					<i class="btn-close"></i>
+					<div id="video" class="video"></div>
+				</div>
+				<!--<div class="searchbox">
+					<input type="text" name="searchinfo" id="searchipt" class="searchipt" value="" placeholder="请输入姓名" />
+					<span class="searchbtn"><i class="searchicon"></i></span>
+				</div>-->
+			</article>
+			<article class="con-top-box con-top-right-box" style="overflow: hidden;">
+				<div class="con-top-right con-top-right-top">
+					<div class="con-top-right-top-1">
+						<label id="person-build-in">进园区</label>
+						<span id="person-count-in"></span>
+					</div>
+					<div class="con-top-right-top-2">
+						<label id="person-build-out">出园区</label>
+						<span id="person-count-out"><!--<em>人</em>--></span>
+					</div>
+				</div>
+				<!--初始板块           开始-->
+				<div class="con-top-right con-top-right-center-index con_top_right_index">
+					<div class="con-top-right-center-1" id="person_traffic">
+					</div>
+					<div class="con-top-right-center-2" id="person_flow">
+					</div>
+				</div>
+				<div class="con-top-right con-top-right-bottom-index con_top_right_index">
+					<div class="con-top-right-bottom-title"><span>访客分析</span></div>
+					<div class="con-top-right-bottom-table visit-company" name="visit_company">
+						<h4 class="title">拜访公司（月）</h4>
+						<ul id="visit_company">
+						</ul>
+					</div>
+					<div class="con-top-right-bottom-table stay-time" id="stay_time" name="stay_time">
+						<h4 class="title">停留时长（月）</h4>
+						<div class="st-chart">
+							<div class="st">
+								<!--<div class="">
+									<div class="bg"></div>
+								</div>-->
+							</div>
+							<hr />
+						</div>
+						<div class="st-lenged">
+							<div class="avg">
+								<span class="avg-title">平均停留</span>
+								<span class="avg-content" id="stay_time_avg"><em>小时</em></span>
+							</div>
+						</div>
+					</div>
+					<div class="con-top-right-bottom-table return-visits" name="return_visits">
+						<h4 class="title">回访次数（月）</h4>
+						<div class="chart" id="return_visits"></div>
+					</div>
+					<!--<div class="con-top-right-bottom-table work-hours" id="work_hours">
+						<h4 class="title">累计工作时长（周）</h4>
+						<div class="wh-chart">
+							<div class="wh"></div>
+							<hr />
+						</div>
+						<div class="wh-lenged"></div>
+					</div>
+					<div class="con-top-right-bottom-table come-times" name="come_times" >
+						<h4 class="title">来园区频次（周）</h4>
+						<div class="chart" id="come_times"></div>
+					</div>
+					<div class="con-top-right-bottom-table" >
+						<h4 class="title">员工平均工作时长TOP5</h4>
+					</div>-->
+					<div class="con-top-right-bottom-fun" id="person_fun_next"></div>
+				</div>
+				<!--初始板块           结束-->
+				<!--员工板块           开始-->
+				<div class="con-top-right con-top-right-center-worker con_top_right_worker ">
+					<div class="con-top-right-center-worker-1">
+						<div class="title">人员分析</div>
+						<div class="content" id="worker_info">
+							<img src="" class="content-img"/>
+							<div class="content-info">
+								<!--<p class="content-info-name">黎镇霆 <i>男</i></p>
+								<p class="content-info-hr"></p>
+								<p class="content-info-company">理想集团</p>
+								<p class="content-info-department">软件一部 B3楼401</p>
+								<p class="content-info-type">员工/黑名单</p>
+								<p class="content-info-phone">12321321321</p>
+								<p class="content-info-stay">停留时长：<em>6.5小时</em></p>
+								<p class="content-info-transport">入园交通：<em>班车</em></p>-->
+							</div>
+						</div>
+					</div>
+					<div class="con-top-right-center-worker-2">
+						<div class="title">今日轨迹</div>
+						<div class="content">
+							<table>
+								<thead>
+								  	<tr class="table-header">
+								    	<th>轨迹点</th>
+								    	<th>时间</th>
+								    	<th>地点</th>
+								    	<th>进出</th>
+								  	</tr>
+							  	</thead>
+							  	<tbody id="worker_trajectory"></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="con-top-right con-top-right-bottom-worker con_top_right_worker ">
+					<div class="con-top-right-bottom-worker-1">
+						<div class="title">来园区频次（周）</div>
+						<div class="content" id="worker_frequency"></div>
+					</div>
+					<div class="con-top-right-bottom-worker-2">
+						<div class="title">本周在园区时长</div>
+						<div class="content" id="worker_duration"></div>
+					</div>
+				</div>
+				<!--员工板块           结束-->
+				<!--访客板块           开始-->
+				<div class="con-top-right con-top-right-left-vistor con_top_right_vistor">
+					<div class="title">人员分析</div>
+					<div class="content" id="vist_info">
+						<div class="content-top">
+							<img class="content-top-img"/>
+							<div class="content-top-info">
+								<!--<p class="content-info-name">黎镇霆<i>男</i></p>
+								<p class="content-info-hr"></p>
+								<p class="content-info-company">理想集团</p>
+								<p class="content-info-department">------</p>
+								<p class="content-info-type">员工/黑名单</p>
+								<p class="content-info-phone">12321321321</p>
+								<p class="content-info-reason">开会</p>
+								<p class="content-info-stay">停留时长：<em>6.5小时</em></p>-->
+							</div>
+						</div>
+						<hr />
+						<div class="content-bottom">
+							<div class="content-bottom-info">
+								<!--<p>被访问人信息</p>
+								<p class="content-info-name">黎镇霆 <i>男</i></p>
+								<p class="content-info-company">理想集团</p>
+								<p class="content-info-department">软件一部 B3楼401</p>
+								<p class="content-info-type">员工/黑名单</p>
+								<p class="content-info-phone">12321321321</p>-->
+							</div>
+							<!--<img src="" class="content-bottom-img"/>-->
+						</div>
+					</div>
+				</div>
+				<div class="con-top-right con-top-right-right-vistor con_top_right_vistor">
+					<div class="content-top">
+						<div class="title">今日轨迹</div>
+						<div class="content">
+							<table>
+								<thead>
+								  	<tr class="table-header">
+								    	<th>轨迹点</th>
+								    	<th>时间</th>
+								    	<th>地点</th>
+								    	<th>进出</th>
+								  	</tr>
+							  	</thead>
+							  	<tbody id="vist_trajectory">
+							  		<!--<tr class="table-content">
+									    <td>1</td>
+									    <td>2018-06-21 00:00:00</td>
+									    <td>北门入口</td>
+									    <td>进</td>
+								  	</tr>-->
+							  	</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="content-bottom">
+						<div class="title">回访次数（月）</div>
+						<div class="content" id="vist_frequency">
+						</div>
+					</div>
+				</div>
+				<!--访客板块           结束-->
+			</article>
+			<article class="con-bottom-box">
+				<div class="con-bottom-box-header">
+					<div id="return_all"><span>人员识别</span></div>
+					<div>
+						<ul id="people_recognition">
+							<li name="员工">
+								<span>员工</span><span class="num">0%</span>
+								<div class="chart"><div></div></div>
+							</li>
+							<li name="访客">
+								<span>访客</span><span class="num">0%</span>
+								<div class="chart"><div></div></div>
+							</li>
+							<li name="陌生人">
+								<span>备案</span><span class="num">0%</span>
+								<div class="chart"><div></div></div>
+							</li>
+							<li name="黑名单">
+								<span>黑名单</span><span class="num">0%</span>
+								<div class="chart"><div></div></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con-bottom-box-sider">
+					<div class="con-bottom-box-border" id="picture">
+						<!--<div class="con-bottom-box-item" name="" id="" userType="worker">
+							<img src="../img/person-bg-bottom-4.png" class="item-img"/>
+							<div class="item-info">
+								<p class="item-info-name">黎镇霆 <i class="icon-person-worker"></i></p>
+								<p class="item-info-company">理想集团</p>
+								<p class="item-info-date">2018-06-21 00:00:00</p>
+								<p class="item-info-palce">园区B3楼口出</p>
+								<i class="item-info-more"></i>
+							</div>
+						</div>-->
+					</div>
+					<div class="con-bottom-box-next" id="bottom_next"></div>
+				</div>
+			</article>
+
+		</section>
+		<script src="../lib/jQuery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/Echarts/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/player/cyberplayer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../data/videoDetail.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/person.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>
