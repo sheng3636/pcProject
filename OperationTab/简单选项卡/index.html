@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/new_file.css" />
+		<script type="text/javascript" src="js/jquery-1.5.2.min.js" ></script>
+		<script type="text/javascript">
+$(document).ready(function() {
+    function myTab(tabtit,tabcon) {
+        $(tabcon+":first").show();
+
+        $(tabtit+" li").click(function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            var conindex=$(this).index();
+            $(".tab_con").eq(conindex).show().siblings().hide();
+        });
+    };
+    /*调用方法如下：*/
+    myTab(".tabs",".tab_con");
+
+});
+</script>
+	</head>
+	<body>
+		<div class="tabbox">
+           <ul class="tabs">
+             <li class="active"><a href="javascript:void(0)">导航菜单</a></li>
+             <li><a href="javascript:void(0)">焦点幻灯片</a></li>
+             <li><a href="javascript:void(0)">广告代码</a></li>
+             <li><a href="javascript:void(0)">网页特效</a></li>
+           </ul>
+            <div class="tab_content">
+                <div class="tab_con">
+                    1
+                </div>
+                <div class="tab_con">
+                    2
+                </div>
+                <div class="tab_con">
+                    3
+                </div>
+                <div class="tab_con">
+                    4
+                </div>
+            </div>
+        </div>
+</body>
+</html>
