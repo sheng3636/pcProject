@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>css3实现文本溢出显示省略号 - 何问起</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <style type="text/css">
+        /*数量框字体居中*/
+        .textNum {
+            text-align: center;
+        }
+
+        /*****/
+        span {
+            color: red;
+        }
+
+        label {
+            margin-left: 20px;
+        }
+        input[value='删除'] {
+            color: green;
+        }
+        /*总价格颜色*/
+        #heji {
+            color: red;
+            font-size: 1em; /*字体大小为原来的1倍*/
+        }
+    </style>
+</head>
+<body>
+    <div id="bigbox">
+        <div id="container" style="height:220px;width:620px;border:1px solid gray;margin:0 auto;">
+            <p>
+                <input type="checkbox" name="quanxuan" value="" class="box" />
+                <label>数量：</label>
+                <input type="button" name="name" value="-" class="reduce" />
+                <input type="text" name="name" value="2" class="textNum" />
+                <input type="button" name="name" value="+" class="add" />
+                <label>单价：</label>
+                <span class="danjia">2</span><strong>￥ |</strong>
+                <label>小计：</label>
+                <span class="xiaoji">4</span><strong>￥</strong>
+                <input type="button" name="name" value="删除" class="deleteOne" />
+            </p>
+            <p>
+                <input type="checkbox" name="quanxuan" value="" class="box" />
+                <label>数量：</label>
+                <input type="button" name="name" value="-" class="reduce" />
+                <input type="text" name="name" value="2" class="textNum" />
+                <input type="button" name="name" value="+" class="add" />
+                <label>单价：</label>
+                <span class="danjia">2</span><strong>￥ |</strong>
+                <label>小计：</label>
+                <span class="xiaoji">4</span><strong>￥</strong>
+                <input type="button" name="name" value="删除" class="deleteOne" />
+            </p>
+            <p>
+                <input type="checkbox" name="quanxuan" value="" class="box" />
+                <label>数量：</label>
+                <input type="button" name="name" value="-" class="reduce" />
+                <input type="text" name="name" value="2" class="textNum" />
+                <input type="button" name="name" value="+" class="add" />
+                <label>单价：</label>
+                <span class="danjia">2</span><strong>￥ |</strong>
+                <label>小计：</label>
+                <span class="xiaoji">4</span><strong>￥</strong>
+                <input type="button" name="name" value="删除" class="deleteOne" />
+            </p>
+            <p>
+                <input type="checkbox" name="name" value="" class="box" />
+                <label>数量：</label>
+                <input type="button" name="name" value="-" class="reduce" />
+                <input type="text" name="name" value="2" class="textNum" />
+                <input type="button" name="name" value="+" class="add" />
+                <label>单价：</label>
+                <span class="danjia">2</span><strong>￥ |</strong>
+                <label>小计：</label>
+                <span class="xiaoji">4</span><strong>￥</strong>
+                <input type="button" name="name" value="删除" class="deleteOne" />
+            </p>
+            <hr />
+            <p style="height:30px;width:470px;margin-left:60px;margin:0 auto;">
+                <input type="button" name="name" value="全选" id="allSelect" />
+                <input type="button" name="name" value="取消全选" id="notSelect" />
+                <input type="button" name="name" value="批量删除" id="deleteAll" />
+                <input type="button" name="name" value="清零" id="zero" />
+                <input type="button" name="name" value="合计总价" id="he" />
+                <input type="text" name="name" value="" id="heji" style="width:100px;" />
+                <strong>.00￥</strong>
+            </p>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            //计算总价，编写总价方法
+            function totalPrice() {
+                var zong = 0;
+                $(".xiaoji").each(function () {
+                    var all = parseInt($(this).text());
+                    zong += all;
+                })
+                $("#heji").val(zong);
+            };
+
+            //设置数量框不可手动填写（此处为避免不必要的操作失误）
+            $(".textNum").prop("disabled", true);
+
+            //减号逻辑
+            $(".reduce").click(function () {
+                var num = $(this).siblings(".textNum").val();  //获取数量框里的数值
+                num--;  //单击“-”减号时，数量递减
+                $(this).siblings(".textNum").val(num); //把数量变化后的新值放入数量框中
+                if (num <= 0) {
+                    $(this).prop("disabled", true); //当输入框内数值为0时，使“-”减号处于不可用状态。
+                };
+                var danjia = $(this).siblings(".danjia").text(); //获取单价
+                var xiaoji = danjia * num; //用单价乘以数量计算得到单个小计的值
+                $(this).siblings(".xiaoji").text(xiaoji); //把得到的小计值放入数量框中显示
+                totalPrice();//调用“总价”方法，使每点击减号，数量变化时，总价跟着变化
+            })
+
+            //加号逻辑（逻辑如同减号的逻辑差不多）
+            $(".add").click(function () {
+                var num = $(this).siblings(".textNum").val();
+                num++;
+                $(this).siblings(".textNum").val(num);
+                if (num > 0) {
+                    $(this).siblings(".reduce").prop("disabled", false); //判断当输入框内数值大于0，使“-”减号处于解封可用状态。
+                };
+                var danjia = $(this).siblings(".danjia").text();
+                var xiaoji = danjia * num;
+                $(this).siblings(".xiaoji").text(xiaoji);
+                totalPrice();
+            })
+
+            //点击合计重整清算(防止单行删除某项商品后，总价不刷新)
+            $("#he").click(function () {
+                totalPrice(); //调用总价方法
+            })
+
+            //单行删除商品
+            $(".deleteOne").click(function () {
+                $(this).parent().remove();
+            })
+
+            ////全部删除商品
+            $("#deleteAll").click(function () {
+                $(".box:checked").parent().remove(); //把被选中的复选框所在的区域删除
+            })
+
+            //全选
+            $("#allSelect").click(function () {
+                $(".box").prop("checked", true);
+            })
+
+            //取消全选
+            $("#notSelect").click(function () {
+                $(".box").prop("checked", false);
+            });
+
+            //全部清零
+            $("#zero").click(function () {
+                $(".textNum").val(0);
+                $(".xiaoji").text(0);
+                $("#heji").val(0);
+            });
+        })
+
+    </script>
+</body>
+</html>
