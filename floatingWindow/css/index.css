@@ -1,0 +1,46 @@
+/*
+* @Author: Marte
+* @Date:   2018-01-03 10:04:00
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-03 11:26:38
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+ol, ul ,li{list-style: none;}
+#fuchuang{
+    position: fixed;
+    right: -500px;
+    bottom: 100px;
+    width: 500px;
+    height: 70px;
+    border-radius: 60px;
+    background: rgba(0,0,0,0.5) url(../images/fuchuang_logo.png) no-repeat 10px center;
+}
+.fc_wrapper{
+    padding-left: 80px;
+   line-height: 1.5em;
+   padding-top: 10px;
+    height:60px;
+    border-radius: 60px;
+    position:relative;
+}
+.fc_wrapper span{
+     display: inline-block;
+     width: 365px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+     text-align: center;
+}
+#closeBtn{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-weight:bold;
+    color:#000;
+}

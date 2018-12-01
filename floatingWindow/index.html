@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>浮窗</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div id="fuchuang">
+        <div class="fc_wrapper">
+            <span>新版江西省红十字会门户网站已上线试运行各栏目内容正在建设中</span>
+            <a href="javascript:void(0)" id="closeBtn"><img src="images/closeBtn.png"></a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var fuchuangWidth = $('#fuchuang').width();
+            speed = 1; //X轴方向
+            sunX = -fuchuangWidth;
+
+            function sunMov() {
+                //定一个方向
+                sunX += speed;
+                var fuchuang = document.getElementById("fuchuang");
+                fuchuang.style.right = sunX + "px";
+                //判断什么时候，转变方向
+                if (sunX >= document.body.clientWidth) {
+                    sunX = -fuchuangWidth;
+                    /*
+                    speed = -speed;
+                    div将做往返运动
+                     */
+                }
+            }
+            var timer1 = setInterval(sunMov, 10);
+
+            //浮窗隐藏
+            $("#closeBtn").click(function() {
+                $("#fuchuang").fadeOut('slow');
+            });
+            //移动到浮窗上停止运动
+            $("#fuchuang").mouseover(function() {
+                clearInterval(timer1);
+            });
+            $("#fuchuang").mouseout(function() {
+                timer1 = setInterval(sunMov, 10);
+            });
+        })
+    </script>
+</body>
+</html>
