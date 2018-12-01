@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>城域事件</title>
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#header").load("pages/header.html");
+			})
+		</script>
+		<style>
+				/*地图*/
+				#map .BMap_pop div{background: rgba(0,0,0,.5)!important;border-color: transparent!important;}
+				#map .BMap_pop div>div{background: transparent!important;}
+				#map .BMap_pop .aaa{background: transparent!important;}
+				.BMap_pop .aaa>div{background: transparent!important;}
+				#map .BMap_pop .map-img{width:28px!important;height: 14px!important;margin-left: auto!important;margin-top: 25px!important;}
+				#map .BMap_bubble_title{overflow: auto;white-space: pre-wrap;}
+				.peopleOpenClose {position: absolute;top:10px;right:15px;width:50px;height:50px;border-radius: 50%;background: rgba(14, 230, 220, 0.4);z-index:8;cursor: pointer;}
+				.peopleDisplay {display: none;}
+		</style>
+	</head>
+	<body class="body">
+		<div class="content">
+			<!--<div id="header"></div>-->
+			<div class="header">
+				<div class="logo"><img src="images/logo02.png"/></div>
+				<ul class="menu clearfix">
+				<li class="index">
+				    <a href="index.html" class="one">城域战图</a>
+				</li>
+				<li class="board">
+				    <a href="region.html" class="one">城域看板</a>
+				</li>
+				<li class="living live">
+				    <a href="safety.html" class="oneMenu">
+				        城域事件<!-- <i class="iconfont icon-htmal5icon03"></i>-->
+				    </a>
+				    <!--<ul class="sub-menu">
+				        <li>
+				            <a href="safety.html">城域事件-安全</a>
+				        </li>
+				        <li>
+				            <a href="javascript:;">城域事件-环境</a>
+				        </li>
+				        <li>
+				            <a href="javascript:;">城域事件-服务</a>
+				        </li>-->
+				    <!--</ul>-->
+				</li>
+				<li class="brain">
+				    <a href="cityHead.html"  class="one">城域大脑</a>
+				</li>
+				<li class="living Plus">
+				    <a href="javascript:;" class="oneMenu">城域+ <i class="iconfont icon-htmal5icon03"></i></a>
+			    	<ul class="sub-menu">
+				        <li>
+				            <a href="cityPlus.html">城域+服务</a>
+				        </li>
+				        <li>
+				            <a href="cityPlusPart.html">城域+党建</a>
+				        </li>
+			
+			    	</ul>
+				</li>
+				</ul>
+				<div class="time">2018年04月03日  星期二</div>
+			</div>
+			<!--section部分-->
+			<div class="section safety clearfix">
+				<div class="divleft fl clearfix">
+					<div class="leftTop fl">
+						<p class="title">
+							事件看板
+							<span class="num">30</span>
+						</p>
+						<ul class="list clearfix">
+							<li class="red"><i class="iconfont icon-zhongyao red"></i>重要事件 <span class="num red">3</span></li>
+							<li class="green"><i class="iconfont icon-yibantixing green"></i>一般事件 <span class="num green">27</span></li>
+							<li>自动处理中 <span class="num blue">1</span><i class="icon new"><img src="images/safety/new.png"/></i></li>
+							<li>自动处理中 <span class="num blue">2</span></li>
+							<li>待人工处理 <span class="num blue">1</span></li>
+							<li>待人工处理 <span class="num blue">5</span><i class="icon new"><img src="images/safety/new.png"/></i></li>
+							<li>人工处理中 <span class="num blue">1</span></li>
+							<li>人工处理中 <span class="num blue">20</span></li>
+						</ul>
+					</div>
+					<div class="rightTop fr" style="position: relative;">
+						<div class="peopleOpenClose peopleDisplay" id="peoplePhoto">
+							<img src="images/peopleOpen.png" style="width:100%;border-radius: 50%;" alt="">
+						</div>
+						<div class="peopleOpenClose" id="peopleClosePhoto">
+							<img src="images/peopleClose.png" style="width:100%;border-radius: 50%;" alt="">
+						</div>
+						<div id="map" class="active"></div>
+						<div class="detail clearfix">
+							<div class="centerLeft fl">
+								<div class="centerTop">
+									<ul class="sub-menu clearfix">
+										<li class="active">附件</li>
+										<li>地图</li>
+									</ul>
+									<div class="list active">
+										<div class="swiper-container">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide">
+													<p class="time">拍摄时间 8:15:36</p>
+													<img src="images/safety/img01.png"/>
+												</div>
+												<div class="swiper-slide">
+													<p class="time">拍摄时间 8:17:01</p>
+													<img src="images/safety/img02.jpg"/>
+												</div>
+												<div class="swiper-slide">
+													<p class="time">拍摄时间 8:18:01 </p>
+													<img src="images/safety/img03.jpg"/>
+												</div>
+											</div>
+											<div class="swiper-pagination swiper-pagination-bullets"></div>
+										</div>
+									</div>
+									<div class="list">
+											<div class="map" id="centerMap" style="width:100%;height:100%;"></div>
+									</div>
+									<div class="list video">
+										
+											<video controls="controls">
+														<source src="images/safety/vedio01.mp4" type="video/mp4"></source>
+													</video>
+													<!--<p class="begin01 begins"><img src="images/safety/begins.png" alt=""></p>-->
+										</div>
+									
+								</div>
+								<div class="centerBottom">
+									<div class="title">事件描述 <p class="video fr"><i class="iconfont icon-shipintianchong green"></i></p></div>
+									<p class="text scroll">
+										消防地磁设备8:34:01发生了第2次告警，持续30分钟
+									</p>
+								</div>
+							</div>
+							<div class="centerRight fr">
+								<div class="centerTop">
+									<ul class="sub-menu clearfix">
+										<li class="active">基本信息</li>
+										<li>处理流程</li>
+										<li class="progressing">未处理</li>
+										<p class="close iconfont icon-guanbi fr"></p>
+									</ul>
+									<div class="list active">
+										<ul class="lists list_ct">
+											<li class="clearfix">
+												<span class="titles">事件来源</span> <span class="sort">设备告警</span>
+											</li>
+											<li class="clearfix">
+												<span class="titles">事件类别</span> <span class="sort">重要</span>
+											</li>
+											<li class="clearfix">
+												<span class="titles">事件类型</span> <span class="sort">消防占道</span>
+											</li>
+											<li class="clearfix">
+												<span class="titles">事件位置</span> <span class="sort">小区15号楼消防通道</span>
+											</li>
+											<li class="clearfix">
+												<span class="titles">创建时间</span> <span class="sort">2018.4.11 8:01:34</span>
+											</li>
+											<li class="clearfix">
+												<span class="titles">处置时间</span> <span class="sort">2018.4.11 8:32:05</span>
+											</li>
+										</ul>
+										<div class="centerBottom">
+											<div class="details">
+												<div class="title">当前责任人</div>
+												<dl class="clearfix responsible"></dl>
+											</div>
+										</div>
+									</div>
+									<div class="list">
+										<ul class="basic scroll">
+											<li class="clearfix">
+												<i class="icon circle big"></i>
+												<p class="title text">系统通知  8:01:34</p>
+												<p class="text">地磁设备感应消防占道，发出通知 </p>
+											</li>
+											<li class="clearfix">
+												<i class="icon circle"></i>
+												<p class="title text">自动核实   8:15:36</p>
+												<p class="text">系统捕捉15分钟内地磁持续保持“被占”状态，确认非法占道 </p>
+											</li>
+											<li class="clearfix">
+												<i class="icon circle big"></i>
+												<p class="title text">事件创建 8:16:41</p>
+												<p class="text">系统创建事件，转入智能处置  </p>
+											</li>
+											<li class="clearfix">
+												<i class="icon circle"></i>
+												<p class="title text">智能处置  8:17:01</p>
+												<p class="text">系统联动周边摄像头识别车牌信息，平台外呼车主 </p>
+											</li>
+											<li class="clearfix active">
+												<i class="icon circle big"></i>
+												<p class="title text">系统校验  8:32:05</p>
+												<p class="text">系统持续检测，工单是否被处理 </p>
+											</li>
+										</ul>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="leftBottom fl">
+						<div class="title">
+							<span class="text">事件列表</span>
+							<ul class="menu clearfix">
+								<li class="progresss">待人工处理<i class="iconfont icon-htmal5icon03"></i></li>
+								<ul class="sub-menu">
+									<li><a href="safety.html">人工处理中</a></li>
+									<li><a href="safety02.html">待人工处理</a></li>
+									<li><a href="safety04.html">处理完成</a></li>
+								</ul>
+							</ul>
+						</div>
+						<div class="tableList">													
+							<div id="" class="dataTables_wrapper scroll active" role="grid">
+								<table class="table table-bordered table-striped table-condensed dataTable table01" id="">
+									<thead>
+										<tr>
+											<th width="15%">事件级别</th>
+											<th width="15%">事件类型</th>
+											<th width="20%">上报时间</th>
+											<th width="22%">当前责任单位</th>
+											<th width="19%">当前责任人</th>
+											<th width="14%">SLA</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="rightBottom fr">
+						<div class="detail">
+							<ul class="menu clearfix">
+								<li class="active">事件详情</li>
+								<li>设备详情</li>
+								<p class="sub-title">消防占道</p>
+							</ul>
+							<div class="list active scrolls">
+								<p class="text"><span class="title">事件类型：</span><span class="sort">消防占道</span></p>
+								<p class="text"><span class="title">事件描述：</span><span class="sort">消防地磁设备8:34:01发生了第2次告警，持续30分钟 </span></p>
+								<p class="titles">事件处理流程</p>
+								<ul class="flow clearfix">
+									<p class="line"></p>
+									
+									<li class="green">
+										<i class="icon circle"></i>
+										<p class="txt">8:30:44</p>
+										<p class="txt">系统通知</p>
+									</li>
+									<li class="green">
+										<i class="icon circle"></i>
+										<p class="txt">8:30:55</p>
+										<p class="txt">事件创建</p>
+									</li>
+									<li class="green">
+										<i class="icon circle"></i>
+										<p class="txt">9:13:08</p>
+										<p class="txt">人工处置</p>
+									</li>
+									<li class="hover">
+										<i class="icon circle"></i>
+										<p class="txt">9:43:08</p>
+										<p class="txt">系统校验</p>
+									</li>
+									<li class="">
+										<i class="icon circle"></i>
+										<!--<p class="txt">9:43:08</p>-->
+										<p class="txt">事件关闭</p>
+									</li>
+									
+									
+									
+								</ul>
+							</div>
+							<div class="list information">
+								<div class="subList clearfix">
+									<ul class="sub-menus clearfix">
+										<li class="">设备信息 <i class="iconfont icon-htmal5icon03"></i></li>
+										<ul class="sub-list">
+											<!--<li>设备信息<i class="iconfont icon-htmal5icon03"></i></li>-->
+											<li>监控信息<i class="iconfont icon-htmal5icon03"></i></li>
+										</ul>
+									</ul>
+									<ul class="menuright clearfix">
+										<li><i class="iconfont icon-electricquantity2dianchidianliang"></i>电池电量  <span class="num">85%</span></li>
+										<li><i class="iconfont icon-xinhao"></i>信号强度  <span class="num">16(dpm)</span></li>
+									</ul>
+								</div>
+								<div class="subcontent">
+									<div class="chart02">
+										<!-- <img src="images/safety/imgs.png"/> -->
+										<div id="bottomEquipInfo" style="width:620px;height:160px;"></div>
+									</div>
+									<div class="chart03 clearfix">
+										<!--<div class="swiper"></div>-->
+										<div class="imgs swiper-container">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide">
+													<img src="images/safety/img015.jpg"/>
+												</div>
+												<div class="swiper-slide">
+													<img src="images/safety/img015.jpg"/>
+												</div>
+												<div class="swiper-slide">
+													<img src="images/safety/img015.jpg"/>
+												</div>
+											</div>
+											<div class="swiper-button-prev"><i class="iconfont icon-jiantou_zuo"></i></div>
+											<div class="swiper-button-next"><i class="iconfont icon-jiantou"></i></div>
+											<div class="swiper-pagination"></div>
+										</div>
+										<ul class="lists fr">
+											<li><span class="sort">设备编号</span><span class="txt">SH-010</span></li>
+											<li><span class="sort">布防状态</span><span class="txt">布防</span></li>
+											<li><span class="sort">设备状态</span><span class="txt red">异常</span></li>
+											<li><span class="sort">责任单位</span><span class="txt">中国电信上海分公司</span></li>
+											<li><span class="sort">责任人</span><span class="txt">李好 <i class="tel">18901785347</i></span></li>
+											<li><span class="sort">所属社区</span><span class="txt">二联馨苑</span></li>
+											
+										</ul>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<div class="charts active">
+							<div class="eCharts-wrap clearfix" style="width: 100%;">
+								<div id="main-left" style="width: 30%;height:280px;float: left;"></div>
+								<div id="main-right" style="width: 68%;height:280px;float: left;"></div>
+							</div>
+							
+						</div>
+						<!--右侧切换开始-->
+						<div class="detailright01">
+							<div class="eCharts-wrap clearfix" id="changeCharts2" style="width: 100%;display: block;">
+									<div id="yujCharts" style="width: 600px;height:280px;"></div>
+							</div>
+						</div>
+						<div class="detailright">
+							<ul class="menu clearfix">
+								<li>事件详情</li>
+								<li class="active">设备详情</li>
+								<p class="sub-title">漏水水浸预警监控</p>
+							</ul>
+							<div class="list scrolls">
+								<p class="text"><span class="title">事件类型：</span><span class="sort">设备失联</span></p>
+								<p class="text"><span class="title">事件描述：</span><span class="sort">烟感设备30分钟内没有监测到心态数据 </span></p>
+								<p class="titles">事件处理流程</p>
+								<ul class="flow clearfix">
+									<p class="line"></p>
+									<li class="green">
+										<i class="icon circle"></i>
+										<p class="txt">10:01:34</p>
+										<p class="txt">系统通知</p>
+									</li>
+									<!--<li class="green">
+										<i class="icon circle"></i>
+										<p class="txt">10:15:36</p>
+										<p class="txt">自动核实</p>
+									</li>-->
+									<li class="green">
+										<i class="icon circle"></i>
+										<p class="txt">10:16:41</p>
+										<p class="txt">事件创建</p>
+									</li>
+									<!--<li class="green">
+										<i class="icon circle"></i>
+										<p class="txt">10:16:45</p>
+										<p class="txt">智能处置</p>
+									</li>
+									<li class="hover">
+										<i class="icon circle"></i>
+										<p class="txt">10:16:45</p>
+										<p class="txt">系统预警</p>
+									</li>-->
+									<li class="hover">
+										<i class="icon circle"></i>
+										<p class="txt">8:43:03</p>
+										<p class="txt">人工处置</p>
+									</li>
+									<li class="=">
+										<i class="icon circle"></i>
+										<!--<p class="txt">9:43:03</p>-->
+										<p class="txt">系统核实</p>
+									</li>
+									<li class="=" >
+										<i class="icon circle"></i>
+										<!--<p class="txt">9:43:08</p>-->
+										<p class="txt">事件关闭</p>
+									</li>
+								</ul>
+							</div>
+							<div class="list active information">
+								<div class="subList clearfix">
+									<ul class="sub-menus clearfix">
+										<li class="">设备信息 <i class="iconfont icon-htmal5icon03"></i></li>
+										<ul class="sub-list">
+											<li>监控信息<i class="iconfont icon-htmal5icon03"></i></li>
+										</ul>
+									</ul>
+									<ul class="menuright clearfix">
+										<li><i class="iconfont icon-electricquantity2dianchidianliang"></i>电池电量  <span class="num">78%</span></li>
+										<li><i class="iconfont icon-xinhao"></i>信号强度  <span class="num">17(dpm)</span></li>
+									</ul>
+								</div>
+								<div class="subcontent">
+									<div class="chart02">
+										<!-- <img src="images/safety/imgs.png"/> -->
+										<div id="bottomListInfo" style="width:620px;height:160px;"></div>
+									</div>
+									<div class="chart03 clearfix">
+										<!--<div class="swiper"></div>-->
+										<div class="imgs swiper-container">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide">
+													<img src="images/safety/img013.jpg"/>
+												</div>
+												<div class="swiper-slide">
+													<img src="images/safety/img013.jpg"/>
+												</div>
+												<div class="swiper-slide">
+													<img src="images/safety/img013.jpg"/>
+												</div>
+											</div>
+											<div class="swiper-button-prev"><i class="iconfont icon-jiantou_zuo"></i></div>
+											<div class="swiper-button-next"><i class="iconfont icon-jiantou"></i></div>
+											<div class="swiper-pagination"></div>
+											
+										</div>
+										<ul class="lists fr">
+											<li><span class="sort">设备编号</span><span class="txt">L0000001</span></li>
+											<li><span class="sort">布防状态</span><span class="txt">布防</span></li>
+											<li><span class="sort">设备状态</span><span class="txt red">异常</span></li>
+											<li><span class="sort">责任单位</span><span class="txt">中国电信上海分公司</span></li>
+											<li><span class="sort">责任人</span><span class="txt">李好 <i class="tel">18901785347</i></span></li>
+											<li><span class="sort">所属社区</span><span class="txt">二联馨苑</span></li>
+											
+										</ul>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<!--右侧开始结束-->
+						
+					</div>					
+				</div>
+				<div class="divright fr">
+					<div class="top">
+						<div class="wrapper">
+							<div class="title">
+								设备看板
+								<span class="num fr yellow">30</span>
+							</div>
+							<div class="list">
+								<ul class="lists clearfix">
+									<li class="textcut">
+										<p class="num num01">752</p><p class="text"><i class="iconfont icon-yunxing"></i>正常</p>
+									</li>
+									<li class="textcut">
+										<p class="num num02">23</p><p class="text"><i class="iconfont icon-gaojing"></i>预警</p>
+									</li>
+									<li class="textcut">
+										<p class="num num03">24</p><p class="text"><i class="iconfont icon-shilian"></i>失联</p>
+									</li>
+									
+								</ul>
+								<div class="swiper-container">
+									<div class="swiper-wrapper"  id="swiperWraper">
+										<ul class="swiper-slide clearfix">
+											<li class="active swiperItem" data-target="1"><i class="iconfont icon-quanbu"></i></li>
+											<li class="swiperItem" data-target="2"><i class="iconfont icon-yanganzhuji"></i></li>
+											<li class="swiperItem" data-target="3"><i class="iconfont icon-jingwuicon_svg-"></i></li>
+											<li class="swiperItem" data-target="4"><i class="iconfont icon-tingche"></i></li>
+										</ul>
+										<ul class="swiper-slide clearfix">
+											<li class="swiperItem" data-target="5"><i class="iconfont icon-lajixiang-fuben"></i></li>
+											<li class="swiperItem" data-target="6"><i class="iconfont icon-gaokongpaowu"></i></li>
+										</ul>
+									</div>
+									 <!-- 如果需要导航按钮 -->
+								    <div class="swiper-button-prev"><i class="iconfont icon-jiantou_zuo"></i></div>
+								    <div class="swiper-button-next"><i class="iconfont icon-jiantou"></i></div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="bottom">
+						<div class="type">
+								<ul class="sub-menu clearfix">
+									<li class="active outofContact">失联</li>
+									<li class="warning">预警</li>
+									<p class="closes fr"><i class="iconfont icon-guanbi"></i></p>
+								</ul>
+								<div class="list scroll active"></div>
+							
+						</div>
+						<div class="details active">
+							<div class="title">人员看板</div>
+							<div class="list clearfix">
+								<dl>
+									<dt><i class="iconfont icon-tuandui"></i>总人数</dt>
+									<dd>281</dd>
+								</dl>
+								<dl class="red">
+									<dt><i class="iconfont icon-liucheng"></i>今日在职</dt>
+									<dd>10</dd>
+								</dl>
+								<dl class="yellow">
+									<dt><i class="iconfont icon-riliriqi"></i>今日请假</dt>
+									<dd>10</dd>
+								</dl>
+							</div>
+							<div class="detail scroll"></div>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>			
+		</div>
+		<!--弹窗-->		
+		<div class="bg safety"></div>
+		<div class="modal safety">
+			<div class="modal-header close"><i class="iconfont icon-guanbi"></i></div>
+			<div id="" class="dataTables_wrapper scroll" role="grid">				
+				<table class="table table-bordered table-striped table-condensed dataTable" id="lesseeTable">
+					<thead style="">
+						<tr>
+							
+							<th width="15%">事件编号</th>
+							<th width="15%">事件类别</th>
+							<th width="15%">责任人</th>
+							<th width="20%">事件类型</th>
+							<th width="15%">事件状态</th>
+							<th width="15%">响应状态</th>
+						</tr>
+					</thead>
+					<tbody style="margin-top: 60px;"></tbody>
+				</table>
+			</div>
+		</div>
+				
+	</body>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=lGdbdcsA3LBr1s2FIluWARnrZImND8PT"></script>
+	<script type="text/javascript" src="http://lbsyun.baidu.com/custom/stylelist.js"></script>
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>	
+	
+	<script src="js/safetyEchats.js"></script>
+	<script src="js/map01.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper-4.2.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--数据-->
+	<script src="js/leftBottom02.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/InfoBox_min.js"></script>
+	<!--数据-->
+	<script src="js/leftBottom04.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/rightList01.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/rightList02.js" type="text/javascript" charset="utf-8"></script>
+	<!--人-->
+	<script src="js/people.js" type="text/javascript" charset="utf-8"></script>
+	<!--弹窗-->
+	<script src="js/modal.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/modal02.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/modal03.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/modal04.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			function swiperRight(){
+				var mySwiper1 = new Swiper ('.divright .top .swiper-container', {
+				    direction: 'horizontal',
+				    loop: false,
+				    // 如果需要前进后退按钮
+				    navigation: {
+				      nextEl: '.divright .top .swiper-button-next',
+				      prevEl: '.divright .top .swiper-button-prev',
+				    },
+				 })   
+			}
+			swiperRight();
+			
+			 function swiperLeft(){
+			 	 var mySwiper2 = new Swiper ('.detail .centerLeft .swiper-container', {
+				    direction: 'horizontal',
+				    loop: false,
+					 pagination: {
+					      el: '.detail .centerLeft .swiper-pagination',
+					   },
+				})  
+			 }
+			 function swiperDetail01(){
+			 	var mySwiper2 = new Swiper ('.rightBottom .detail .swiper-container', {
+				    direction: 'horizontal',
+				    loop: true,
+//				    autoplay:1000,
+				    // 如果需要分页器
+				    pagination: {
+				      el: '.rightBottom .detail .swiper-pagination',
+				    },
+				    
+				    // 如果需要前进后退按钮
+				    navigation: {
+				      nextEl: '.rightBottom .detail .swiper-button-next',
+				      prevEl: '.rightBottom .detail .swiper-button-prev',
+				    },
+				}) 
+			 }
+//			 swiperDetail01()
+ 			function swiperDetail02(){
+			 	var mySwiper2 = new Swiper ('.rightBottom .detailright .swiper-container', {
+				    direction: 'horizontal',
+				    loop: true,
+				    autoplay:{
+				    	 delay: 3000,
+				    	 
+				    },
+				    // 如果需要分页器
+				    pagination: {
+				      el: '.rightBottom .detailright .swiper-pagination',
+				    },
+				    
+				    // 如果需要前进后退按钮
+				    navigation: {
+				      nextEl: '.rightBottom .detailright .swiper-button-next',
+				      prevEl: '.rightBottom .detailright .swiper-button-prev',
+				    },
+				}) 
+			 }
+
+			//生成leftBottom列表
+			function leftList01(){
+				var table=$(".leftBottom .dataTables_wrapper.active table tbody");
+				var responsible=$(".rightTop .centerRight .centerBottom .responsible")
+				var _leftBottom=leftBottom02;
+				var str01="";
+				var str02="";
+				for(var i=0;i<_leftBottom.length;i++){
+						if(_leftBottom[i].icon==""){
+						str01+="<tr><td>"+_leftBottom[i].event_level+"</td><td>"+_leftBottom[i].event_type+"</td><td>"+_leftBottom[i].event_report+"</td><td>"+_leftBottom[i].people_company+"</td><td>"+_leftBottom[i].people_name+"</td><td>"+_leftBottom[i].response_state+"</td></tr>";	
+						str02="<dt><img src="+_leftBottom[0].people_desc+" /></dt><dd class='clearfix'><span class='text'>编号:</span><span class='num'>"+_leftBottom[0].people_id+"</span></dd><dd class='clearfix'><span class='text'>姓名:</span><span class='name'>"+_leftBottom[0].people_name+"</span></dd><dd class'clearfix'><span class='text'>联系电话:</span><span class='tel'>"+_leftBottom[0].people_phone+"</span></dd>";
+					}else{
+						str01+="<tr class='degree'><td>"+_leftBottom[i].event_level+"</td><td>"+_leftBottom[i].event_type+"</td><td>"+_leftBottom[i].event_report+"</td><td>"+_leftBottom[i].people_company+"</td><td>"+_leftBottom[i].people_name+"<i class='icon flag'><img src="+_leftBottom[i].icon+" /></i></td><td>"+_leftBottom[i].response_state+"</td></tr>";	
+						str02="<dt class='degree'><img src="+_leftBottom[0].people_desc+" /></dt><dd class='clearfix'><span class='text'>编号:</span><span class='num'>"+_leftBottom[0].people_id+"</span></dd><dd class='clearfix'><span class='text'>姓名:</span><span class='name'>"+_leftBottom[0].people_name+"</span></dd><dd class'clearfix'><span class='text'>联系电话:</span><span class='tel'>"+_leftBottom[0].people_phone+"</span></dd>";
+					}				
+					
+				}
+				table.html(str01);
+				responsible.html(str02);
+			}
+			leftList01();
+			//右侧下方列表生成
+			//右侧下方列表生成
+			function rightList(){
+				//预警
+				var type=$(".divright .bottom .type")
+				var typeList=$(".divright .bottom .type .list");
+				var detailRight=$(".divleft .detailright");
+				var detailRight01=$(".divleft .detailright01");
+				var detail02=$(".divleft .rightBottom .detail");
+				var _rightList01=rightList01;
+				var _rightList02=rightList02;
+				var str01="";
+				var str02="";
+				for(var i=0;i<_rightList01.length;i++){
+					str01+="<ul class='clearfix'><li class='number'><span class='num'>"+_rightList01[i].equipment_num+"</span></li><li><span class='sort'>设备编号：</span><span class='txt'>"+_rightList01[i].equipment_number+"</span></li><li><span class='sort'>设备类型：</span><span class='txt'>"+_rightList01[i].equipment_type+"</span></li><li><span class='sort'>责任单位：</span><span class='txt'>"+_rightList01[i].equipment_company+"</span></li><li><span class='sort'>责任人：</span><span class='txt'>"+_rightList01[i].equipment_companypeo+"</span></li><li><span class='sort'>设备位置：</span><span class='txt'>"+_rightList01[i].equipment_position+"</span></li><li><span class='sort'>影响范围：</span><span class='txt'>"+_rightList01[i].equipment_force_range+"</span></li></ul>";
+				}
+				for(var i=0;i<_rightList02.length;i++){
+					str02+="<ul class='clearfix'><li class='number'><span class='num'>"+_rightList02[i].equipment_num+"</span></li><li><span class='sort'>设备编号：</span><span class='txt'>"+_rightList02[i].equipment_number+"</span></li><li><span class='sort'>设备类型：</span><span class='txt'>"+_rightList02[i].equipment_type+"</span></li><li><span class='sort'>责任单位：</span><span class='txt'>"+_rightList02[i].equipment_company+"</span></li><li><span class='sort'>责任人：</span><span class='txt'>"+_rightList02[i].equipment_companypeo+"</span></li><li><span class='sort'>设备位置：</span><span class='txt'>"+_rightList02[i].equipment_position+"</span></li><li><span class='sort'>影响范围：</span><span class='txt'>"+_rightList02[i].equipment_force_range+"</span></li></ul>";
+				}	
+				
+				typeList.html(str02);
+				var menu=$(".divright .bottom .type .sub-menu li");
+					$(".outofContact").click(function(){
+//						swiperDetail02();
+						$(this).addClass("active");
+						typeList.html(str02);
+						$(".warning").removeClass("active");
+						var uL=$(".divright .bottom .type .list ul");
+						console.log(uL)
+						uL.each(function(i,index){
+							
+							$(this).click(function(){
+								$(this).addClass("active").siblings().removeClass("active")
+								detailRight.addClass("active");
+								detailRight01.removeClass("active");
+								detail02.removeClass("active");
+							})
+						});
+					})
+					$(".warning").click(function(){
+						
+						$(this).addClass("active");
+						typeList.html(str01);
+						var uL=$(".divright .bottom .type .list ul");
+						console.log(uL)
+						uL.each(function(i,index){
+							
+							$(this).click(function(){
+								$(this).addClass("active").siblings().removeClass("active")
+								detailRight.addClass("active");
+								detailRight01.removeClass("active");
+								detail02.removeClass("active")
+							})
+						})
+					
+					})
+						var uL=$(".divright .bottom .type .list ul");
+						// console.log(uL)
+						uL.each(function(i,index){
+							
+							$(this).click(function(){
+								$(this).addClass("active").siblings().removeClass("active")
+								detailRight.addClass("active");
+								detailRight01.removeClass("active");
+								detail02.removeClass("active");
+								swiperDetail02();
+							})
+						})
+			}
+			rightList();
+			//people
+			function people(){
+				
+				var _peoples=$(".divright .bottom .details .detail");
+				
+				console.log()
+				var _people=people01;
+				var str01="";
+				for(var i=0;i<_people.length;i++){
+					str01+="<ul class='lists clearfix'><li class='fl imgs'><img src="+_people[i].people_desc+ " /></li><li class='fr text'><p class='sub-title'>"+_people[i].people_name+"</p><p class='txt'><span class='sort'>职务</span>：<span class='text_ct'>"+_people[i].people_post+"</span></p><p class='txt  right'><span class='sort'>未处理</span>：<span class='text_ct'>"+_people[i].people_wei+"</span></p><p class='txt'><span class='sort'>所属单位</span>：<span class='text_ct'>"+_people[i].people_company+"</span></p><p class='txt right'><span class='sort'>处理中</span>：<span class='text_ct'>"+_people[i].people_zhong+"</span></p><p class='txt'><span class='sort'>联系电话</span>：<span class='text_ct'>"+_people[i].people_phone+"</span></p><p class='txt  right'><span class='sort'>响应时间</span>：<span class='text_ct'>"+_people[i].people_chao+"</span></p></li></ul>"					
+				}
+				_peoples.html(str01);
+			}
+			people();
+			
+			 //左侧下方列表
+			function list(){
+				var _tr=$(".dataTables_wrapper table tbody tr");
+				var menu=$(".leftBottom .title .menu");
+				var menuList=$(".leftBottom .title .menu .sub-menu")
+				var subMenu=$(".leftBottom .title .menu .sub-menu li a");
+				var tableList=$(".tableList .dataTables_wrapper");
+				var detail01=$(".rightTop .detail");
+				var detail02=$(".rightBottom .detail");
+				var close=$(".centerRight .centerTop .sub-menu .close");
+				var maps=$(".rightTop  #map");
+				var user=$(".rightTop .peopleOpenClose")
+			 	var charts=$(".rightBottom .charts");
+			 	var detailRight=$(".divleft .rightBottom .detailright01");
+			 	var detailRight02=$(".divleft .rightBottom .detailright");
+			 	var type=$(".divright .bottom .type");
+//			 	var menu02=$(".")
+				
+				menu.click(function(){
+					if($(this).hasClass("active")){
+						$(this).removeClass("active");
+						menuList.hide();
+					}else{
+						menuList.show();
+						$(this).addClass("active");
+					}
+				})
+				//点击列表
+				_tr.each(function(i,index){
+					$(this).click(function(e){
+						e.stopPropagation()
+						$(this).addClass("flag").siblings().removeClass("flag");
+						detail01.addClass("active");
+						detail02.addClass("active");
+						maps.removeClass("active");
+						user.hide();
+						charts.removeClass("active");
+						detailRight.removeClass("active");
+						detailRight02.removeClass("active");
+						swiperLeft();
+					})
+				});
+				close.click(function(){
+					
+					_tr.removeClass("flag");
+					detail01.removeClass("active");
+					detail02.removeClass("active");
+					maps.addClass("active");
+					user.show();
+					charts.addClass("active");
+					if(type.hasClass("active")){
+						detailRight.addClass("active");
+						detailRight02.removeClass("active");
+						charts.removeClass("active");
+					}else{
+						detailRight.removeClass("active");
+						detailRight02.removeClass("active");
+						charts.addClass("active")
+					}
+				})
+			}
+			list();
+			// divright top swiper
+			function swiper(){
+				var list=$(".swiper-container .swiper-slide li.swiperItem");				
+				var menu=$(".divright .bottom .type .sub-menu li");
+				var type=$(".divright .bottom .type")
+				var typeList=$(".divright .bottom .type .list");
+				var detail=$(".divright .bottom .details");
+				var close=$(".divright .bottom .sub-menu .closes");
+				var centerDetail=$(".divleft .rightTop .detail");
+				var maps=$(".divleft .rightTop #map");
+				var user=$(".divleft .rightTop .peopleOpenClose");
+				var centerBottomDetail=$(".divleft .rightBottom .detail");
+				var detailRight=$(".divleft .rightBottom .detailright01");
+				var detailRight02=$(".divleft .rightBottom .detailright");
+				var _tr=$(".dataTables_wrapper table tbody tr");
+				var details=$(".divright .bottom .details");
+				var charts=$(".rightBottom .charts");
+				// var num01=$(".divright .top .list .lists .num01");
+				// var num02=$(".divright .top .list .lists .num02");
+				// var num03=$(".divright .top .list .lists .num03");
+				
+					list.each(function(i,index){
+						// list.eq(0).click(function(){
+						// 	num01.html(281);
+						// 	num02.html(14);
+						// 	num03.html(8);
+						// })
+						// list.eq(1).click(function(){
+						// 	num01.html(281);
+						// 	num02.html(7);
+						// 	num03.html(4);
+						// })
+						// list.eq(2).click(function(){
+						// 	num01.html(281);
+						// 	num02.html(7);
+						// 	num03.html(4);
+						// })
+						
+						$(this).click(function(){
+							
+//							if($(this).hasClass("active")){
+//								$(this).removeClass("active");
+//							}else{
+								$(this).addClass("active").siblings().removeClass("active")
+//							}			
+							//点击右侧列表，中间top的detail消失，map出现 下方bottom的detail消失，detailright出现
+							//右侧下放的type出现 ，detial消失
+							maps.addClass("active");
+							user.show();
+							centerDetail.removeClass("active");
+							type.addClass("active");
+							detail.removeClass("active");
+							centerBottomDetail.removeClass("active")
+							detailRight.addClass("active");
+							detailRight02.removeClass("active");
+							//图表消失
+							charts.removeClass("active");
+						});
+						
+					});
+					menu.each(function(i,index){
+						$(this).click(function(){
+							$(this).addClass("active").siblings().removeClass("active");
+							typeList.eq(i).addClass("active").siblings().removeClass("active");
+						})
+					})
+					//关闭
+					close.click(function(){
+				
+							//点击close，divright关闭，type关闭，
+							detailRight.removeClass("active");
+							detailRight02.removeClass("active")
+							type.removeClass("active");
+							//如果 divleft top的detail显示，那么继续显示
+							if(_tr.hasClass("flag")){
+								centerDetail.addClass("active");
+								centerBottomDetail.addClass("active");
+								maps.removeClass("active");
+								user.hide();
+								charts.removeClass("active");
+							}else{
+								centerDetail.removeClass("active");
+								centerBottomDetail.removeClass("active");
+								maps.addClass("active");
+								user.show();
+								charts.addClass("active")
+							}
+							details.addClass("active")
+							
+					})
+//					视频播放
+					var _vedios=$(".vedio-links");
+					var wrapper=$(".centerLeft .centerTop .swiper-slide ")
+					var _vedio=$(".centerLeft .centerTop .swiper-slide video")
+					var begins=$(".centerLeft .centerTop .swiper-slide .begins")
+					var begin01=$(".centerLeft .centerTop .swiper-slide .begin01");
+					var begin02=$(".centerLeft .centerTop .swiper-slide .begin02");
+					wrapper.each(function(i,index){
+						$(this).click(function(e){
+							e.stopPropagation()
+							if($(this).hasClass("flag")){
+								$(this).removeClass("flag");
+								_vedio[i].pause()
+								begins.eq(i).show();
+							}else{
+								$(this).addClass("flag").siblings().removeClass("active");
+								_vedio[i].play();
+								begins.eq(i).hide();
+							}
+						})
+					});
+					//事件描述 视频播放
+					var videos=$(".centerLeft .centerTop  .list.video");
+					var video01=$(".centerLeft .centerTop  .list.video video");
+					var begins02=$(".centerLeft .centerTop  .list.video .begins");
+					var times=$(".centerLeft .centerTop  .list.video video").duration;
+//					var time;
+					videos.click(function(){
+						if($(this).hasClass("flag")){
+							video01[0].pause();
+							begins02.show();
+							$(this).removeClass("flag")
+						}else{
+							$(this).addClass("flag")
+							video01[0].play();
+							begins02.hide();
+							begins02.click(function(e){
+								e.stopPropagation();
+								video01[0].pause();
+								begins02.show()
+							})
+						}
+						
+					})
+					
+					
+					$("body").click(function(){
+						_vedio.removeClass("flag")
+						begins.show();
+					})
+					
+			}
+			swiper()
+			//弹窗
+			function modal(){
+				var modal=$(".modal");
+				var close=$(".modal .close");
+				var bg=$(".safety.bg");
+				var list=$(".divright .bottom .detail .lists");
+				var _table=$(".modal table tbody");
+				//生成弹窗内容
+				 var _modal=modal01;
+				 var _modal02=modal02;
+				 var _modal03=modal03;
+				 var _modal04=modal04;
+				 var str01="";
+				 var str02="";
+				 var str03="";
+				 var str04="";
+				for(var i=0;i<_modal.length;i++){
+					str01+="<tr><td>"+_modal[i].event_id+"</td><td>"+_modal[i].event_level+"</td><td>"+_modal[i].people_name+"</td><td>"+_modal[i].event_attribute+"</td><td>"+_modal[i].event_handlestate+"</td><td>"+_modal[i].response_state+"</td></tr>";
+				}
+				for(var i=0;i<_modal02.length;i++){
+					str02+="<tr><td>"+_modal02[i].event_id+"</td><td>"+_modal02[i].event_level+"</td><td>"+_modal02[i].people_name+"</td><td>"+_modal02[i].event_attribute+"</td><td>"+_modal02[i].event_handlestate+"</td><td>"+_modal02[i].response_state+"</td></tr>";
+				}
+				for(var i=0;i<_modal03.length;i++){
+					str03+="<tr><td>"+_modal03[i].event_id+"</td><td>"+_modal03[i].event_level+"</td><td>"+_modal03[i].people_name+"</td><td>"+_modal03[i].event_attribute+"</td><td>"+_modal03[i].event_handlestate+"</td><td>"+_modal03[i].response_state+"</td></tr>";
+				}
+				for(var i=0;i<_modal04.length;i++){
+					str04+="<tr><td>"+_modal04[i].event_id+"</td><td>"+_modal04[i].event_level+"</td><td>"+_modal04[i].people_name+"</td><td>"+_modal04[i].event_attribute+"</td><td>"+_modal04[i].event_handlestate+"</td><td>"+_modal04[i].response_state+"</td></tr>";
+				}
+				
+				list.each(function(i,index){
+					list.eq(0).click(function(){
+						_table.html(str01);
+					})
+					list.eq(1).click(function(){
+						_table.html(str02);
+					})
+					list.eq(2).click(function(){
+						_table.html(str03);
+					})
+					list.eq(3).click(function(){
+						_table.html(str04);
+					})
+					$(this).click(function(e){
+						e.stopPropagation();
+						$(this).addClass("hover").siblings().removeClass("hover")
+						modal.show();
+						bg.show();
+					});
+				});
+				//关掉弹窗
+				close.click(function(){
+					modal.hide();
+//					list.removeClass("hover")
+					bg.hide();
+				});
+				$("body").click(function(){
+					modal.hide();
+//					list.removeClass("hover")
+					bg.hide();
+				});
+			}
+			modal()	
+			//左侧右上方
+			function centerList(){
+				//divleft centerLeft
+				var menu=$(".divleft .centerLeft .centerTop .sub-menu li");
+				var list=$(".divleft .centerLeft .centerTop .list");
+				var _video=$(".centerLeft .centerBottom .video .iconfont");
+				var list=$(".centerLeft .centerTop .list");
+				var videos=$(".centerLeft .centerTop .video");
+				var maps=$(".centerLeft .centerTop .map");
+				menu.each(function(i,index){
+					$(this).click(function(){							
+						$(this).addClass("active");
+						$(this).siblings("li").removeClass("active");
+						list.eq(i).addClass("active")
+						list.eq(i).siblings().removeClass("active");
+						videos.removeClass("active");
+					});
+				});	
+				_video.click(function(){
+					if($(this).hasClass("green")){
+						list.removeClass("active")
+						videos.addClass("active")
+					}else{
+						
+					}
+				})
+				//divleft centerRight
+				var menu02=$(".divleft .centerRight .centerTop .sub-menu li");
+				var list02=$(".divleft .centerRight .centerTop .list");
+				menu02.each(function(i,index){
+					$(this).not(".progressing").click(function(){
+						$(this).not(".progressing").addClass("active").siblings().removeClass("active");
+						list02.eq(i).addClass("active").siblings().removeClass("active")
+					});
+				})
+			}
+			 centerList();
+			//divleft rightBottom
+			function leftMenu(){
+				var menu=$(".divleft .rightBottom .detail .menu li");
+				var list=$(".divleft .rightBottom .detail .list");
+				var subMenus=$(".divleft .rightBottom .detail .list .sub-menus li");
+				var list02=$(".divleft .rightBottom .detail .list .sub-menus .sub-list")
+				var subList=$(".divleft .rightBottom .detail .list .sub-menus .sub-list li");
+				var text01=$(".divleft .rightBottom .detail .list .sub-menus li").html();
+				var text02=$(".divleft .rightBottom .detail .list .sub-menus .sub-list li").html();
+				var chart02=$(".divleft .rightBottom .subcontent .chart02");
+				var chart03=$(".divleft .rightBottom .subcontent .chart03");
+				var menuRight=$(".divleft .rightBottom .detail .menuright");
+				var flag=1;
+				menu.each(function(i,index){
+					$(this).click(function(){
+						$(this).addClass("active").siblings().removeClass("active");
+						list.eq(i).addClass("active").siblings().removeClass("active");
+						swiperDetail01();
+					})
+				});
+				subMenus.click(function(){
+					if($(this).hasClass("active")){
+						$(this).removeClass("active");
+						list02.hide();
+					}else{
+						$(this).addClass("active");
+						list02.show();
+					}
+					
+					subList.click(function(){
+						if(flag){
+							subMenus.html(text02)
+							$(this).html(text01);
+							list02.hide();
+							subMenus.removeClass("active");
+							flag=0;
+						}else{
+							subMenus.html(text01)
+							$(this).html(text02);
+							list02.hide();
+							subMenus.removeClass("active");
+							flag=1;
+						}
+						if($(this).hasClass("flag")){
+							chart02.hide();
+							menuRight.hide();
+							chart03.show();
+							$(this).removeClass("flag");
+						}else{
+							$(this).addClass("flag");
+							chart02.show();
+							menuRight.show()
+							chart03.hide()
+						}
+//						$(this).removeClass("active");
+					})			
+				})
+			}
+			leftMenu();
+			function rightBottom(){
+				var menu=$(".divleft .rightBottom .detailright .menu li");
+				var list=$(".divleft .rightBottom .detailright .list");
+				var subMenus=$(".divleft .rightBottom .detailright .list .sub-menus li");
+				var list02=$(".divleft .rightBottom .detailright .list .sub-menus .sub-list")
+				var subList=$(".divleft .rightBottom .detailright .list .sub-menus .sub-list li");
+				var text01=$(".divleft .rightBottom .detailright .list .sub-menus li").html();
+				var text02=$(".divleft .rightBottom .detailright .list .sub-menus .sub-list li").html();
+				var chart02=$(".divleft .rightBottom .subcontent .chart02");
+				var chart03=$(".divleft .rightBottom .subcontent .chart03");
+				var menuRight=$(".divleft .rightBottom .detailright .menuright")
+				var flag=1;
+				menu.each(function(i,index){
+					$(this).click(function(){
+						$(this).addClass("active").siblings().removeClass("active");
+						list.eq(i).addClass("active").siblings().removeClass("active");
+					})
+				});
+				subMenus.click(function(){
+					if($(this).hasClass("active")){
+						$(this).removeClass("active");
+						list02.hide();
+					}else{
+						$(this).addClass("active");
+						list02.show();
+					}
+					
+					subList.click(function(){
+						if(flag){
+							subMenus.html(text02)
+							$(this).html(text01);
+							list02.hide();
+							subMenus.removeClass("active");
+							flag=0;
+						}else{
+							subMenus.html(text01)
+							$(this).html(text02);
+							list02.hide();
+							subMenus.removeClass("active");
+							flag=1;
+						}
+						if($(this).hasClass("flag")){
+							chart02.hide();
+							menuRight.hide();
+							chart03.show();
+							$(this).removeClass("flag");
+						}else{
+							$(this).addClass("flag");
+							chart02.show();
+							menuRight.show()
+							chart03.hide()
+						}
+//						$(this).removeClass("active");
+					})			
+				})
+			}
+			rightBottom();
+
+			// 底部 信号 图表
+			var myEquipmentChart1 = echarts.init(document.getElementById('bottomEquipInfo'));
+			 var myListInfo = echarts.init(document.getElementById('bottomListInfo'));
+
+			myEquipmentChart1.setOption(equipOption(), true);
+			myListInfo.setOption(equipOption(), true);
+
+			 function equipOption() {
+				 return  equipmentOption = {
+					grid: {
+						//show:true,
+						left: '10%',
+						right: '6%',
+						top: '25%',
+						bottom: '5%',
+						containLabel: true
+					},
+					toolbox: {
+						"show": false,
+					},
+					tooltip : {
+						trigger: 'item',
+						axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+						    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					xAxis: [{
+						type: 'category',
+						boundaryGap: true, //false时X轴从0开始
+						axisLine: {
+							lineStyle: {
+								color: '#B1B1B3'
+							},
+							onZero: true
+						},
+						// x周坐标 名称
+						// data: ['井设备', '果皮箱', '果皮箱', '噪音检测', '路灯', '异味监测']
+						
+					}],
+					yAxis: [
+						{
+						type: 'value',
+						axisLine: {
+							show:false,
+							lineStyle: {
+								color: '#B1B1B3'
+							},
+							onZero: true
+						},
+					}
+				],
+            series: [
+                {
+                    name: '预警',
+                    smooth: true, // 平滑
+                    type: 'line',
+                    lineStyle: {  // 线性 的样式
+                        normal: {
+                            color: '#cdd',
+                            opacity: 10,
+                            ZIndex: 9
+                        }
+                    },
+                    areaStyle: {  // 线形图 曲线下面颜色
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: '#186dd6'
+                            }, {
+                                offset: 1,
+                                color: '#4576b3'
+                            }])
+                        }
+                    },
+                    symbolSize: 0,
+                    data: [5, 20, 15, 10, 5, 10],
+                }
+            ]
+    }
+			 }
+		})
+	</script>
+</html>
