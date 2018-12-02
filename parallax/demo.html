@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ZH">
+<head>
+    <meta charset="UTF-8" />
+    <title>滚动视差Demo</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div id="banner_wrapper">
+        <div class="cooperation">
+            <div class="layer" data-depth="0.4" data-limit-x='90' data-limit-y='90'>
+                <img src="images/cooperation1.png">
+            </div>
+        </div>
+        <div class="banner_txt">
+            <div class="layer" data-depth="0.3" data-limit-x='90' data-limit-y='90'>
+                <span class="fuhua_area">草原额吉企业孵化园</span>
+                <span class="noBorder">打造没有边界、没有围墙的</span>
+                <span class="mom_service">“妈妈式” &nbsp;服务体系</span>
+            </div>
+        </div>
+        <div class="bottom_cloundf" id="bottom_clound" data-scalar-y="0">
+            <div class="layer" data-depth="0.25">
+                <img src="images/bottom_clound1.png">
+            </div>
+        </div>
+    </div>
+    <script src="js/parallax.js"></script>
+    <script>
+        var scene = document.getElementById('banner_wrapper');
+        var parallax = new Parallax(scene);
+        var clound = document.getElementById('bottom_clound');
+        var parallax = new Parallax(clound);
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+@charset "utf-8";
+*{margin: 0px;padding: 0px;}
+/*================================基本信息==============================*/
+body, td, th, samp, dfn ,input,h4{ font-family: Arial, 'Microsoft YaHei'; font-size:12px; line-height:1.6em; color:#333; }
+body { margin:0; background:#fff;-webkit-text-size-adjust:none;-webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */user-select: none;}
+ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,p,html,blockquote,fieldset,div, textarea, address { margin:0; padding:0;font-size:12px; color:#373535; }
+form{display: block;}
+ul,ol,dl,li,dt,dd { list-style:none; }
+p { font-size:14px;font-family:Arial, 'Microsoft YaHei'; }
+em , i , dfn , address { font-style:normal; }
+a,img { border:none;  -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */}
+html{-webkit-text-size-adjust:none;}
+a { color:#333; text-decoration:none; -webkit-transition:all .5s ease; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+a:hover { -webkit-transition:all .5s ease; }
+input:focus, a:focus, summary:focus, select:focus, textarea:focus { outline:none; }
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset; }
+input:-webkit-autofill { background-color:transparent; }
+input{text-indent: 5px;display: inline-block;}
+/* banner区域 */
+#banner_wrapper{
+    position: relative;
+    margin: 0 auto;
+    width: 1366px;
+    height:585px;
+    background: url('../images/banner1.png');
+}
+.cooperation{
+    position: absolute;
+    top: 82px;
+    left:152px;
+    width: 796px;
+    height: 418px;
+}
+.cooperation img{
+    max-width: 100%;
+}
+.banner_txt{
+    position: absolute;
+    top: 160px;
+    left: 668px;
+    height: 145px;
+    padding-top: 86px;
+    line-height: 1.35;
+    text-align: center;
+}
+.banner_txt .layer{
+    padding-top: 86px;
+}
+.banner_txt span{
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    text-align: right;
+}
+.banner_txt .fuhua_area{
+    font-size: 52px;
+    color: #fff;
+}
+.banner_txt .noBorder{
+    font-size: 27.89px;
+    color: #fff;
+}
+.banner_txt .mom_service{
+    font-size: 33.47px;
+    color: #fff110;
+}
+.bottom_cloundf{
+    position: absolute;
+    bottom: -12px;
+    right: 115px;
+    width: 640px;
+    height: 428px;
+}
+
+
