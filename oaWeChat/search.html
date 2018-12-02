@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>搜索</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/mobiscroll.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+<body>
+    <div class="search_box">
+    <div class="search_top">
+        <div class="search_input">
+            <input type="text"  placeholder="请输入搜索关键字">
+            <button type="button" class="searchbtn"></button>
+        </div>
+        <div class="search_button" onclick="location='index.html'">
+            取消
+        </div>
+    </div>
+    <div class="history_search">
+        <div class="hissearch_top">
+            <span class="hissearch_title">历史搜索</span>
+            <span class="search_clear"><img src="images/search_clear.png">清空</span>
+        </div>
+        <div class="history_content">
+            <a class="two_word" href="canyin.html">会议</a>
+            <a class="two_word" href="chalv.html">通知</a>
+            <a class="four_word" href="cycle.html">党员干部</a>
+            <a class="six_word" href="specialBy.html">三严三实活动</a>
+            <a class="six_word" href="taxi.html">招标结果公告</a>
+            <a class="two_word" href="tongyong.html">厅党组中心组织</a>
+        </div>
+    </div>
+    <div class="shaixuan_time">
+        <span class="shaixuan">筛选</span>
+        <span class="cost_type">费用类型</span>
+        <div class="type_list">
+            <a class="selected" href="javascript:void(0)">差旅</a>
+            <a href="javascript:void(0)">办公用品</a>
+            <a class="another" href="javascript:void(0)">其他</a>
+        </div>
+        <div style="border:1px solid #eeeeee">
+        </div>
+        <span class="star_time">起止时间</span>
+        <div class="searchtime">
+            <input id="starTime" class="searchtime_box" readonly="readonly" type="text" placeholder="开始时间" onfocus="this.blur();"><span style="margin: 0 0.15rem;font-weight: bold;" >-</span><input id="endTime" class="searchtime_box" readonly="readonly" type="text" placeholder="结束时间" onfocus="this.blur();">
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/rem.js"></script>
+   <script type="text/javascript" src="js/mobiscroll.js"></script>
+    <script type="text/javascript">
+         $(function(){
+            $(".type_list a").click(function () {
+                 $(this).addClass("selected").siblings().removeClass("selected");
+             });
+            var currYear = (new Date()).getFullYear();
+                    var opt={};
+                    opt.date = {preset : 'date'};
+                    opt.datetime = {preset : 'datetime'};
+                    opt.time = {preset : 'time'};
+                    opt.default = {
+                        theme: 'android-ics light', //皮肤样式 'android-holo-light'
+                        display: 'modal', //显示方式
+                        mode: 'scroller', //日期选择模式
+                        dateFormat: 'yyyy-mm-dd',
+                        lang: 'zh',
+                        showNow: true,
+                        nowText: "今天",
+                        startYear: currYear - 100, //开始年份
+                        endYear: currYear + 100 //结束年份
+                    };
+
+                    $("#starTime,#endTime").mobiscroll($.extend(opt['date'], opt['default']));
+
+                    var optDateTime = $.extend(opt['datetime'], opt['default']);
+                    var optTime = $.extend(opt['time'], opt['default']);
+                    $('#starTime').val("2014-03-12");
+         });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>提示框</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        a,button,input,span,select,label,li,div{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+        html,body{
+            height: 100%;
+        }
+        .mask{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            background-color:rgba(0,0,0,0.8);
+            display:none;
+        }
+        .confirm_box,.confirm_box2{
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -3rem;
+            margin-top: -1.195rem;
+            z-index: 20;
+            width: 6rem;
+            height: 2.39rem;
+            background-color: #f7f7f7;
+            border-radius: 0.1rem;
+        }
+        .confirm_top{
+            width: 100%;
+            height: 1.45rem;
+            line-height: 1.45rem;
+            font-size: 0.36rem;
+            text-align: center;
+            color: #333333;
+            border-bottom:1px solid #cccccc;
+            border-top-left-radius: 0.1rem;
+            border-top-right-radius: 0.1rem;
+        }
+        .confirm_bottom{
+            width: 100%;
+            height: 0.93rem;
+            border-bottom-left-radius: 0.1rem;
+            border-bottom-right-radius: 0.1rem;
+        }
+        .confirm_bottom span{
+            float: left;
+            width: 50%;
+            height: 0.92rem;
+            text-align: center;
+            line-height: 0.92rem;
+            font-size: 0.36rem;
+            color: #4c80cf;
+        }
+        .confirm_bottom .cancel_confirm{
+            box-sizing: border-box;
+            color: #999999;
+            border-right: 1px solid #cccccc;
+        }
+        .confirm_bottom2{
+            text-align: center;
+        }
+        .confirm_bottom2 span{
+            display: inline-block;
+            width: 50%;
+            height: 0.92rem;
+            text-align: center;
+            line-height: 0.92rem;
+            font-size: 0.36rem;
+            color: #4c80cf;
+        }
+        </style>
+</head>
+<body>
+    <a class="show_confirm">显示提示框</a><br><br><br>
+    <a class="show_confirm2">显示提示框2</a>
+    <div class="mask"></div>
+    <!-- 提示框 -->
+    <div class="confirm_box" style="display: none;">
+        <div class="confirm_top">是否保存草稿?</div>
+        <div class="confirm_bottom">
+            <!-- <a class="cancel_confirm">隐藏提示框</a> -->
+            <span class="cancel_confirm">取消</span>
+            <span class="sure_confirm">确定</span>
+        </div>
+    </div>
+    <!-- 提示框2 -->
+    <div class="confirm_box2" style="display: none;">
+        <div class="confirm_top">是否保存草稿?</div>
+        <div class="confirm_bottom2">
+            <span class="sure_confirm">确定</span>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/rem.js"></script>
+    <script type="text/javascript">
+        // 提示框
+        $('.show_confirm').click(function(){
+            $('.mask').fadeIn(500);
+            $('.confirm_box').show('slow');
+        });
+        $('.cancel_confirm').click(function(){
+            $('.mask').fadeOut(500);
+            $('.confirm_box').hide('slow');
+        });
+        //提示框2
+        $('.show_confirm2').click(function(){
+            $('.mask').fadeIn(500);
+            $('.confirm_box2').show('slow');
+        });
+        $('.sure_confirm').click(function(){
+            $('.mask').fadeOut(500);
+            $('.confirm_box2').hide('slow');
+        });
+    </script>
+</body>
+</html>
