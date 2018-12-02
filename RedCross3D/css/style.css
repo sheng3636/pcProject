@@ -1,0 +1,219 @@
+/*
+* @Author: Marte
+* @Date:   2018-03-07 09:05:08
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-07-03 08:57:30
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+ol, ul ,li{list-style: none;}
+a{
+    text-decoration: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: "微软雅黑";
+}
+.bodyWrapper{
+    padding-bottom: 40px;
+    width: 100%;
+    min-width: 1250px;
+    height: auto;
+    background: url(../image/bodyBg.png)  center center no-repeat;
+    background-size: 100% 100%;
+}
+/* 页面头部 */
+.dataShow_wrapper{
+    position: relative;
+    height: 130px;
+}
+.dataShow_top{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -358px;
+    width: 716px;
+    height: 130px;
+    color: #333333;
+    background: url(../image/systemLogo.png) no-repeat left center;
+}
+.userWrapper{
+    float: right;
+    padding-left: 25px;
+    padding-right: 30px;
+    height: 130px;
+    line-height: 130px;
+    font-size: 18px;
+    color: #666666;
+    background:  url(../image/userLogo.png) no-repeat left center;
+}
+.exit{
+    margin-left: 25px;
+}
+/*下部红十字会简介 */
+.redcrossInfo{
+    padding: 20px 125px 0 125px;
+}
+.crossInfo_title{
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333333;
+}
+.crossInfo_content{
+    font-size: 16px;
+    color: #333333;
+    line-height: 25px;
+}
+
+/* 中间部分3D旋转 */
+.lunboWrapper{
+    padding-top: 105px;
+    height: 680px;
+}
+.Button {
+    position: relative;
+    display: block;
+    width: 484px;
+    height: 626px;
+    text-align: center;
+    border-radius: 10px;
+    background: url(../image/diushiBg1.png);
+    background-size: 100% 100%;
+}
+.lunboTitle{
+    display: inline-block;
+    margin: 30px 0 40px 0;
+    font-size: 42px;
+    color: #ffffff;
+}
+.yanglaoPhoto{
+    margin: 0 auto;
+    width: 170px;
+    height: 170px;
+    background: url(../image/yanglaoPhoto.png) no-repeat;
+    background-size: 100% 100%;
+}
+.beijiuPhoto{
+    margin: 0 auto;
+    width: 170px;
+    height: 170px;
+    background: url(../image/beijiuPhoto.png) no-repeat;
+    background-size: 100% 100%;
+}
+.kuanwuPhoto{
+    margin: 0 auto;
+    width: 170px;
+    height: 170px;
+    background: url(../image/kuanwuPhoto.png) no-repeat;
+    background-size: 100% 100%;
+}
+.renyuanPhoto{
+    margin: 0 auto;
+    width: 170px;
+    height: 170px;
+    background: url(../image/renyuanPhoto.png) no-repeat;
+    background-size: 100% 100%;
+}
+.sanjiuPhoto{
+    margin: 0 auto;
+    width: 170px;
+    height: 170px;
+    background: url(../image/sanjiuPhoto.png) no-repeat;
+    background-size: 100% 100%;
+}
+.xuanchuanPhoto{
+    margin: 0 auto;
+    width: 170px;
+    height: 170px;
+    background: url(../image/xuanchuanPhoto.png) no-repeat;
+    background-size: 100% 100%;
+}
+.sanxianPhoto{
+    margin: 0 auto;
+    width: 170px;
+    height: 170px;
+    background: url(../image/sanxianPhoto.png) no-repeat;
+    background-size: 100% 100%;
+}
+.infoList{
+    margin: 0 30px;
+    height: 66px;
+    line-height: 66px;
+    border-bottom: 1px solid #ff6765;
+    color: #ffc9c8;
+}
+.listName{
+    float: left;
+    width: 50%;
+    height: 66px;
+    font-size: 22px;
+    text-align: left;
+}
+.listNum{
+    float: left;
+    width: 50%;
+    height: 66px;
+    text-align: right;
+}
+.numAccount{
+    color: #ffffff;
+    font-size: 32px;
+}
+.numDanwei{
+    font-size: 16px;
+    color: #f7b2b1;
+}
+.viewDetail{
+    position: absolute;
+    top: 558px;
+    left: 50%;
+    margin-left: -100px;
+    display: inline-block;
+    width: 200px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #e6403e;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #ffcac9;
+}
+.centerShadow{
+    position: absolute;
+    bottom: -49px;
+    left: 0;
+    display: inline-block;
+    width: 484px;
+    height: 49px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: url(../image/centerShadow.png) no-repeat;
+}
+/* 灰色内容 */
+.currentBgActive{
+    background: url(../image/currentBg.png);
+    background-size: 100% 100%;
+}
+.diushiColor{
+    color: #666666;
+    border-bottom: 1px solid #a9a9a9;
+}
+.numAccountColor{
+    color: #e44543;
+}
+.numDanweiColor{
+    color: #666666;
+}
+.lunboTitleColor{
+    color: #333333;
+
+}
+.mmp{
+    color: red!important;
+}
